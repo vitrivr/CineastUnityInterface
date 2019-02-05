@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc1c5e1a-e907-4c00-af98-dd148bb98214" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ResultMerger.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding>
+                <marker date="1549360442012" expanded="true" signature="6:94" ph="..." />
+                <marker date="1549360442012" expanded="true" signature="139:7244" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="171:7242" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="209:2780" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="349:460" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="491:592" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="625:735" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="806:931" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1020:1110" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1158:1227" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1281:1563" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1331:1384" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1434:1486" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1611:1688" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1771:2513" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1828:2353" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1877:1937" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="1989:2050" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="2102:2163" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="2217:2278" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="2406:2499" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="2690:2770" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="2790:3398" ph="/// Merges multiple ResultObjects of different categories to a single list of ContentObjects. ... " />
+                <marker date="1549360442012" expanded="true" signature="3485:5049" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="3761:4906" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="3851:4892" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="4002:4624" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="4110:4602" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="4172:4576" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="4657:4874" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5107:5314" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5142:5248" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5386:5634" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5499:5596" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5703:5926" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5820:5888" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="5936:6719" ph="/// Merges the given scores based on the given weights and returns a new ContentObject (key-value pair) with ... " />
+                <marker date="1549360442012" expanded="true" signature="6811:7236" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="6862:6993" ph="{...}" />
+                <marker date="1549360442012" expanded="true" signature="7085:7157" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CineastObject.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+              <folding>
+                <marker date="1549360441780" expanded="true" signature="49:243" ph="{...}" />
+                <marker date="1549360441780" expanded="true" signature="108:241" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContentObject.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding>
+                <marker date="1549360441903" expanded="true" signature="64:1137" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="153:1135" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="187:211" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="276:347" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="456:726" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="504:545" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="593:634" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="770:838" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="905:1129" ph="{...}" />
+                <marker date="1549360441903" expanded="true" signature="1012:1074" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetaDataObject.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+              <folding>
+                <marker date="1549360441828" expanded="true" signature="64:249" ph="{...}" />
+                <marker date="1549360441828" expanded="true" signature="117:247" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetaDataResult.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1549360441969" expanded="true" signature="49:288" ph="{...}" />
+                <marker date="1549360441969" expanded="true" signature="109:286" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectsResult.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1549360442051" expanded="true" signature="49:298" ph="{...}" />
+                <marker date="1549360442051" expanded="true" signature="108:296" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultObject.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1549360442129" expanded="true" signature="49:458" ph="{...}" />
+                <marker date="1549360442129" expanded="true" signature="107:456" ph="{...}" />
+                <marker date="1549360442129" expanded="true" signature="390:450" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SegmentObject.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+              <folding>
+                <marker date="1549360442097" expanded="true" signature="49:360" ph="{...}" />
+                <marker date="1549360442097" expanded="true" signature="108:358" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SegmentResult.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1549360442172" expanded="true" signature="49:286" ph="{...}" />
+                <marker date="1549360442172" expanded="true" signature="108:284" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimilarResult.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1549360442209" expanded="true" signature="49:288" ph="{...}" />
+                <marker date="1549360442209" expanded="true" signature="108:286" ph="{...}" />
+                <marker date="1549360442209" expanded="true" signature="220:280" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="CineastUnityInterface" type="483dac07:UnityExplorerNode$Root" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="CineastUnityInterface" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="CineastUnityInterface" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="CineastUnityInterface" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="CineastUnityInterface" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc1c5e1a-e907-4c00-af98-dd148bb98214" name="Default" comment="" />
+      <created>1549359467633</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549359467633</updated>
+      <workItem from="1549359476897" duration="483000" />
+      <workItem from="1549359992650" duration="18000" />
+      <workItem from="1549360207282" duration="223000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="724000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1549360434177" expanded="true" signature="6:237" ph="..." />
+            <marker date="1549360434177" expanded="true" signature="282:15288" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="328:15286" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="993:1915" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1195:1724" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1311:1443" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2020:2176" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2321:2497" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2586:8397" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2600:2654" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="3135:3245" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3384:3530" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3692:4338" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3805:4010" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="4352:4395" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="4905:5016" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="5587:5698" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6743:6892" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6791:6878" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7199:7297" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7746:7939" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8179:8355" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8461:13503" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8475:8529" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="9010:9120" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9259:9405" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9419:9462" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="10011:10122" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="10693:10804" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11849:11998" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11897:11984" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12305:12403" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12852:13045" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13285:13461" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13582:13649" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13715:13928" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13796:13887" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13979:14024" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14060:14100" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14138:14180" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14230:14275" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14323:14365" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14428:14470" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14533:14589" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14599:14660" ph="/* RETURNS FALSE IF AN ERROR OCCURED ... */" />
+            <marker date="1549360434177" expanded="true" signature="14728:14950" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14777:14859" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14980:15023" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15087:15152" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15213:15280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <marker date="1549360434177" expanded="true" signature="6:237" ph="..." />
+            <marker date="1549360434177" expanded="true" signature="282:15288" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="328:15286" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="993:1915" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1195:1724" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1311:1443" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2020:2176" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2321:2497" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2586:8397" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2600:2654" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="3135:3245" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3384:3530" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3692:4338" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3805:4010" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="4352:4395" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="4905:5016" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="5587:5698" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6743:6892" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6791:6878" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7199:7297" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7746:7939" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8179:8355" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8461:13503" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8475:8529" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="9010:9120" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9259:9405" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9419:9462" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="10011:10122" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="10693:10804" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11849:11998" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11897:11984" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12305:12403" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12852:13045" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13285:13461" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13582:13649" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13715:13928" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13796:13887" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13979:14024" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14060:14100" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14138:14180" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14230:14275" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14323:14365" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14428:14470" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14533:14589" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14599:14660" ph="/* RETURNS FALSE IF AN ERROR OCCURED ... */" />
+            <marker date="1549360434177" expanded="true" signature="14728:14950" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14777:14859" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14980:15023" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15087:15152" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15213:15280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding>
+            <marker date="1549360377614" expanded="false" signature="6:66" ph="..." />
+            <marker date="1549360377614" expanded="true" signature="111:2906" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="144:2904" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="301:347" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="417:704" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="472:566" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="624:694" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="769:823" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="873:921" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1008:1666" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1075:1538" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1120:1172" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1220:1273" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1321:1374" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1424:1477" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1594:1656" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1852:1921" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="1974:2029" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2079:2415" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2125:2170" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2216:2260" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2311:2356" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2459:2509" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2553:2898" ph="{...}" />
+            <marker date="1549360377614" expanded="true" signature="2676:2771" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding>
+            <marker date="1549360434177" expanded="true" signature="6:237" ph="..." />
+            <marker date="1549360434177" expanded="true" signature="282:15288" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="328:15286" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="993:1915" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1195:1724" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="1311:1443" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2020:2176" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2321:2497" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2586:8397" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="2600:2654" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="3135:3245" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3384:3530" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3692:4338" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="3805:4010" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="4352:4395" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="4905:5016" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="5587:5698" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6743:6892" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="6791:6878" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7199:7297" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="7746:7939" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8179:8355" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8461:13503" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="8475:8529" ph="/* === SIMILAR === ... */" />
+            <marker date="1549360434177" expanded="true" signature="9010:9120" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9259:9405" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="9419:9462" ph="/* === SEGMENTS === ... */" />
+            <marker date="1549360434177" expanded="true" signature="10011:10122" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="10693:10804" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11849:11998" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="11897:11984" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12305:12403" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="12852:13045" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13285:13461" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13582:13649" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13715:13928" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13796:13887" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="13979:14024" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14060:14100" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14138:14180" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14230:14275" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14323:14365" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14428:14470" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14533:14589" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14599:14660" ph="/* RETURNS FALSE IF AN ERROR OCCURED ... */" />
+            <marker date="1549360434177" expanded="true" signature="14728:14950" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14777:14859" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="14980:15023" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15087:15152" ph="{...}" />
+            <marker date="1549360434177" expanded="true" signature="15213:15280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <marker date="1549360381794" expanded="false" signature="6:49" ph="..." />
+            <marker date="1549360381794" expanded="true" signature="94:3226" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="134:3224" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="254:351" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="453:554" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="940:1017" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1063:1141" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1183:1258" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1299:1375" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1478:1536" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1588:2187" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1620:1726" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="1938:1996" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="2092:2149" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="2253:2397" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="2449:2645" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="2691:2918" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="2960:3057" ph="{...}" />
+            <marker date="1549360381794" expanded="true" signature="3115:3218" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <marker date="1549360434185" expanded="true" signature="6:204" ph="..." />
+            <marker date="1549360434185" expanded="true" signature="248:11299" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="255:307" ph="/* Utilities related to cineast API. ... */" />
+            <marker date="1549360434185" expanded="true" signature="344:11297" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="359:414" ph="/* The key of meta 'latitude' ... */" />
+            <marker date="1549360434185" expanded="true" signature="478:532" ph="/* The key of meta 'longitude' ... */" />
+            <marker date="1549360434185" expanded="true" signature="598:651" ph="/* The key of meta 'datetime' ... */" />
+            <marker date="1549360434185" expanded="true" signature="1368:1598" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="1475:1552" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="1675:2168" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="1848:1992" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="1903:1978" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="2046:2122" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="2186:2411" ph="/* Creates an object of a given metadataobject and sets the meta data ... */" />
+            <marker date="1549360434185" expanded="true" signature="2483:2669" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="2740:2959" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3037:3538" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3174:3499" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3289:3390" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3411:3485" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3617:4101" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3750:4065" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3861:3959" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="3980:4051" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="4188:4397" ph="/* Generates a WWW object with given params ... */" />
+            <marker date="1549360434185" expanded="true" signature="4472:4807" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="4818:5067" ph="/* Builds a SimilarQuery and sends a request to the specified url. ... */" />
+            <marker date="1549360434185" expanded="true" signature="5149:5329" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="5404:5576" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="5655:5751" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="5761:5989" ph="/* Extracts a string array containing only the Ids (aka the keys) of the given content object array. ... */" />
+            <marker date="1549360434185" expanded="true" signature="6067:6361" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="6187:6316" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="6371:6600" ph="/* Extracts a string array containing only the objectIds of the given segment object array. ... */" />
+            <marker date="1549360434185" expanded="true" signature="6678:6911" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="6798:6866" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="6994:7089" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="7099:7320" ph="/* Builds a IdsQuery and sends a request to the specified url. ... */" />
+            <marker date="1549360434185" expanded="true" signature="7392:7536" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="7546:7778" ph="/* Builds a MetaDataQuery and sends a request to the specified url. ... */" />
+            <marker date="1549360434185" expanded="true" signature="7857:8013" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8023:8118" ph="/* Extracts all the ids for a given MultimediaObject array. ... */" />
+            <marker date="1549360434185" expanded="true" signature="8192:8412" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8307:8368" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8485:8629" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8693:8781" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8849:8965" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="8975:9092" ph="/* -1 == empty similar result ... */" />
+            <marker date="1549360434185" expanded="true" signature="9178:9856" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9224:9279" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9347:9823" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9405:9472" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9550:9809" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9663:9790" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="9874:10336" ph="/// Converts the given year (numerical value) to a ISO8601 conform timestamp. ... " />
+            <marker date="1549360434185" expanded="true" signature="10397:10467" ph="{...}" />
+            <marker date="1549360434185" expanded="true" signature="10477:11005" ph="/// Converts the given time specification to a ISO8601 conform timestamp representation. ... " />
+            <marker date="1549360434185" expanded="true" signature="11126:11290" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding>
+            <marker date="1549360394320" expanded="true" signature="6:33" ph="..." />
+            <marker date="1549360394320" expanded="true" signature="78:1305" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="110:1303" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="348:483" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="513:606" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="688:1211" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="926:1077" ph="{...}" />
+            <marker date="1549360394320" expanded="true" signature="1249:1297" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding>
+            <marker date="1549360398310" expanded="true" signature="6:33" ph="..." />
+            <marker date="1549360398310" expanded="true" signature="78:306" ph="{...}" />
+            <marker date="1549360398310" expanded="true" signature="116:304" ph="{...}" />
+            <marker date="1549360398310" expanded="true" signature="127:225" ph="/*Filters some mmos out and returnes the filtered list ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <marker date="1549360434197" expanded="true" signature="6:66" ph="..." />
+            <marker date="1549360434197" expanded="true" signature="158:6464" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="164:321" ph="/* The object represents an object in cineast. ... */" />
+            <marker date="1549360434197" expanded="true" signature="406:6462" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="838:898" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="942:1191" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="1202:1368" ph="/* Adds the given meta data to this object. ... */" />
+            <marker date="1549360434197" expanded="true" signature="1422:2935" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="1466:2899" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="1532:2855" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="1613:2800" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="1727:1875" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="2025:2174" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="2316:2450" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="2596:2743" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="2945:3478" ph="/* Merges this and the passed object with a 'this-first' strategy. ... */" />
+            <marker date="1549360434197" expanded="true" signature="3529:4210" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="3563:3608" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4270:4465" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4343:4428" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4521:4719" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4596:4683" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4775:4977" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="4852:4941" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5034:5207" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5092:5171" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5264:5437" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5322:5401" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5494:5683" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5560:5647" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5770:6456" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5843:6306" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5888:5940" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="5987:6040" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="6087:6140" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="6189:6242" ph="{...}" />
+            <marker date="1549360434197" expanded="true" signature="6365:6446" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+          <folding>
+            <marker date="1549360409183" expanded="true" signature="89:3609" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="128:3607" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="238:438" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="516:704" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="785:1104" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="863:954" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="1199:1429" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="1507:1589" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="1607:1806" ph="/// Builds a new similarity query for the category 'edge'. ... " />
+            <marker date="1549360409183" expanded="true" signature="1877:2047" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="2126:2303" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="2391:2650" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="2484:2544" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="2713:2872" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="2934:3125" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="3195:3361" ph="{...}" />
+            <marker date="1549360409183" expanded="true" signature="3426:3601" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <marker date="1549360414497" expanded="true" signature="48:232" ph="{...}" />
+            <marker date="1549360414497" expanded="true" signature="102:230" ph="{...}" />
+            <marker date="1549360414497" expanded="true" signature="176:224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+          <folding>
+            <marker date="1549360419031" expanded="true" signature="48:277" ph="{...}" />
+            <marker date="1549360419031" expanded="true" signature="55:89" ph="/* Stuff and things ... */" />
+            <marker date="1549360419031" expanded="true" signature="144:275" ph="{...}" />
+            <marker date="1549360419031" expanded="true" signature="221:269" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding>
+            <marker date="1549360422199" expanded="true" signature="48:504" ph="{...}" />
+            <marker date="1549360422199" expanded="true" signature="106:502" ph="{...}" />
+            <marker date="1549360422199" expanded="true" signature="262:324" ph="{...}" />
+            <marker date="1549360422199" expanded="true" signature="370:496" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <marker date="1549360427563" expanded="true" signature="48:260" ph="{...}" />
+            <marker date="1549360427563" expanded="true" signature="107:258" ph="{...}" />
+            <marker date="1549360427563" expanded="true" signature="200:252" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding>
+            <marker date="1549360432035" expanded="true" signature="63:1210" ph="{...}" />
+            <marker date="1549360432035" expanded="true" signature="113:1208" ph="{...}" />
+            <marker date="1549360432035" expanded="true" signature="805:897" ph="{...}" />
+            <marker date="1549360432035" expanded="true" signature="992:1202" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+          <folding>
+            <marker date="1549360441780" expanded="true" signature="49:243" ph="{...}" />
+            <marker date="1549360441780" expanded="true" signature="108:241" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <marker date="1549360441903" expanded="true" signature="64:1137" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="153:1135" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="187:211" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="276:347" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="456:726" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="504:545" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="593:634" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="770:838" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="905:1129" ph="{...}" />
+            <marker date="1549360441903" expanded="true" signature="1012:1074" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <marker date="1549360442012" expanded="true" signature="6:94" ph="..." />
+            <marker date="1549360442012" expanded="true" signature="139:7244" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="171:7242" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="209:2780" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="349:460" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="491:592" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="625:735" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="806:931" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1020:1110" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1158:1227" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1281:1563" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1331:1384" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1434:1486" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1611:1688" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1771:2513" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1828:2353" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1877:1937" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="1989:2050" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="2102:2163" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="2217:2278" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="2406:2499" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="2690:2770" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="2790:3398" ph="/// Merges multiple ResultObjects of different categories to a single list of ContentObjects. ... " />
+            <marker date="1549360442012" expanded="true" signature="3485:5049" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="3761:4906" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="3851:4892" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="4002:4624" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="4110:4602" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="4172:4576" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="4657:4874" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5107:5314" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5142:5248" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5386:5634" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5499:5596" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5703:5926" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5820:5888" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="5936:6719" ph="/// Merges the given scores based on the given weights and returns a new ContentObject (key-value pair) with ... " />
+            <marker date="1549360442012" expanded="true" signature="6811:7236" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="6862:6993" ph="{...}" />
+            <marker date="1549360442012" expanded="true" signature="7085:7157" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding>
+            <marker date="1549360441828" expanded="true" signature="64:249" ph="{...}" />
+            <marker date="1549360441828" expanded="true" signature="117:247" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1549360441969" expanded="true" signature="49:288" ph="{...}" />
+            <marker date="1549360441969" expanded="true" signature="109:286" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1549360442051" expanded="true" signature="49:298" ph="{...}" />
+            <marker date="1549360442051" expanded="true" signature="108:296" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1549360442129" expanded="true" signature="49:458" ph="{...}" />
+            <marker date="1549360442129" expanded="true" signature="107:456" ph="{...}" />
+            <marker date="1549360442129" expanded="true" signature="390:450" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+          <folding>
+            <marker date="1549360442097" expanded="true" signature="49:360" ph="{...}" />
+            <marker date="1549360442097" expanded="true" signature="108:358" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1549360442172" expanded="true" signature="49:286" ph="{...}" />
+            <marker date="1549360442172" expanded="true" signature="108:284" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1549360442209" expanded="true" signature="49:288" ph="{...}" />
+            <marker date="1549360442209" expanded="true" signature="108:286" ph="{...}" />
+            <marker date="1549360442209" expanded="true" signature="220:280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Loris\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_CineastUnityInterface.721389482.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Loris\dev\misc\CineastUnityInterface\CineastUnityInterface" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\CineastUnityInterface" t="Include">
+        <e p="CineastAPI" t="Include">
+          <e p="CategoryRatio.cs" t="Include" />
+          <e p="CineastApi.cs" t="Include" />
+          <e p="CineastConfiguration.cs" t="Include" />
+          <e p="CineastUtils.cs" t="Include" />
+          <e p="FilterEngine.cs" t="Include" />
+          <e p="FilterStrategy.cs" t="Include" />
+          <e p="MultimediaObject.cs" t="Include" />
+          <e p="Query" t="Include">
+            <e p="IdsQuery.cs" t="Include" />
+            <e p="ObjectQuery.cs" t="Include" />
+            <e p="SimilarQuery.cs" t="Include" />
+            <e p="TermContainer.cs" t="Include" />
+            <e p="TermsObject.cs" t="Include" />
+          </e>
+          <e p="QueryFactory.cs" t="Include" />
+          <e p="Result" t="Include">
+            <e p="CineastObject.cs" t="Include" />
+            <e p="ContentObject.cs" t="Include" />
+            <e p="MetaDataObject.cs" t="Include" />
+            <e p="MetaDataResult.cs" t="Include" />
+            <e p="ObjectsResult.cs" t="Include" />
+            <e p="ResultObject.cs" t="Include" />
+            <e p="SegmentObject.cs" t="Include" />
+            <e p="SegmentResult.cs" t="Include" />
+            <e p="SimilarResult.cs" t="Include" />
+          </e>
+          <e p="ResultMerger.cs" t="Include" />
+        </e>
+      </e>
+      <e p="CineastUnityInterface.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
