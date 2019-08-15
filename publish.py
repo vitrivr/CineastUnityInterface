@@ -4,22 +4,22 @@ Utility to publish the unity package to make it available for upm.
 For usage, invoke
 
 $> python publish.py --help
+
+Thanks to https://github.com/neogeek/unity-package-example for providing an excellent example
 """
 import argparse
 import os
 
-parser = argparse.ArgumentParser()
+PACKAGE_DIR = 'CineastUnityInterface/Assets/CineastUnityInterface'
+
+parser = argparse.ArgumentParser(description="Utility to publish the stand-alone unity package available for upm.")
 
 parser.add_argument("-r", "--release", help="The name of the release branch", default="release")
-parser.add_argument("-i", "--init", help="Before the first push, one has to call init", action="store_true")
+
 
 args = parser.parse_args()
-baseCmd = 'git subtree push --prefix "Assets/CineastUnityInterface" origin'
-cmd = baseCmd + ' ' + args.release
 
-if args.init:
-  addCmd = 'git subtree add --prefix "Assets/CineastUnityInterface" origin'
-  os.system(addCmd + ' ' + args.release + ' --squash')
+cmd = 'git subtree push --prefix "%s" origin %s' % (PACKAGE_DIR, args.release)
 
 os.system(cmd)
 

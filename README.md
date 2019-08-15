@@ -12,6 +12,14 @@ See [Cineast](https://github.com/vitrivr/cineast) for further API informations
 
 ## Usage
 
+### Unity Package Manager
+
+To use this package with upm, add the following dependency to your `manifest.json`:
+
+```
+"com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/CineastUnityInterface.git#release"
+```
+
 ### Fresh Unity Project
 
 If you have not yet started a unity project, this one is for you:
@@ -40,23 +48,20 @@ in order to get the API working.
 
 ### API
 
-Assuming you have the `CineastApi` MonoBehaviour attachted to a gameobject:
+_coming soon_
 
-Create Queries via the `QueryFactory` and store it as `query`.
-Then, to actually query Cineast:
+## Contribution
 
-```
-val api = cineastApiGameObject.GetComponent<CineastApi>();
-api.RequestSimilarAndThen(query, handler);
-```
+One can contribute to this project by sumbitting a PR.
 
-The `handler` is an `Action<List<MultimediaObject>>` variable which will
-receive the response, as soon Cineast answers.
+### Publishing
 
-## Development Status
+This API is published as a Unity Package Manager (_upm_) ready package.
+To make it available to _upm_, one has to issue the `publish.py` script.
 
-Why this is an early development version:
+This requires [Git Subtree](https://github.com/mwitkow/git-subtree) to be installed.
 
- * There are some missing dependencies in the crrent project setup.
- * There should be an Interface instead of the plain Action for handling responses
 
+---
+
+Credits go to @neogeek, his [Tutorial](https://github.com/neogeek/unity-package-example) lead to the transformation to a proper _upm_ package.
