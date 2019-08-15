@@ -5,7 +5,7 @@
   "description": "An all-unity client for [Cineast](https://github.com/vitrivr/cineast/)",
   "unity": "2018.3",
   "keywords": [
-    "cineast","restclient"
+    "cineast","restclient","vitrivr"
   ],
   "author": {
     "name": "Loris Sauter",
