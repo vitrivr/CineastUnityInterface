@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Loris\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Loris\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Loris\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_CineastUnityInterface.721389482.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Loris\dev\misc\CineastUnityInterface\CineastUnityInterface" t="IncludeRecursive">
+      <e p="Assets" t="Include">
+        <e p="CineastUnityInterface" t="Include">
+          <e p="Runtime" t="Include">
+            <e p="Vitrivr" t="Include">
+              <e p="UnityInterface" t="Include">
+                <e p="CineastAPI" t="Include">
+                  <e p="CineastApi.cs" t="Include" />
+                  <e p="Models" t="Include">
+                    <e p="Messages" t="Include">
+                      <e p="Query" t="Include">
+                        <e p="IdsQuery.cs" t="Include" />
+                        <e p="ObjectQuery.cs" t="Include" />
+                        <e p="SimilarQuery.cs" t="Include" />
+                        <e p="TermContainer.cs" t="Include" />
+                        <e p="TermsObject.cs" t="Include" />
+                      </e>
+                      <e p="Result" t="Include">
+                        <e p="CineastObject.cs" t="Include" />
+                        <e p="ContentObject.cs" t="Include" />
+                        <e p="MetaDataObject.cs" t="Include" />
+                        <e p="MetaDataResult.cs" t="Include" />
+                        <e p="ObjectsResult.cs" t="Include" />
+                        <e p="ResultObject.cs" t="Include" />
+                        <e p="SegmentObject.cs" t="Include" />
+                        <e p="SegmentResult.cs" t="Include" />
+                        <e p="SimilarResult.cs" t="Include" />
+                      </e>
+                    </e>
+                    <e p="MultimediaObject.cs" t="Include" />
+                  </e>
+                  <e p="Processing" t="Include">
+                    <e p="CategoryRatio.cs" t="Include" />
+                    <e p="CineastResponseHandler.cs" t="Include" />
+                    <e p="FilterEngine.cs" t="Include" />
+                    <e p="FilterStrategy.cs" t="Include" />
+                    <e p="ResultMerger.cs" t="Include" />
+                  </e>
+                  <e p="Utils" t="Include">
+                    <e p="CineastConfiguration.cs" t="Include" />
+                    <e p="CineastUtils.cs" t="Include" />
+                    <e p="QueryFactory.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Vitrivr.UnityInterface.CineastApi.asmdef" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="CineastUnityInterface.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Vitrivr.UnityInterface.CineastApi.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc1c5e1a-e907-4c00-af98-dd148bb98214" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CineastUnityInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CategoryRatio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CategoryRatio.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastConfiguration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastUtils.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterStrategy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/MultimediaObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/MultimediaObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/IdsQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/IdsQuery.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/ObjectQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/ObjectQuery.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/SimilarQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/SimilarQuery.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermContainer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermsObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermsObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/QueryFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/QueryFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/CineastObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/CineastObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ContentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ContentObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataResult.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ObjectsResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ObjectsResult.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ResultObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ResultObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentResult.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SimilarResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SimilarResult.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/ResultMerger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/ResultMerger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityPackageManager/manifest.json" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+              <folding>
+                <marker date="1565163650991" expanded="false" signature="6:516" ph="..." />
+                <marker date="1565163650991" expanded="true" signature="646:15788" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="692:15786" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="1357:2293" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="1359:1465" ph="/* logger = LogManager.GetInstance().GetLogger(GetType()); ... */" />
+                <marker date="1565163650991" expanded="true" signature="1563:2098" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="1679:1813" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="2398:2556" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="2701:2879" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="2968:8843" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="2982:3131" ph="/* === SIMILAR === ... */" />
+                <marker date="1565163650991" expanded="true" signature="3268:3379" ph="/* logger.Debug(&quot;Received similar response: &quot; + similarRequest.text); ... */" />
+                <marker date="1565163650991" expanded="true" signature="3521:3633" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="3635:3732" ph="/* logger.Info(&quot;Successfully parsed similar response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="3774:3922" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="4084:4740" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="4199:4408" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="4201:4390" ph="/* logger.Debug(&quot;Result for category {0} contains {1} entries.\n\t{2}&quot;, ro.category, ro.content.Length, ... */" />
+                <marker date="1565163650991" expanded="true" signature="4572:4726" ph="/* logger.Debug(&quot;After merge: {0} unique entries\n\t{1}&quot;, tempResult.Length, ... */" />
+                <marker date="1565163650991" expanded="true" signature="4754:4852" ph="/* === SEGMENTS === ... */" />
+                <marker date="1565163650991" expanded="true" signature="5057:5169" ph="/* logger.Debug(&quot;Received segments response:\n&quot; + segmentRequest.text); ... */" />
+                <marker date="1565163650991" expanded="true" signature="5311:5424" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="5426:5580" ph="/* logger.Info(&quot;Successfully parsed segments response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="6001:6114" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="6116:6208" ph="/* logger.Info(&quot;Successfully parsed metadata response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="6381:6452" ph="/* === OBJECTS === ... */" />
+                <marker date="1565163650991" expanded="true" signature="6841:6937" ph="/* logger.Info(&quot;Successfully parsed objects response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="7171:7320" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="7219:7306" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="7478:7573" ph="/* === WRAPUP === ... */" />
+                <marker date="1565163650991" expanded="true" signature="7631:7729" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="7731:7887" ph="/* logger.Info(&quot;Result contains &quot; + objectList.Count + &quot; entities&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="7902:7966" ph="/* === SORT LIST === ... */" />
+                <marker date="1565163650991" expanded="true" signature="8186:8381" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="8623:8801" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="8907:14003" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="8921:9070" ph="/* === SIMILAR === ... */" />
+                <marker date="1565163650991" expanded="true" signature="9207:9318" ph="/* logger.Debug(&quot;Received similar response: &quot; + similarRequest.text); ... */" />
+                <marker date="1565163650991" expanded="true" signature="9460:9572" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="9574:9671" ph="/* logger.Info(&quot;Successfully parsed similar response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="9713:9861" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="9875:9973" ph="/* === SEGMENTS === ... */" />
+                <marker date="1565163650991" expanded="true" signature="10217:10329" ph="/* logger.Debug(&quot;Received segments response:\n&quot; + segmentRequest.text); ... */" />
+                <marker date="1565163650991" expanded="true" signature="10471:10584" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="10586:10740" ph="/* logger.Info(&quot;Successfully parsed segments response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="11161:11274" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="11276:11368" ph="/* logger.Info(&quot;Successfully parsed metadata response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="11541:11612" ph="/* === OBJECTS === ... */" />
+                <marker date="1565163650991" expanded="true" signature="12001:12097" ph="/* logger.Info(&quot;Successfully parsed objects response&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="12331:12480" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="12379:12466" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="12638:12733" ph="/* === WRAPUP === ... */" />
+                <marker date="1565163650991" expanded="true" signature="12791:12889" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="12891:13047" ph="/* logger.Info(&quot;Result contains &quot; + objectList.Count + &quot; entities&quot;); ... */" />
+                <marker date="1565163650991" expanded="true" signature="13062:13126" ph="/* === SORT LIST === ... */" />
+                <marker date="1565163650991" expanded="true" signature="13346:13541" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="13783:13961" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14082:14149" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14215:14428" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14296:14387" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14479:14524" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14560:14600" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14638:14680" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14730:14775" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14823:14865" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="14928:14970" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15033:15089" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15099:15160" ph="/* RETURNS FALSE IF AN ERROR OCCURED ... */" />
+                <marker date="1565163650991" expanded="true" signature="15228:15450" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15277:15359" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15480:15523" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15587:15652" ph="{...}" />
+                <marker date="1565163650991" expanded="true" signature="15713:15780" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterStrategy.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <marker date="1565163430442" expanded="true" signature="6:111" ph="..." />
+                <marker date="1565163430442" expanded="true" signature="198:426" ph="{...}" />
+                <marker date="1565163430442" expanded="true" signature="236:424" ph="{...}" />
+                <marker date="1565163430442" expanded="true" signature="247:345" ph="/*Filters some mmos out and returnes the filtered list ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CineastResponseHandler.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <folding>
+                <marker date="1565165628364" expanded="true" signature="85:163" ph="{...}" />
+                <marker date="1565165628364" expanded="true" signature="151:161" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+              <folding>
+                <marker date="1565163623153" expanded="false" signature="6:111" ph="..." />
+                <marker date="1565163623153" expanded="true" signature="198:1437" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="230:1435" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="470:607" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="637:732" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="814:1343" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="1054:1207" ph="{...}" />
+                <marker date="1565163623153" expanded="true" signature="1381:1429" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="106" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CategoryRatio.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <marker date="1565165106088" expanded="false" signature="6:66" ph="..." />
+                <marker date="1565165106088" expanded="true" signature="153:2948" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="186:2946" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="343:389" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="459:746" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="514:608" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="666:736" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="811:865" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="915:963" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1050:1708" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1117:1580" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1162:1214" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1262:1315" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1363:1416" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1466:1519" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1636:1698" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="1894:1963" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2016:2071" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2121:2457" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2167:2212" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2258:2302" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2353:2398" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2501:2551" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2595:2940" ph="{...}" />
+                <marker date="1565165106088" expanded="true" signature="2718:2813" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Documentation/Vitrivr.UnityInterface.CineastApi.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="91" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1565165108437" expanded="true" signature="96:333" ph="{...}" />
+                <marker date="1565165108437" expanded="true" signature="155:331" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SimilarResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1565165108387" expanded="true" signature="96:335" ph="{...}" />
+                <marker date="1565165108387" expanded="true" signature="155:333" ph="{...}" />
+                <marker date="1565165108387" expanded="true" signature="267:327" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/ResultMerger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/QueryFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermsObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/IdsQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/SimilarQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/ObjectQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ContentObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr.UnityInterface.CineastApi.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ObjectsResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SimilarResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ResultObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/CineastObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CategoryRatio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/MultimediaObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CineastResponseHandler.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterEngine.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CategoryRatio.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastApi.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/CineastUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/FilterStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/MultimediaObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/QueryFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/ResultMerger.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/IdsQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/ObjectQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/SimilarQuery.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Query/TermsObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/CineastObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ContentObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/MetaDataResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ObjectsResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/ResultObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SegmentResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CineastAPI/Result/SimilarResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/LICENSE.md" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/README.md" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/package.json" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/Documentation/Vitrivr.UnityInterface.CineastApi.md" />
+        <option value="$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CineastResponseHandler.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1707" />
+    <option name="width" value="1734" />
+    <option name="height" value="1407" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Runtime" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Runtime" type="1045f7f1:UnityExplorerNode" />
+              <item name="Vitrivr" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Runtime" type="1045f7f1:UnityExplorerNode" />
+              <item name="Vitrivr" type="1045f7f1:UnityExplorerNode" />
+              <item name="UnityInterface" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Runtime" type="1045f7f1:UnityExplorerNode" />
+              <item name="Vitrivr" type="1045f7f1:UnityExplorerNode" />
+              <item name="UnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="CineastApi" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Runtime" type="1045f7f1:UnityExplorerNode" />
+              <item name="Vitrivr" type="1045f7f1:UnityExplorerNode" />
+              <item name="UnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="CineastApi" type="1045f7f1:UnityExplorerNode" />
+              <item name="Processing" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="CineastUnityInterface" type="1045f7f1:UnityExplorerNode" />
+              <item name="Tests" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Packages" type="4e2708dd:PackagesRoot" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
+      <pane id="AssemblyExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc1c5e1a-e907-4c00-af98-dd148bb98214" name="Default" comment="" />
+      <created>1549359467633</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549359467633</updated>
+      <workItem from="1549359476897" duration="483000" />
+      <workItem from="1549359992650" duration="18000" />
+      <workItem from="1549360207282" duration="821000" />
+      <workItem from="1565010761131" duration="509000" />
+      <workItem from="1565161184298" duration="30000" />
+      <workItem from="1565161857600" duration="3468000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5329000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1707" y="0" width="1734" height="1407" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16965352" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49940264" visible="true" weight="0.3294753" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50059736" side_tool="true" visible="true" weight="0.3294753" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Unity" order="14" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="CineastUnityInterface" type="b2602c69:ProjectViewProjectNode" />
+        <item name="CineastUnityInterface" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastConfiguration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/CineastUtils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/MultimediaObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Utils/QueryFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/IdsQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/ObjectQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/SimilarQuery.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermContainer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Query/TermsObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/CineastObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/ResultMerger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <marker date="1549360955283" expanded="true" signature="6:94" ph="..." />
+            <marker date="1549360955283" expanded="true" signature="171:7242" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="209:2780" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="349:460" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="491:592" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="625:735" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="806:931" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1020:1110" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1158:1227" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1281:1563" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1331:1384" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1434:1486" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1611:1688" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1771:2513" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1828:2353" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1877:1937" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="1989:2050" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="2102:2163" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="2217:2278" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="2406:2499" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="2690:2770" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="2790:3398" ph="/// Merges multiple ResultObjects of different categories to a single list of ContentObjects. ... " />
+            <marker date="1549360955283" expanded="true" signature="3485:5049" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="3761:4906" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="3851:4892" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="4002:4624" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="4110:4602" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="4172:4576" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="4657:4874" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5107:5314" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5142:5248" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5386:5634" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5499:5596" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5703:5926" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5820:5888" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="5936:6719" ph="/// Merges the given scores based on the given weights and returns a new ContentObject (key-value pair) with ... " />
+            <marker date="1549360955283" expanded="true" signature="6811:7236" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="6862:6993" ph="{...}" />
+            <marker date="1549360955283" expanded="true" signature="7085:7157" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ContentObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <marker date="1565163296533" expanded="true" signature="111:1184" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="200:1182" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="234:258" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="323:394" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="503:773" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="551:592" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="640:681" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="817:885" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="952:1176" ph="{...}" />
+            <marker date="1565163296533" expanded="true" signature="1059:1121" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding>
+            <marker date="1565163296581" expanded="true" signature="111:296" ph="{...}" />
+            <marker date="1565163296581" expanded="true" signature="164:294" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/MetaDataResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1565163296597" expanded="true" signature="96:335" ph="{...}" />
+            <marker date="1565163296597" expanded="true" signature="156:333" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ObjectsResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1565163296624" expanded="true" signature="96:345" ph="{...}" />
+            <marker date="1565163296624" expanded="true" signature="155:343" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/ResultObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1565165108370" expanded="true" signature="96:505" ph="{...}" />
+            <marker date="1565165108370" expanded="true" signature="154:503" ph="{...}" />
+            <marker date="1565165108370" expanded="true" signature="437:497" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+          <folding>
+            <marker date="1565165108424" expanded="true" signature="96:407" ph="{...}" />
+            <marker date="1565165108424" expanded="true" signature="155:405" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SegmentResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1565165108437" expanded="true" signature="96:333" ph="{...}" />
+            <marker date="1565165108437" expanded="true" signature="155:331" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Models/Messages/Result/SimilarResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1565165108387" expanded="true" signature="96:335" ph="{...}" />
+            <marker date="1565165108387" expanded="true" signature="155:333" ph="{...}" />
+            <marker date="1565165108387" expanded="true" signature="267:327" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterEngine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <marker date="1565163623153" expanded="false" signature="6:111" ph="..." />
+            <marker date="1565163623153" expanded="true" signature="198:1437" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="230:1435" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="470:607" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="637:732" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="814:1343" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="1054:1207" ph="{...}" />
+            <marker date="1565163623153" expanded="true" signature="1381:1429" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="106" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr.UnityInterface.CineastApi.asmdef">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CategoryRatio.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <marker date="1565165106088" expanded="false" signature="6:66" ph="..." />
+            <marker date="1565165106088" expanded="true" signature="153:2948" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="186:2946" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="343:389" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="459:746" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="514:608" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="666:736" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="811:865" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="915:963" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1050:1708" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1117:1580" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1162:1214" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1262:1315" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1363:1416" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1466:1519" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1636:1698" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="1894:1963" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2016:2071" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2121:2457" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2167:2212" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2258:2302" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2353:2398" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2501:2551" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2595:2940" ph="{...}" />
+            <marker date="1565165106088" expanded="true" signature="2718:2813" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Documentation/Vitrivr.UnityInterface.CineastApi.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="91" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/CineastApi.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+          <folding>
+            <marker date="1565163650991" expanded="false" signature="6:516" ph="..." />
+            <marker date="1565163650991" expanded="true" signature="646:15788" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="692:15786" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="1357:2293" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="1359:1465" ph="/* logger = LogManager.GetInstance().GetLogger(GetType()); ... */" />
+            <marker date="1565163650991" expanded="true" signature="1563:2098" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="1679:1813" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="2398:2556" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="2701:2879" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="2968:8843" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="2982:3131" ph="/* === SIMILAR === ... */" />
+            <marker date="1565163650991" expanded="true" signature="3268:3379" ph="/* logger.Debug(&quot;Received similar response: &quot; + similarRequest.text); ... */" />
+            <marker date="1565163650991" expanded="true" signature="3521:3633" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="3635:3732" ph="/* logger.Info(&quot;Successfully parsed similar response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="3774:3922" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="4084:4740" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="4199:4408" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="4201:4390" ph="/* logger.Debug(&quot;Result for category {0} contains {1} entries.\n\t{2}&quot;, ro.category, ro.content.Length, ... */" />
+            <marker date="1565163650991" expanded="true" signature="4572:4726" ph="/* logger.Debug(&quot;After merge: {0} unique entries\n\t{1}&quot;, tempResult.Length, ... */" />
+            <marker date="1565163650991" expanded="true" signature="4754:4852" ph="/* === SEGMENTS === ... */" />
+            <marker date="1565163650991" expanded="true" signature="5057:5169" ph="/* logger.Debug(&quot;Received segments response:\n&quot; + segmentRequest.text); ... */" />
+            <marker date="1565163650991" expanded="true" signature="5311:5424" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="5426:5580" ph="/* logger.Info(&quot;Successfully parsed segments response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="6001:6114" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="6116:6208" ph="/* logger.Info(&quot;Successfully parsed metadata response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="6381:6452" ph="/* === OBJECTS === ... */" />
+            <marker date="1565163650991" expanded="true" signature="6841:6937" ph="/* logger.Info(&quot;Successfully parsed objects response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="7171:7320" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="7219:7306" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="7478:7573" ph="/* === WRAPUP === ... */" />
+            <marker date="1565163650991" expanded="true" signature="7631:7729" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="7731:7887" ph="/* logger.Info(&quot;Result contains &quot; + objectList.Count + &quot; entities&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="7902:7966" ph="/* === SORT LIST === ... */" />
+            <marker date="1565163650991" expanded="true" signature="8186:8381" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="8623:8801" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="8907:14003" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="8921:9070" ph="/* === SIMILAR === ... */" />
+            <marker date="1565163650991" expanded="true" signature="9207:9318" ph="/* logger.Debug(&quot;Received similar response: &quot; + similarRequest.text); ... */" />
+            <marker date="1565163650991" expanded="true" signature="9460:9572" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="9574:9671" ph="/* logger.Info(&quot;Successfully parsed similar response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="9713:9861" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="9875:9973" ph="/* === SEGMENTS === ... */" />
+            <marker date="1565163650991" expanded="true" signature="10217:10329" ph="/* logger.Debug(&quot;Received segments response:\n&quot; + segmentRequest.text); ... */" />
+            <marker date="1565163650991" expanded="true" signature="10471:10584" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="10586:10740" ph="/* logger.Info(&quot;Successfully parsed segments response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="11161:11274" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="11276:11368" ph="/* logger.Info(&quot;Successfully parsed metadata response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="11541:11612" ph="/* === OBJECTS === ... */" />
+            <marker date="1565163650991" expanded="true" signature="12001:12097" ph="/* logger.Info(&quot;Successfully parsed objects response&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="12331:12480" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="12379:12466" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="12638:12733" ph="/* === WRAPUP === ... */" />
+            <marker date="1565163650991" expanded="true" signature="12791:12889" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="12891:13047" ph="/* logger.Info(&quot;Result contains &quot; + objectList.Count + &quot; entities&quot;); ... */" />
+            <marker date="1565163650991" expanded="true" signature="13062:13126" ph="/* === SORT LIST === ... */" />
+            <marker date="1565163650991" expanded="true" signature="13346:13541" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="13783:13961" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14082:14149" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14215:14428" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14296:14387" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14479:14524" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14560:14600" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14638:14680" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14730:14775" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14823:14865" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="14928:14970" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15033:15089" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15099:15160" ph="/* RETURNS FALSE IF AN ERROR OCCURED ... */" />
+            <marker date="1565163650991" expanded="true" signature="15228:15450" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15277:15359" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15480:15523" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15587:15652" ph="{...}" />
+            <marker date="1565163650991" expanded="true" signature="15713:15780" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/FilterStrategy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <marker date="1565163430442" expanded="true" signature="6:111" ph="..." />
+            <marker date="1565163430442" expanded="true" signature="198:426" ph="{...}" />
+            <marker date="1565163430442" expanded="true" signature="236:424" ph="{...}" />
+            <marker date="1565163430442" expanded="true" signature="247:345" ph="/*Filters some mmos out and returnes the filtered list ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CineastUnityInterface/Runtime/Vitrivr/UnityInterface/CineastApi/Processing/CineastResponseHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding>
+            <marker date="1565165628364" expanded="true" signature="85:163" ph="{...}" />
+            <marker date="1565165628364" expanded="true" signature="151:161" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
