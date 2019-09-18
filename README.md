@@ -2,8 +2,6 @@
 
 This is in very early development. Do not use in production.
 
-**Warning: There are missing dependencies in the current project setup**.
-
 ## Features
 
 This is a Unity3d endpoint for vitrivr's Cineast RESTful API.
