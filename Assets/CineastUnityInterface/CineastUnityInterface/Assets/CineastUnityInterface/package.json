@@ -1,6 +1,6 @@
 {
   "name": "com.vitrivr.unityinterface.cineastapi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Cineast Unity Interface",
   "description": "An all-unity client for [Cineast](https://github.com/vitrivr/cineast/)",
   "unity": "2018.3",

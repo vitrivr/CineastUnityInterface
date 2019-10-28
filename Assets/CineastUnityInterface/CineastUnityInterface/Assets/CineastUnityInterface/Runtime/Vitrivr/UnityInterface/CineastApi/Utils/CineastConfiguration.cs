@@ -40,10 +40,18 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
             return cineastHost + API_VERSION + OBJECT_QUERY_URL;
         }
 
-        public const string FILE_NAME = "cineast.config";
+        public bool Store()
+        {
+            WriteJson(JsonUtility.ToJson(this), GetFilePath());
+            return File.Exists(GetFilePath());
+        }
+
+        public const string FILE_NAME = "cineast";
+        public const string FILE_EXTENSION = "json";
+        public const string FILE_EXTENSION_LEGACY = "config";
 
         public static Boolean HasConfig() {
-            return File.Exists(GetFilePath());
+            return File.Exists(GetFilePath()) || File.Exists(GetFilePath(true));
         }
 
         public static CineastConfiguration Load() {
@@ -51,7 +59,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
                 throw new FileNotFoundException("Configuration not found", GetFilePath());
             }
 
-            CineastConfiguration config = ReadJson<CineastConfiguration>(GetFilePath());
+            CineastConfiguration config = ReadJsonFirst<CineastConfiguration>(GetFilePath(), GetFilePath(true));
 
             // Sanatize
             if (!string.IsNullOrEmpty(config.cineastHost) && !config.cineastHost.EndsWith("/")) {
@@ -79,9 +87,24 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
             return UnityEngine.JsonUtility.FromJson<T>(content);
         }
 
-        private static string GetFilePath() {
+        private static T ReadJsonFirst<T>(params string[] paths)
+        {
+            foreach (string path in paths)
+            {
+                if (File.Exists(path))
+                {
+                    StreamReader sr = File.OpenText(path);
+                    string content = sr.ReadToEnd();
+                    sr.Close();
+                    return UnityEngine.JsonUtility.FromJson<T>(content);                    
+                }
+            }
+            throw new FileNotFoundException("Configuration not found");
+        }
+
+        private static string GetFilePath(bool legacy = false) {
             #if UNITY_EDITOR
-                return Application.dataPath + "/" + FILE_NAME;
+                return Application.dataPath + "/" + $"{FILE_NAME}.{(legacy ? FILE_EXTENSION_LEGACY : FILE_EXTENSION)}";
             #elif UNITY_ANDROID
                 return Application.persistentDataPath + "/" + FILE_NAME;
             #endif
