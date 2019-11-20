@@ -13,6 +13,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
 
         public string cineastHost;
         public string imagesHost;
+        public CategoryConfig categories;
+        
 
         public bool IsEmpty() {
             return string.IsNullOrEmpty(cineastHost) || string.IsNullOrEmpty(imagesHost);
@@ -115,7 +117,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
         }
 
         public static CineastConfiguration GetDefault() {
-            return new CineastConfiguration("http://localhost:4567/", "http://localhost/");
+            var config = new CineastConfiguration("http://localhost:4567/", "http://localhost/");
+            var map = new CategoryConfig();
+            map.mapping.Add(CategoryConfig.SPATIAL_CATEGORY_KEY, "spatialdistance");
+            map.mapping.Add(CategoryConfig.SPATIAL_CATEGORY_KEY, "temporaldistance");
+            config.categories = map;
+            return config;
         }
     }
 }
