@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Method to store the cineast config (i.e. for when a UI enables changes of the host)
 - RESTful interface for JSON communication over HTTP using UnityWebRequest. GET and POST supported as for now
+- Configuration options to map cineast categories to your custom ones.
+
+### Miscellaneous
+
+- Clean
 
 ## [0.0.1]
 
