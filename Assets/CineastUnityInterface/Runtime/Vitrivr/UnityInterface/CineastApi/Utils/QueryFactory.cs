@@ -60,7 +60,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         {
             var to = new TermsObject(TermsObject.LOCATION_TYPE, new[]
             {
-                CineastUtils.Configuration.categories.FindCategoryName(CategoryConfig.SPATIAL_CATEGORY_KEY)
+                CineastUtils.Configuration.categories.spatial
             });
             to.data = string.Format("[{0},{1}]", latitude, longitude);
             return to;
@@ -87,7 +87,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         public static TermsObject BuildTimeTerm(string utcTime)
         {
             var to = new TermsObject(TermsObject.TIME_TYPE,
-                new[] {CineastUtils.Configuration.categories.FindCategoryName(CategoryConfig.SPATIAL_CATEGORY_KEY)});
+                new[] {CineastUtils.Configuration.categories.temporal});
             to.data = utcTime;
             return to;
         }

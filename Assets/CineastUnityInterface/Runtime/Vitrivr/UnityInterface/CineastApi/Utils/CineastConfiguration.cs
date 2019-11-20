@@ -119,8 +119,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils 
         public static CineastConfiguration GetDefault() {
             var config = new CineastConfiguration("http://localhost:4567/", "http://localhost/");
             var map = new CategoryConfig();
-            map.mapping.Add(CategoryConfig.SPATIAL_CATEGORY_KEY, "spatialdistance");
-            map.mapping.Add(CategoryConfig.SPATIAL_CATEGORY_KEY, "temporaldistance");
+            map.spatial = "spatialdistance";
+            map.temporal = "temporaldistance";
             config.categories = map;
             return config;
         }
