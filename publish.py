@@ -10,7 +10,7 @@ Thanks to https://github.com/neogeek/unity-package-example for providing an exce
 import argparse
 import os
 
-PACKAGE_DIR = 'CineastUnityInterface/Assets/CineastUnityInterface'
+PACKAGE_DIR = 'Assets/CineastUnityInterface'
 
 parser = argparse.ArgumentParser(description="Utility to publish the stand-alone unity package available for upm.")
 
