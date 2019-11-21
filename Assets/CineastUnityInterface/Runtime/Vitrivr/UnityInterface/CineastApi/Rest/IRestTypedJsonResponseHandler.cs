@@ -1,6 +1,6 @@
 ﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
 {
-    public interface IRestJsonResponseHandler<T>
+    public interface IRestTypedJsonResponseHandler<T>
     {
         void OnSuccess(T data);
 

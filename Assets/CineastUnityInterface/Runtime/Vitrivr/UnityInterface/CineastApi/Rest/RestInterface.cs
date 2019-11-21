@@ -9,7 +9,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
     public class RestInterface
     {
 
-        public IEnumerator PostJson<T>(string url, IRestJsonResponseHandler<T> handler, object payload)
+        public IEnumerator PostJson<T>(string url, IRestTypedJsonResponseHandler<T> handler, object payload)
         {
             using (UnityWebRequest req = new UnityWebRequest(url))
             {
@@ -35,6 +35,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
                 }
             }
         }
+        
 
         public T PostJsonBlocking<T>(string url, object payload)
         {
@@ -86,7 +87,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
             }
         }
         
-        public IEnumerator GetJson<T>(string url, IRestJsonResponseHandler<T> handler)
+        public IEnumerator GetJson<T>(string url, IRestTypedJsonResponseHandler<T> handler)
         {
             using (UnityWebRequest req = UnityWebRequest.Get(url))
             {
@@ -106,12 +107,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
             }
         }
 
-        private static T FromJson<T>(string json)
+        public static T FromJson<T>(string json)
         {
             return JsonUtility.FromJson<T>(json);
         }
 
-        private static string ToJson(object obj)
+        public static string ToJson(object obj)
         {
             return JsonUtility.ToJson(obj);
         }
