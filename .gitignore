@@ -120,3 +120,4 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 # Temp file
 *~
+.idea/.idea.UnityInterface
