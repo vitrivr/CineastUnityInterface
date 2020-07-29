@@ -16,6 +16,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     public ExperimentalApi(CineastConfiguration config)
     {
       this.config = config;
+      InitApis();
     }
 
     private void InitApis()
