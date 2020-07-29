@@ -121,3 +121,7 @@ Assets/StreamingAssets/crashlytics-build.properties
 # Temp file
 *~
 .idea/.idea.UnityInterface
+
+# Exclude the Generated Stuff
+!Generated/
+!Assets/CineastUnityInterface/Runtime/Libs/
