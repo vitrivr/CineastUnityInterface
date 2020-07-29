@@ -1,8 +1,8 @@
 ﻿using System;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
-using Org.Vitrivr.Cineast.Api.Api;
-using Org.Vitrivr.Cineast.Api.Client;
-using Org.Vitrivr.Cineast.Api.Model;
+using Org.Vitrivr.Cineast.Api;
+using Org.Vitrivr.Cineast.Client;
+using Org.Vitrivr.Cineast.Model;
 using UnityEngine;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
