@@ -6,10 +6,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handle
 {
     public abstract class AbstractMessageHandler<T>: IRestTypedJsonResponseHandler<T>
     {
-        protected CineastApi api;
+        protected LegacyCineastApi api;
         protected string guid;
 
-        protected AbstractMessageHandler(CineastApi api, string guid)
+        protected AbstractMessageHandler(LegacyCineastApi api, string guid)
         {
             this.api = api;
             this.guid = guid;

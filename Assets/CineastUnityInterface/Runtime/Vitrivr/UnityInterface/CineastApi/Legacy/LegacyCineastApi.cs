@@ -14,7 +14,8 @@ using UnityEngine;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
 {
-  public class CineastApi : MonoBehaviour
+  [Obsolete("Formerly known as CineastApi, replaced by Vitrivr.UnityInterface.CineastApi.CineastWrapper")]
+  public class LegacyCineastApi : MonoBehaviour
   {
     private bool earlyBreak;
 
@@ -63,7 +64,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       }
       else
       {
-        CineastConfiguration.StoreEmpty();
+        CineastConfiguration.StoreDefault();
       }
 
       _guidHandlerMap = new Dictionary<string, CineastResponseHandler<List<MultimediaObject>>>();

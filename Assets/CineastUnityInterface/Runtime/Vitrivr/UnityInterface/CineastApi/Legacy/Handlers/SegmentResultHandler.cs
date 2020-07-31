@@ -4,7 +4,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handle
 {
     public class SegmentResultHandler: AbstractMessageHandler<SegmentResult>
     {
-        public SegmentResultHandler(CineastApi api, string guid) : base(api, guid)
+        public SegmentResultHandler(LegacyCineastApi api, string guid) : base(api, guid)
         {
         }
 

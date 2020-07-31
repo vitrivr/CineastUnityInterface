@@ -133,7 +133,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
 #endif
     }
 
-    public static void StoreEmpty()
+    public static void StoreDefault()
     {
       WriteJson(JsonUtility.ToJson(new CineastConfiguration()), GetFilePath());
     }

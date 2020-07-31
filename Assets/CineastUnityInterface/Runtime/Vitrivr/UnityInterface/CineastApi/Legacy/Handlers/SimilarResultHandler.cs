@@ -10,7 +10,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handle
   /// </summary>
   public class SimilarResultHandler : AbstractMessageHandler<SimilarResult>
   {
-    public SimilarResultHandler(CineastApi api, string guid) : base(api, guid)
+    public SimilarResultHandler(LegacyCineastApi api, string guid) : base(api, guid)
     {
     }
 
