@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing {
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing {
     public class FilterEngine {
 
 //        private Logger logger = LogManager.GetInstance().GetLogger(typeof(FilterEngine));

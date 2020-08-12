@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query
 {
     [Serializable]
     public class TermsObject

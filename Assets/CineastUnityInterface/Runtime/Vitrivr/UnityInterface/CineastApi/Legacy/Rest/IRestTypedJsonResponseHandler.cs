@@ -1,4 +1,4 @@
-﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
+﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Rest
 {
     public interface IRestTypedJsonResponseHandler<T>
     {

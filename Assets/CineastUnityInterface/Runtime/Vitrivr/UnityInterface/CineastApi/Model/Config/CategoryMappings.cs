@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config
 {
   
   /// <summary>

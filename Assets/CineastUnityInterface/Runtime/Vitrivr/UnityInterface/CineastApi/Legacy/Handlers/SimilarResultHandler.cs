@@ -1,8 +1,8 @@
-﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
+﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Utils;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handlers
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Handlers
 {
   /// <summary>
   /// Handler for SimilarResult messages.

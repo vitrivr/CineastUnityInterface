@@ -1,8 +1,7 @@
-﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest;
+﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Rest;
 using UnityEngine;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handlers
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Handlers
 {
     public abstract class AbstractMessageHandler<T>: IRestTypedJsonResponseHandler<T>
     {

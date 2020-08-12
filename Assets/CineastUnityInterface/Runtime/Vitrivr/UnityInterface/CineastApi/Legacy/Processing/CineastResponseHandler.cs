@@ -1,6 +1,6 @@
 using System;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing {
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing {
   
   /// <summary>
   /// Response handler for cineast quieries

@@ -2,7 +2,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Utils
 {
   public class CineastConfiguration
   {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result
 {
     [System.Serializable]
     public class ContentObject : IComparable<ContentObject> {

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Rest
 {
     public class RestInterface
     {

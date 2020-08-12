@@ -1,4 +1,4 @@
-﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query
+﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query
 {
     /*
      * Stuff and things

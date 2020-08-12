@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing {
     public class ResultMerger {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config
 {
   [Serializable]
   public class CineastConfig

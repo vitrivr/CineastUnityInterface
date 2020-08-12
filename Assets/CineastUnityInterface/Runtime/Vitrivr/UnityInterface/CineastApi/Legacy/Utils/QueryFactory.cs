@@ -1,6 +1,6 @@
-﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query;
+﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Utils
 {
     public static class QueryFactory
     {

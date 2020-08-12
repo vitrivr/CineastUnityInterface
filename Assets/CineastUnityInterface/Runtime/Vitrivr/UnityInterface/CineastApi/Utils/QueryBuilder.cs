@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils

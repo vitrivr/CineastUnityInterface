@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing {
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing {
     public class CategoryRatio {
 
         private Dictionary<string, double> ratios = new Dictionary<string, double>();

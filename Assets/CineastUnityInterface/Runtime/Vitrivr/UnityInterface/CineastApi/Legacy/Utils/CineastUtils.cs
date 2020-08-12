@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing;
 using UnityEngine;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Utils
 {
     /**
      * Utilities related to cineast API.

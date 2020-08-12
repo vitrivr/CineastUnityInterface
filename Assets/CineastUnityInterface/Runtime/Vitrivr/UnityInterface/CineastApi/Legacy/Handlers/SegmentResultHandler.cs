@@ -1,6 +1,6 @@
-﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
+﻿using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handlers
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Handlers
 {
     public class SegmentResultHandler: AbstractMessageHandler<SegmentResult>
     {

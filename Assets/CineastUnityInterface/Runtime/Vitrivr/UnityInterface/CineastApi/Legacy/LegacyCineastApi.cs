@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Handlers;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Query;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Handlers;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Query;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models.Messages.Result;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Rest;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Utils;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Processing;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Rest;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
 using UnityEngine;
 
 //using Logger = Assets.Modules.SimpleLogging.Logger;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy
 {
   [Obsolete("Formerly known as CineastApi, replaced by Vitrivr.UnityInterface.CineastApi.CineastWrapper")]
   public class LegacyCineastApi : MonoBehaviour
