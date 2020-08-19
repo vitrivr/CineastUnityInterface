@@ -1,7 +1,5 @@
 ﻿using System.IO;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
-using NUnit.Framework.Constraints;
 using Org.Vitrivr.CineastApi.Client;
 using UnityEngine;
 

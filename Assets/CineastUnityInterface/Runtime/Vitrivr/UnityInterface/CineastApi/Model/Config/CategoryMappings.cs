@@ -17,6 +17,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     public const string GLOBAL_COLOR_CATEGORY = "globalcolor";
     public const string EDGE_CATEGORY = "edge";
+
+    public const string TAGS_CATEGORY = "tags";
     
     /// <summary>
     /// The mappings. This class provides *_NAME as mapping name and
@@ -50,6 +52,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       m.mapping.Add(SPATIOTEMPORAL_CATEGORY, SPATIOTEMPORAL_CATEGORY);
       m.mapping.Add(GLOBAL_COLOR_CATEGORY, GLOBAL_COLOR_CATEGORY);
       m.mapping.Add(EDGE_CATEGORY, EDGE_CATEGORY);
+      m.mapping.Add(TAGS_CATEGORY, TAGS_CATEGORY);
       return m;
     }
 

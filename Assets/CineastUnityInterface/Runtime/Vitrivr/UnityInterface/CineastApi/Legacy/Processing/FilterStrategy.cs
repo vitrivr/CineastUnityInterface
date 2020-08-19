@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Models;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Models;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy.Processing {
     public interface FilterStrategy {
