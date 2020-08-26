@@ -74,6 +74,8 @@ This requires [Git Subtree](https://github.com/mwitkow/git-subtree) to be instal
 
 Follow these steps to generate / update the cineast OAS. We provide the latest generation in this repo for convenience.
 
+For unix systems, the build requires an installation of the [.NET Core SDK](https://dotnet.microsoft.com/), [wget](https://www.gnu.org/software/wget/) and [mono](https://www.mono-project.com). Mono and wget are available through [homebrew](https://brew.sh) on mac.
+
 1. Have an updated, running cineast api.
 2. Issue the following `gradle` command:
    ```
@@ -87,7 +89,7 @@ Follow these steps to generate / update the cineast OAS. We provide the latest g
 
 ## Contribution
 
-One can contribute to this project by sumbitting a PR.
+One can contribute to this project by submitting a PR.
 
 ## Contribtors
 
