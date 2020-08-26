@@ -28,15 +28,26 @@ task clean(type: Delete){
 
 /* Build the openapi dll */
 task buildOpenApi(type: Exec){
+  dependsOn tasks.openApiGenerate
   workingDir "$rootDir/Generated"
   if( Os.isFamily(Os.FAMILY_WINDOWS)){
     /* only windows */
     commandLine = "$rootDir/Generated/build.bat"
   }else{
     /* Should work with .sh */
+    dependsOn "modex"
     commandLine = "$rootDir/Generated/build.sh"
   }
 }
+
+task modex(type: Exec){
+  workingDir "$rootDir/Generated"
+  if( !Os.isFamily(Os.FAMILY_WINDOWS)){
+    /* Should work with .sh */
+    commandLine "chmod", "+x", "$rootDir/Generated/build.sh"
+  }
+}
+
 
 /* Copy what buildOpenApi produced to unity folder */
 task deployLibs(type: Copy){
@@ -60,3 +71,4 @@ deployLibs.dependsOn buildOpenApi
 deployLink.dependsOn deployLibs
 tasks.openApiGenerate.mustRunAfter clean
 buildOpenApi.mustRunAfter tasks.openApiGenerate
+modex.mustRunAfter tasks.openApiGenerate

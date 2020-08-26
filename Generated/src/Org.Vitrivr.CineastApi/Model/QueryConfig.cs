@@ -218,13 +218,13 @@ namespace Org.Vitrivr.CineastApi.Model
         /// <param name="resultsPerModule">resultsPerModule.</param>
         /// <param name="maxResults">maxResults.</param>
         /// <param name="relevantSegmentIds">relevantSegmentIds.</param>
-        /// <param name="distanceIfEmpty">distanceIfEmpty.</param>
         /// <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
+        /// <param name="distanceIfEmpty">distanceIfEmpty.</param>
         /// <param name="correspondenceFunction">correspondenceFunction.</param>
         /// <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
         /// <param name="normIfEmpty">normIfEmpty.</param>
         /// <param name="rawResultsPerModule">rawResultsPerModule.</param>
-        public QueryConfig(Guid queryId = default(Guid), List<HintsEnum> hints = default(List<HintsEnum>), DistanceEnum? distance = default(DistanceEnum?), List<float> distanceWeights = default(List<float>), float norm = default(float), int resultsPerModule = default(int), int maxResults = default(int), List<string> relevantSegmentIds = default(List<string>), QueryConfig distanceIfEmpty = default(QueryConfig), QueryConfig correspondenceFunctionIfEmpty = default(QueryConfig), Object correspondenceFunction = default(Object), QueryConfig distanceWeightsIfEmpty = default(QueryConfig), QueryConfig normIfEmpty = default(QueryConfig), int rawResultsPerModule = default(int))
+        public QueryConfig(Guid queryId = default(Guid), List<HintsEnum> hints = default(List<HintsEnum>), DistanceEnum? distance = default(DistanceEnum?), List<float> distanceWeights = default(List<float>), float norm = default(float), int resultsPerModule = default(int), int maxResults = default(int), List<string> relevantSegmentIds = default(List<string>), QueryConfig correspondenceFunctionIfEmpty = default(QueryConfig), QueryConfig distanceIfEmpty = default(QueryConfig), Object correspondenceFunction = default(Object), QueryConfig distanceWeightsIfEmpty = default(QueryConfig), QueryConfig normIfEmpty = default(QueryConfig), int rawResultsPerModule = default(int))
         {
             this.QueryId = queryId;
             this.Hints = hints;
@@ -234,8 +234,8 @@ namespace Org.Vitrivr.CineastApi.Model
             this.ResultsPerModule = resultsPerModule;
             this.MaxResults = maxResults;
             this.RelevantSegmentIds = relevantSegmentIds;
-            this.DistanceIfEmpty = distanceIfEmpty;
             this.CorrespondenceFunctionIfEmpty = correspondenceFunctionIfEmpty;
+            this.DistanceIfEmpty = distanceIfEmpty;
             this.CorrespondenceFunction = correspondenceFunction;
             this.DistanceWeightsIfEmpty = distanceWeightsIfEmpty;
             this.NormIfEmpty = normIfEmpty;
@@ -281,16 +281,16 @@ namespace Org.Vitrivr.CineastApi.Model
         public List<string> RelevantSegmentIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets DistanceIfEmpty
-        /// </summary>
-        [DataMember(Name="distanceIfEmpty", EmitDefaultValue=false)]
-        public QueryConfig DistanceIfEmpty { get; set; }
-
-        /// <summary>
         /// Gets or Sets CorrespondenceFunctionIfEmpty
         /// </summary>
         [DataMember(Name="correspondenceFunctionIfEmpty", EmitDefaultValue=false)]
         public QueryConfig CorrespondenceFunctionIfEmpty { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DistanceIfEmpty
+        /// </summary>
+        [DataMember(Name="distanceIfEmpty", EmitDefaultValue=false)]
+        public QueryConfig DistanceIfEmpty { get; set; }
 
         /// <summary>
         /// Gets or Sets CorrespondenceFunction
@@ -332,8 +332,8 @@ namespace Org.Vitrivr.CineastApi.Model
             sb.Append("  ResultsPerModule: ").Append(ResultsPerModule).Append("\n");
             sb.Append("  MaxResults: ").Append(MaxResults).Append("\n");
             sb.Append("  RelevantSegmentIds: ").Append(RelevantSegmentIds).Append("\n");
-            sb.Append("  DistanceIfEmpty: ").Append(DistanceIfEmpty).Append("\n");
             sb.Append("  CorrespondenceFunctionIfEmpty: ").Append(CorrespondenceFunctionIfEmpty).Append("\n");
+            sb.Append("  DistanceIfEmpty: ").Append(DistanceIfEmpty).Append("\n");
             sb.Append("  CorrespondenceFunction: ").Append(CorrespondenceFunction).Append("\n");
             sb.Append("  DistanceWeightsIfEmpty: ").Append(DistanceWeightsIfEmpty).Append("\n");
             sb.Append("  NormIfEmpty: ").Append(NormIfEmpty).Append("\n");
@@ -416,14 +416,14 @@ namespace Org.Vitrivr.CineastApi.Model
                     this.RelevantSegmentIds.SequenceEqual(input.RelevantSegmentIds)
                 ) && 
                 (
-                    this.DistanceIfEmpty == input.DistanceIfEmpty ||
-                    (this.DistanceIfEmpty != null &&
-                    this.DistanceIfEmpty.Equals(input.DistanceIfEmpty))
-                ) && 
-                (
                     this.CorrespondenceFunctionIfEmpty == input.CorrespondenceFunctionIfEmpty ||
                     (this.CorrespondenceFunctionIfEmpty != null &&
                     this.CorrespondenceFunctionIfEmpty.Equals(input.CorrespondenceFunctionIfEmpty))
+                ) && 
+                (
+                    this.DistanceIfEmpty == input.DistanceIfEmpty ||
+                    (this.DistanceIfEmpty != null &&
+                    this.DistanceIfEmpty.Equals(input.DistanceIfEmpty))
                 ) && 
                 (
                     this.CorrespondenceFunction == input.CorrespondenceFunction ||
@@ -472,10 +472,10 @@ namespace Org.Vitrivr.CineastApi.Model
                     hashCode = hashCode * 59 + this.MaxResults.GetHashCode();
                 if (this.RelevantSegmentIds != null)
                     hashCode = hashCode * 59 + this.RelevantSegmentIds.GetHashCode();
-                if (this.DistanceIfEmpty != null)
-                    hashCode = hashCode * 59 + this.DistanceIfEmpty.GetHashCode();
                 if (this.CorrespondenceFunctionIfEmpty != null)
                     hashCode = hashCode * 59 + this.CorrespondenceFunctionIfEmpty.GetHashCode();
+                if (this.DistanceIfEmpty != null)
+                    hashCode = hashCode * 59 + this.DistanceIfEmpty.GetHashCode();
                 if (this.CorrespondenceFunction != null)
                     hashCode = hashCode * 59 + this.CorrespondenceFunction.GetHashCode();
                 if (this.DistanceWeightsIfEmpty != null)

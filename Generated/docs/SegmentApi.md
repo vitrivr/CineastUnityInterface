@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.SegmentApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new SegmentApi(Configuration.Default);
             var id = id_example;  // string | The id of the segments
 
@@ -108,7 +108,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new SegmentApi(Configuration.Default);
             var idList = new IdList(); // IdList |  (optional) 
 
@@ -183,7 +183,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new SegmentApi(Configuration.Default);
             var id = id_example;  // string | The id of the media object to find segments fo
 

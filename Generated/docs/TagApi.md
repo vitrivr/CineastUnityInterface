@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.TagApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new TagApi(Configuration.Default);
 
             try
@@ -102,7 +102,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new TagApi(Configuration.Default);
             var attribute = attribute_example;  // string | The attribute to filter on. One of: id, name, matchingname
             var value = value_example;  // string | The value of the attribute to filter
@@ -177,7 +177,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new TagApi(Configuration.Default);
             var idList = new IdList(); // IdList |  (optional) 
 

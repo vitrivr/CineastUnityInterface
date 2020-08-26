@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.SegmentsApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new SegmentsApi(Configuration.Default);
             var similarityQuery = new SimilarityQuery(); // SimilarityQuery |  (optional) 
 

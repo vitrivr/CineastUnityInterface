@@ -78,7 +78,7 @@ namespace Example
         public static void Main()
         {
 
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new DefaultApi(Configuration.Default);
             var id = id_example;  // string | 
 
@@ -101,7 +101,7 @@ namespace Example
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

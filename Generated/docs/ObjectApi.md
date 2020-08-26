@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.ObjectApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new ObjectApi(Configuration.Default);
             var type = type_example;  // string | The type the objects should have
 
@@ -108,7 +108,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new ObjectApi(Configuration.Default);
             var attribute = attribute_example;  // string | The attribute type of the value. One of: id, name, path
             var value = value_example;  // string | 
@@ -185,7 +185,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new ObjectApi(Configuration.Default);
             var idList = new IdList(); // IdList |  (optional) 
 

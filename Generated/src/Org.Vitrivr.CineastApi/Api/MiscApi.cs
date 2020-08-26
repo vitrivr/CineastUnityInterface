@@ -28,7 +28,7 @@ namespace Org.Vitrivr.CineastApi.Api
         /// Find all distinct elements of a given column
         /// </summary>
         /// <remarks>
-        /// TODO
+        /// Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </remarks>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -39,7 +39,7 @@ namespace Org.Vitrivr.CineastApi.Api
         /// Find all distinct elements of a given column
         /// </summary>
         /// <remarks>
-        /// TODO
+        /// Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </remarks>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -51,7 +51,7 @@ namespace Org.Vitrivr.CineastApi.Api
         /// Find all distinct elements of a given column
         /// </summary>
         /// <remarks>
-        /// TODO
+        /// Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </remarks>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -62,7 +62,7 @@ namespace Org.Vitrivr.CineastApi.Api
         /// Find all distinct elements of a given column
         /// </summary>
         /// <remarks>
-        /// TODO
+        /// Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </remarks>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -180,7 +180,7 @@ namespace Org.Vitrivr.CineastApi.Api
         }
 
         /// <summary>
-        /// Find all distinct elements of a given column TODO
+        /// Find all distinct elements of a given column Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </summary>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -192,7 +192,7 @@ namespace Org.Vitrivr.CineastApi.Api
         }
 
         /// <summary>
-        /// Find all distinct elements of a given column TODO
+        /// Find all distinct elements of a given column Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </summary>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -251,7 +251,7 @@ namespace Org.Vitrivr.CineastApi.Api
         }
 
         /// <summary>
-        /// Find all distinct elements of a given column TODO
+        /// Find all distinct elements of a given column Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </summary>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>
@@ -264,7 +264,7 @@ namespace Org.Vitrivr.CineastApi.Api
         }
 
         /// <summary>
-        /// Find all distinct elements of a given column TODO
+        /// Find all distinct elements of a given column Find all distinct elements of a given column. Please note that this operation does cache results.
         /// </summary>
         /// <exception cref="Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnSpecification"> (optional)</param>

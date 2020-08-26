@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.MetadataApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +37,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var id = id_example;  // string | The object id to find metadata of
 
@@ -112,7 +112,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var id = id_example;  // string | The object id
             var domain = domain_example;  // string | The domain name
@@ -191,7 +191,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var domain = domain_example;  // string | The domain of the metadata to find
             var id = id_example;  // string | The object id of the multimedia object to find metadata for
@@ -268,7 +268,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var domain = domain_example;  // string | The domain of the metadata to find
             var idList = new IdList(); // IdList |  (optional) 
@@ -345,7 +345,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var key = key_example;  // string | The key of the metadata to find
             var id = id_example;  // string | The object id of for which the metadata should be find
@@ -422,7 +422,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var key = key_example;  // string | The key of the metadata to find
             var idList = new IdList(); // IdList |  (optional) 
@@ -499,7 +499,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MetadataApi(Configuration.Default);
             var optionallyFilteredIdList = new OptionallyFilteredIdList(); // OptionallyFilteredIdList |  (optional) 
 

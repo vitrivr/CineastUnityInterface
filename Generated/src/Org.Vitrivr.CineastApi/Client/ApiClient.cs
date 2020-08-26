@@ -53,12 +53,12 @@ namespace Org.Vitrivr.CineastApi.Client
         public ApiClient()
         {
             Configuration = Org.Vitrivr.CineastApi.Client.Configuration.Default;
-            RestClient = new RestClient("http://10.34.58.145:1900");
+            RestClient = new RestClient("http://localhost:4567");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://10.34.58.145:1900).
+        /// with default base path (http://localhost:4567).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -73,7 +73,7 @@ namespace Org.Vitrivr.CineastApi.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://10.34.58.145:1900")
+        public ApiClient(String basePath = "http://localhost:4567")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

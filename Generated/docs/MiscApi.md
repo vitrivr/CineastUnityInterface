@@ -1,6 +1,6 @@
 # Org.Vitrivr.CineastApi.Api.MiscApi
 
-All URIs are relative to *http://10.34.58.145:1900*
+All URIs are relative to *http://localhost:4567*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Find all distinct elements of a given column
 
-TODO
+Find all distinct elements of a given column. Please note that this operation does cache results.
 
 ### Example
 
@@ -31,7 +31,7 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://10.34.58.145:1900";
+            Configuration.Default.BasePath = "http://localhost:4567";
             var apiInstance = new MiscApi(Configuration.Default);
             var columnSpecification = new ColumnSpecification(); // ColumnSpecification |  (optional) 
 

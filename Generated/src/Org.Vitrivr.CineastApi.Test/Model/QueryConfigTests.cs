@@ -130,20 +130,20 @@ namespace Org.Vitrivr.CineastApi.Test
             // TODO unit test for the property 'RelevantSegmentIds'
         }
         /// <summary>
-        /// Test the property 'DistanceIfEmpty'
-        /// </summary>
-        [Test]
-        public void DistanceIfEmptyTest()
-        {
-            // TODO unit test for the property 'DistanceIfEmpty'
-        }
-        /// <summary>
         /// Test the property 'CorrespondenceFunctionIfEmpty'
         /// </summary>
         [Test]
         public void CorrespondenceFunctionIfEmptyTest()
         {
             // TODO unit test for the property 'CorrespondenceFunctionIfEmpty'
+        }
+        /// <summary>
+        /// Test the property 'DistanceIfEmpty'
+        /// </summary>
+        [Test]
+        public void DistanceIfEmptyTest()
+        {
+            // TODO unit test for the property 'DistanceIfEmpty'
         }
         /// <summary>
         /// Test the property 'CorrespondenceFunction'
