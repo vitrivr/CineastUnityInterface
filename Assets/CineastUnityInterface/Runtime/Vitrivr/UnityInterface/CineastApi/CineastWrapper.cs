@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Processing;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
@@ -24,8 +25,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     
     private void Awake()
     {
-      this.cineastConfig = CineastConfigManager.Instance.Config;
-      this.segmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
+      cineastConfig = CineastConfigManager.Instance.Config;
+      segmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
     }
 
     private Dictionary<Guid, ResponseHandler<Object>> guidHandlerMap = new Dictionary<Guid, ResponseHandler<Object>>();
@@ -33,6 +34,19 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     private bool queryRunning = false;
 
     public bool QueryRunning => queryRunning;
+
+    public async Task<SimilarityQueryResultBatch> RequestThreaded(SimilarityQuery query)
+    {
+      if (queryRunning)
+      {
+        return null;
+      }
+
+      queryRunning = true;
+      var result = await Task.Run(() => segmentsApi.FindSegmentSimilar(query));
+      queryRunning = false;
+      return result;
+    }
 
     public void RequestAsync(SimilarityQuery query, ResponseHandler<Object> handler) // FIXME Use proper object
     {

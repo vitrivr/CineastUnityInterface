@@ -16,6 +16,21 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// Defaults to http://localhost/
     /// </summary>
     public string mediaHost;
+    /// <summary>
+    /// The path to thumbnail files.
+    /// Defaults to "thumbnails/:o/:s"
+    /// </summary>
+    public string thumbnailPath;
+    /// <summary>
+    /// The thumbnail file extension.
+    /// Defaults to ".jpg"
+    /// </summary>
+    public string thumbnailExtension;
+    /// <summary>
+    /// The path to original media files.
+    /// Defaults to "collection/:p"
+    /// </summary>
+    public string mediaPath;
 
     /// <summary>
     /// The category names mapped to known names.
@@ -30,11 +45,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     public CineastConfig(
       string cineastHost,
-      string mediaHost)
+      string mediaHost,
+      string thumbnailPath,
+      string thumbnailExtension,
+      string mediaPath)
     {
       this.cineastHost = SanitizeHost(cineastHost);
       this.mediaHost = SanitizeHost(mediaHost);
-      this.categoryMappings = CategoryMappings.GetDefault();
+      this.thumbnailPath = thumbnailPath;
+      this.thumbnailExtension = thumbnailExtension;
+      this.mediaPath = mediaPath;
+      categoryMappings = CategoryMappings.GetDefault();
     }
 
     public bool IsEmpty()
@@ -56,14 +77,14 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       if (!host.EndsWith("/"))
       {
-        host += "";
+        host += "/";
       }
       return host;
     }
 
     public static CineastConfig GetDefault()
     {
-      return new CineastConfig("http://localhost:4567/", "http://localhost/");
+      return new CineastConfig("http://localhost:4567/", "http://localhost/", "thumbnails/:o/:s", ".jpg", "collection/:p");
     }
     
   }

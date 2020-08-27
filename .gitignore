@@ -128,3 +128,6 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 # Ignore auto-downloaded nuget
 **/nuget.exe
+
+# OS specific
+.DS_Store

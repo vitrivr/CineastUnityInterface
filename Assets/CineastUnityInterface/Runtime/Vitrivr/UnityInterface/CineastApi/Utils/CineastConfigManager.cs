@@ -109,7 +109,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
 #else
       folder = Application.persistentDataPath;
 #endif
-      return folder + $"/{FILE_NAME}.{FILE_EXTENSION}";
+      return Path.Combine(folder, $"{FILE_NAME}.{FILE_EXTENSION}");
     }
   }
 }
