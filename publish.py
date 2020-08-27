@@ -19,7 +19,7 @@ parser.add_argument("-r", "--release", help="The name of the release branch", de
 
 args = parser.parse_args()
 
-cmd = 'git subtree push --prefix "%s" origin %s' % (PACKAGE_DIR, args.release)
+cmd = f'git subtree push --prefix "{PACKAGE_DIR}" origin {args.release}'
 
 os.system(cmd)
 
