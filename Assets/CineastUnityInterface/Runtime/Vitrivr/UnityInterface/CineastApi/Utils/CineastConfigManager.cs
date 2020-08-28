@@ -43,7 +43,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         {
           if (File.Exists(GetFilePath()))
           {
-            config = ReadJsonUnity<CineastConfig>(GetFilePath());
+            config = FileUtils.ReadJson<CineastConfig>(GetFilePath());
           }
           else
           {
@@ -70,35 +70,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// </summary>
     public void StoreConfig()
     {
-      WriteJsonUnity(config, GetFilePath());
-    }
-
-    /// <summary>
-    /// Attempts to read the with path specified json file
-    /// </summary>
-    /// <param name="path"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
-    private static T ReadJsonUnity<T>(string path)
-    {
-      StreamReader sr = File.OpenText(path);
-      string content = sr.ReadToEnd();
-      sr.Close();
-      return UnityEngine.JsonUtility.FromJson<T>(content);
-    }
-
-    /// <summary>
-    /// Requries Serializable on obj
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <param name="path"></param>
-    private static void WriteJsonUnity(object obj, string path)
-    {
-      StreamWriter sw = File.CreateText(path);
-      sw.Write(JsonUtility.ToJson(obj));
-      sw.WriteLine(""); // empty line at EOF
-      sw.Flush();
-      sw.Close();
+      FileUtils.WriteJson(config, GetFilePath());
     }
 
     public static string GetFilePath()
