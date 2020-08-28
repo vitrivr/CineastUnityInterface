@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
@@ -12,9 +13,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns></returns>
     public static SimilarityQuery BuildSimilarityQuery(params QueryTerm[] terms)
     {
-      var qc = new QueryComponent(new List<QueryTerm>(terms));
-      var sq = new SimilarityQuery(components: new List<QueryComponent>());
-      sq.Components.Add(qc);
+      var qc = new QueryComponent(terms.ToList());
+      var sq = new SimilarityQuery(new List<QueryComponent> {qc});
       return sq;
     }
 
@@ -28,16 +28,15 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildLocationTerm(lat, lon));
     }
-    
+
     /// <summary>
     /// Convenience method to create tags only query
     /// </summary>
     /// <param name="tags">Tags to query</param>
     /// <returns></returns>
-    public static SimilarityQuery BuildTagsQuery(List<(string id, string name)> tags)
+    public static SimilarityQuery BuildTagsSimilarityQuery(List<(string id, string name)> tags)
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildTagTerm(tags));
     }
-    
   }
 }
