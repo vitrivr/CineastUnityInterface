@@ -32,8 +32,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// <summary>
     /// Convenience method to create tags only query
     /// </summary>
-    /// <param name="lat"></param>
-    /// <param name="lon"></param>
+    /// <param name="tags">Tags to query</param>
     /// <returns></returns>
     public static SimilarityQuery BuildTagsQuery(List<(string id, string name)> tags)
     {
