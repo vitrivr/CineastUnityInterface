@@ -29,5 +29,16 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       return BuildSimilarityQuery(QueryTermBuilder.BuildLocationTerm(lat, lon));
     }
     
+    /// <summary>
+    /// Convenience method to create tags only query
+    /// </summary>
+    /// <param name="lat"></param>
+    /// <param name="lon"></param>
+    /// <returns></returns>
+    public static SimilarityQuery BuildTagsQuery(List<(string id, string name)> tags)
+    {
+      return BuildSimilarityQuery(QueryTermBuilder.BuildTagTerm(tags));
+    }
+    
   }
 }
