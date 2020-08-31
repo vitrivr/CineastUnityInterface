@@ -20,6 +20,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
   {
 
     private SegmentsApi segmentsApi;
+    private SegmentApi segmentApi;
 
     private CineastConfig cineastConfig;
     
@@ -27,6 +28,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     {
       cineastConfig = CineastConfigManager.Instance.Config;
       segmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
+      segmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
     }
 
     private Dictionary<Guid, ResponseHandler<Object>> guidHandlerMap = new Dictionary<Guid, ResponseHandler<Object>>();
@@ -37,7 +39,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
 
     public async Task<SimilarityQueryResultBatch> RequestThreaded(SimilarityQuery query)
     {
-      if (queryRunning)
+      if (QueryRunning)
       {
         return null;
       }
@@ -48,7 +50,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       return result;
     }
 
-    public void RequestAsync(SimilarityQuery query, ResponseHandler<Object> handler) // FIXME Use proper object
+    public async void SimilarityRequestAsync(SimilarityQuery query, ResponseHandler<Object> handler) // FIXME Use proper object
     {
       if (QueryRunning)
       {
@@ -57,15 +59,13 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
 
       guidHandlerMap.Add(handler.Guid, handler);
       queryRunning = true;
-      StartCoroutine(ExecuteAsyncQuery(query, handler.Guid));
-    }
-
-    private IEnumerator ExecuteAsyncQuery(SimilarityQuery query, Guid guid)
-    {
       // === Initial Similarity Query ===
-      yield return this.segmentsApi.FindSegmentSimilarAsync(query);
+      var similarResults = await Task.Run(() => this.segmentsApi.FindSegmentSimilarAsync(query));
       
-        //...
+      // TODO handle errors
+      
+      // === SEGMENTS ===
+      var segmentResults = await Task.Run(() => this.segmentApi.FindSegmentByIdBatched(ResultUtils.IdsOf(similarResults)));
     }
   }
   
