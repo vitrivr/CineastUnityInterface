@@ -66,6 +66,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       
       // === SEGMENTS ===
       var segmentResults = await Task.Run(() => this.segmentApi.FindSegmentByIdBatched(ResultUtils.IdsOf(similarResults)));
+      
     }
   }
   
