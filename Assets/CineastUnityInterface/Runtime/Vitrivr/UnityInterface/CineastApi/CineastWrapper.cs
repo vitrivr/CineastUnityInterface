@@ -19,21 +19,14 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
   public class CineastWrapper : MonoBehaviour
   {
 
-    private SegmentsApi segmentsApi;
-    private SegmentApi segmentApi;
+    public static readonly SegmentsApi SegmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
+    public static readonly SegmentApi SegmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
 
-    private CineastConfig cineastConfig;
-    
-    private void Awake()
-    {
-      cineastConfig = CineastConfigManager.Instance.Config;
-      segmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
-      segmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
-    }
+    public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
 
     private Dictionary<Guid, ResponseHandler<Object>> guidHandlerMap = new Dictionary<Guid, ResponseHandler<Object>>();
     
-    private bool queryRunning = false;
+    private bool queryRunning;
 
     public bool QueryRunning => queryRunning;
 
@@ -45,7 +38,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       }
 
       queryRunning = true;
-      var result = await Task.Run(() => segmentsApi.FindSegmentSimilar(query));
+      var result = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
       queryRunning = false;
       return result;
     }
@@ -60,12 +53,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       guidHandlerMap.Add(handler.Guid, handler);
       queryRunning = true;
       // === Initial Similarity Query ===
-      var similarResults = await Task.Run(() => this.segmentsApi.FindSegmentSimilarAsync(query));
+      var similarResults = await Task.Run(() => SegmentsApi.FindSegmentSimilarAsync(query));
       
       // TODO handle errors
       
       // === SEGMENTS ===
-      var segmentResults = await Task.Run(() => this.segmentApi.FindSegmentByIdBatched(ResultUtils.IdsOf(similarResults)));
+      var segmentResults = await Task.Run(() => SegmentApi.FindSegmentByIdBatched(ResultUtils.IdsOf(similarResults)));
     }
   }
   
