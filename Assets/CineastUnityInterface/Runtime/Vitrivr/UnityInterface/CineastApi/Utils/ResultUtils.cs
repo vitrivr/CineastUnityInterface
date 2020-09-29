@@ -26,9 +26,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       return new IdList(theIds);
     }
 
-    public static List<(SegmentData segment, double score)> ToSegmentData(SimilarityQueryResultBatch results)
+    /// <summary>
+    /// Converts a query result into a more easily processable list of <see cref="SegmentData"/> and score.
+    /// </summary>
+    /// <param name="results">The query results to convert</param>
+    /// <param name="maxResults">The maximum number of results to include</param>
+    /// <returns></returns>
+    public static List<(SegmentData segment, double score)> ToSegmentData(SimilarityQueryResultBatch results,
+      int maxResults)
     {
       return results.Results[0].Content
+        .Take(maxResults)
         .Select(result => (SegmentRegistry.GetSegment(result.Key), result.Value))
         .ToList();
     }
