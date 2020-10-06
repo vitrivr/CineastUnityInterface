@@ -8,10 +8,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   public class QueryData
   {
     public SimilarityQuery query;
-    public List<(SegmentData segment, double score)> results;
-    
+    public Dictionary<string, List<(SegmentData segment, double score)>> results;
 
-    public QueryData(SimilarityQuery query, List<(SegmentData segment, double score)> results)
+
+    public QueryData(SimilarityQuery query, Dictionary<string, List<(SegmentData segment, double score)>> results)
     {
       this.query = query;
       this.results = results;
@@ -20,13 +20,18 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Batch fetches segment data for the top scoring number of segments in the results set.
     /// </summary>
-    /// <param name="number">Number of top scoring segments to prefetch data for</param>
+    /// <param name="number">Number of top scoring segments from each result category to prefetch data for</param>
     /// <returns></returns>
     public async Task Prefetch(int number)
     {
-      var prefetchSegments = results.Take(number).Select(item => item.segment).ToList();
+      // TODO: Prevent more than the number of segments to be prefetched in total
+      var segmentSet = new HashSet<SegmentData>();
+      foreach (var segmentList in results.Values)
+      {
+        segmentList.Take(number).Select(item => item.segment).ToList().ForEach(segment => segmentSet.Add(segment));
+      }
 
-      await SegmentRegistry.BatchFetchSegmentData(prefetchSegments);
+      await SegmentRegistry.BatchFetchSegmentData(segmentSet.ToList());
     }
   }
 }

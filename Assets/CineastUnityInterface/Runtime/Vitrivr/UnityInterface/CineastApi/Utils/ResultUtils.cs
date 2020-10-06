@@ -30,15 +30,28 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// Converts a query result into a more easily processable list of <see cref="SegmentData"/> and score.
     /// </summary>
     /// <param name="results">The query results to convert</param>
-    /// <param name="maxResults">The maximum number of results to include</param>
+    /// <param name="maxResults">The maximum number of results to include from each results category</param>
     /// <returns></returns>
-    public static List<(SegmentData segment, double score)> ToSegmentData(SimilarityQueryResultBatch results,
-      int maxResults)
+    public static Dictionary<string, List<(SegmentData segment, double score)>> ToSegmentData(
+      SimilarityQueryResultBatch results, int maxResults)
     {
-      return results.Results[0].Content
-        .Take(maxResults)
-        .Select(result => (SegmentRegistry.GetSegment(result.Key), result.Value))
-        .ToList();
+      var categoryResults = new Dictionary<string, List<(SegmentData segment, double score)>>();
+
+      foreach (var similarityQueryResult in results.Results)
+      {
+        if (similarityQueryResult.Content.Count > 0)
+        {
+          categoryResults.Add(
+            similarityQueryResult.Category,
+            similarityQueryResult.Content
+              .Take(maxResults)
+              .Select(result => (SegmentRegistry.GetSegment(result.Key), result.Value))
+              .ToList()
+          );
+        }
+      }
+
+      return categoryResults;
     }
   }
 }
