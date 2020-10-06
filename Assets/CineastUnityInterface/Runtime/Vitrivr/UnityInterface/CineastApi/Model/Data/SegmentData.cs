@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     private bool initialized;
 
+    // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
+    private static SemaphoreSlim initLock = new SemaphoreSlim(1, 1);
+
 
     public SegmentData(string id)
     {
@@ -28,7 +32,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         Debug.LogError($"Attempted to initialize already initialized segment with id \"{id}\"!");
         return;
       }
-      
+
       if (data.SegmentId != id)
       {
         Debug.LogError($"Attempted to initialize segment with ID \"{id}\" using MediaSegmentDescriptor" +
@@ -118,16 +122,24 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     private async Task InitializeData()
     {
-      if (initialized)
+      await initLock.WaitAsync();
+      try
       {
-        Debug.LogError($"Attempted to initialize already initialized segment with id \"{id}\"!");
-        return;
-      }
+        if (initialized)
+        {
+          Debug.LogError($"Attempted to initialize already initialized segment with id \"{id}\"!");
+          return;
+        }
 
-      var queryResult = await CineastWrapper.SegmentApi.FindSegmentByIdAsync(id);
-      // TODO: Error handling in the data breaking case there is no or more than one segment returned
-      var result = queryResult.Content[0];
-      Initialize(result);
+        var queryResult = await CineastWrapper.SegmentApi.FindSegmentByIdAsync(id);
+        // TODO: Error handling in the data breaking case there is no or more than one segment returned
+        var result = queryResult.Content[0];
+        Initialize(result);
+      }
+      finally
+      {
+        initLock.Release();
+      }
     }
   }
 }
