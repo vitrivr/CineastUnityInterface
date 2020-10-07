@@ -76,6 +76,54 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
                 new List<string> {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
             return qt;
         }
+        
+        /// <summary>
+        /// Builds a <see cref="QueryTerm"/> of type TEXT with the specified categories
+        /// </summary>
+        /// <param name="text">Text to search for</param>
+        /// <param name="categories">List of categories to search</param>
+        /// <returns>The corresponding query term for the given text string</returns>
+        public static QueryTerm BuildTextTerm(string text, List<string> categories)
+        {
+            
+            var qt = new QueryTerm(QueryTerm.TypeEnum.TEXT,
+                text,
+                categories);
+            return qt;
+        }
+
+        /// <summary>
+        /// Builds a <see cref="QueryTerm"/> of type TEXT with the specified categories
+        /// </summary>
+        /// <param name="text">Text to search for</param>
+        /// <param name="ocr">Whether ocr data should be searched</param>
+        /// <param name="asr">Whether asr data should be searched</param>
+        /// <param name="scenecaption">Whether scene caption data should be searched</param>
+        /// <returns>The corresponding query term for the given text string</returns>
+        public static QueryTerm BuildTextTerm(string text, bool ocr = false, bool asr = false, bool scenecaption = false)
+        {
+            var categories = new List<string>();
+
+            if (ocr)
+            {
+                categories.Add("ocr");
+            }
+
+            if (asr)
+            {
+                categories.Add("asr");
+            }
+
+            if (scenecaption)
+            {
+                categories.Add("scenecaption");
+            }
+            
+            var qt = new QueryTerm(QueryTerm.TypeEnum.TEXT,
+                text,
+                categories);
+            return qt;
+        }
 
         /// <summary>
         /// Builds a <see cref="QueryTerm"/> of type TIME with category temporal
