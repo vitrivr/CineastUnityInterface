@@ -6,6 +6,9 @@ using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
 {
+  /// <summary>
+  /// Class for the instantiation and management of <see cref="SegmentData"/> objects.
+  /// </summary>
   public static class SegmentRegistry
   {
     private static readonly ConcurrentDictionary<string, SegmentData> Registry =
