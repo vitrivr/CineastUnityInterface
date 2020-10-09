@@ -32,14 +32,14 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <returns></returns>
     public static async Task BatchFetchSegmentData(List<SegmentData> segments)
     {
-      var uninitializedSegments = segments.Where(segment => !segment.IsInitialized()).ToList();
+      var uninitializedSegments = segments.Where(segment => !segment.Initialized).ToList();
       if (uninitializedSegments.Count == 0)
       {
         // All segments already initialized
         return;
       }
 
-      var segmentIds = uninitializedSegments.Select(segment => segment.GetId()).ToList();
+      var segmentIds = uninitializedSegments.Select(segment => segment.Id).ToList();
 
       var results = await Task.Run(() => CineastWrapper.SegmentApi.FindSegmentByIdBatched(new IdList(segmentIds)));
 

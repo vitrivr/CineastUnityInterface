@@ -13,42 +13,20 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   [Serializable]
   public class SegmentData
   {
+
+    /// <summary>
+    /// actual data
+    /// </summary>
+    private MediaSegmentDescriptor descriptor;
+    
     /// <summary>
     /// Segment ID uniquely identifying the corresponding media segment.
     /// </summary>
     private readonly string id;
 
-    /// <summary>
-    /// Object ID uniquely identifying the media object this media segment originates from.
-    /// </summary>
-    private string objectId;
-
-    /// <summary>
-    /// The frame within the media object this media segment starts from.
-    /// </summary>
-    private int start;
-
-    /// <summary>
-    /// The frame within the media object this media segment ends.
-    /// </summary>
-    private int end;
-
-    /// <summary>
-    /// This media segments zero-based sequence number in relation to the other media segments of the same media object.
-    /// </summary>
-    private int number;
-
-    /// <summary>
-    /// The time in seconds within the media object this media segment starts from.
-    /// </summary>
-    private float startabs;
-
-    /// <summary>
-    /// The time in seconds within the media object this media segment ends.
-    /// </summary>
-    private float endabs;
-    // TODO: What is the "exists" flag actually used for or rather what is its purpose?
-
+/// <summary>
+/// Private flag whether actual data is available or not
+/// </summary>
     private bool initialized;
 
     // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
@@ -60,15 +38,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       this.id = id;
     }
 
-    public SegmentData(string id, string objectId, int start, int end, int number, float startabs, float endabs)
+    public SegmentData(MediaSegmentDescriptor descriptor)
     {
-      this.id = id;
-      this.objectId = objectId;
-      this.start = start;
-      this.end = end;
-      this.number = number;
-      this.startabs = startabs;
-      this.endabs = endabs;
+      this.descriptor = descriptor;
 
       initialized = true;
     }
@@ -117,84 +89,112 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         return;
       }
 
-      objectId = data.ObjectId;
-      start = data.Start;
-      end = data.End;
-      number = data.SequenceNumber;
-      startabs = data.Startabs;
-      endabs = data.Endabs;
+      descriptor = data;
 
       initialized = true;
     }
+    /// <summary>
+    /// ID of the <see cref="MediaSegmentDescriptor"/>
+    /// </summary>
+    public string Id => Initialized ? descriptor.SegmentId : id;
 
-    public string GetId()
+    public MediaSegmentDescriptor Descriptor
     {
-      return id;
+      get
+      {
+        if (Initialized)
+        {
+          return descriptor;
+        }
+        throw new Exception("Not initialized"); // TODO
+      } 
     }
 
-    public bool IsInitialized()
-    {
-      return initialized;
-    }
 
+    public bool Initialized => initialized;
+
+    /// <summary>
+    /// ID of the <see cref="MediaObjectDescriptor"/> this <see cref="MediaSegmentDescriptor"/> belongs to.
+    /// </summary>
+    /// <returns></returns>
     public async Task<string> GetObjectId()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return objectId;
+      return descriptor.ObjectId;
     }
 
+    /// <summary>
+    /// Start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
+    /// </summary>
+    /// <returns></returns>
     public async Task<int> GetStart()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return start;
+      return descriptor.Start;
     }
 
+    /// <summary>
+    /// End of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
+    /// </summary>
+    /// <returns></returns>
     public async Task<int> GetEnd()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return end;
+      return descriptor.End;
     }
 
+    /// <summary>
+    /// Relative position of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} (starts with 1)
+    /// </summary>
+    /// <returns></returns>
     public async Task<int> GetSequenceNumber()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return number;
+      return descriptor.SequenceNumber;
     }
 
+    /// <summary>
+    /// Absolute start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in seconds (e.g. for videos or audio).
+    /// </summary>
+    /// <returns></returns>
     public async Task<float> GetAbsoluteStart()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return startabs;
+      return descriptor.Startabs;
     }
 
+    /// <summary>
+    /// Absolute end of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in seconds (e.g. for videos or audio).
+    /// </summary>
+    /// <returns></returns>
     public async Task<float> GetAbsoluteEnd()
     {
-      if (!initialized)
+      if (!Initialized)
       {
         await InitializeAsync();
       }
 
-      return endabs;
+      return descriptor.Endabs;
     }
   }
 }
