@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
 using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
@@ -20,12 +21,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Dictionary of result lists by result category.
     /// </summary>
-    public readonly Dictionary<string, List<(SegmentData segment, double score)>> results;
+    public readonly Dictionary<string, List<ScoredSegment>> results;
 
 
     /// <param name="query">Query to store data for</param>
     /// <param name="results">Dictionary of results by result category</param>
-    public QueryData(SimilarityQuery query, Dictionary<string, List<(SegmentData segment, double score)>> results)
+    public QueryData(SimilarityQuery query, Dictionary<string, List<ScoredSegment>> results)
     {
       this.query = query;
       this.results = results;
@@ -45,6 +46,11 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       }
 
       await SegmentRegistry.BatchFetchSegmentData(segmentSet.ToList());
+    }
+
+    public List<ScoredSegment> GetMeanFusionResults()
+    {
+      return ResultUtils.MeanScoreFusion(results);
     }
   }
 }

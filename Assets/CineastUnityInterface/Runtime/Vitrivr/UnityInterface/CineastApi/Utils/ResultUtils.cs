@@ -32,26 +32,51 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// <param name="results">The query results to convert</param>
     /// <param name="maxResults">The maximum number of results to include from each results category</param>
     /// <returns>Dictionary of results by result category</returns>
-    public static Dictionary<string, List<(SegmentData segment, double score)>> ToSegmentData(
+    public static Dictionary<string, List<ScoredSegment>> ToSegmentData(
       SimilarityQueryResultBatch results, int maxResults)
     {
-      var categoryResults = new Dictionary<string, List<(SegmentData segment, double score)>>();
+      return results.Results.Where(similarityQueryResult => similarityQueryResult.Content.Count > 0)
+        .ToDictionary(
+          similarityQueryResult => similarityQueryResult.Category,
+          similarityQueryResult => similarityQueryResult.Content.Take(maxResults)
+            .Select(result => new ScoredSegment(SegmentRegistry.GetSegment(result.Key), result.Value))
+            .ToList()
+        );
+    }
 
-      foreach (var similarityQueryResult in results.Results)
+    public static List<ScoredSegment> ScoreFusion(Dictionary<string, List<ScoredSegment>> results,
+      Func<double[], double> fusion)
+    {
+      if (results.Keys.Count < 2)
       {
-        if (similarityQueryResult.Content.Count > 0)
-        {
-          categoryResults.Add(
-            similarityQueryResult.Category,
-            similarityQueryResult.Content
-              .Take(maxResults)
-              .Select(result => (SegmentRegistry.GetSegment(result.Key), result.Value))
-              .ToList()
-          );
-        }
+        return results.Values.FirstOrDefault();
       }
 
-      return categoryResults;
+      var categoryMaps = results.Select(entry =>
+          entry.Value.ToDictionary(scoredSegment => scoredSegment.segment, scoredSegment => scoredSegment.score))
+        .ToList();
+
+      var segmentSet = categoryMaps.Aggregate(new HashSet<SegmentData>(), (set, map) =>
+      {
+        set.UnionWith(map.Keys);
+        return set;
+      });
+
+      var mergedResults = segmentSet.Select(segment => new ScoredSegment(segment,
+        fusion(
+          categoryMaps.Select(map => map.TryGetValue(segment, out var score) ? score : 0.0)
+            .ToArray()
+        )
+      )).ToList();
+
+      mergedResults.Sort();
+
+      return mergedResults;
+    }
+
+    public static List<ScoredSegment> MeanScoreFusion(Dictionary<string, List<ScoredSegment>> results)
+    {
+      return ScoreFusion(results, scores => scores.Average());
     }
   }
 }
