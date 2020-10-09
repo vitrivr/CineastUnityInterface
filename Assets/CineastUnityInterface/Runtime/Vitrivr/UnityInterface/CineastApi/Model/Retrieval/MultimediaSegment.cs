@@ -5,7 +5,7 @@ using Org.Vitrivr.CineastApi.Model;
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Retrieval
 {
   /// <summary>
-  /// Wrapper for <see cref="MediaSegmentDescriptor"/>
+  /// Extended <see cref="MediaSegmentDescriptor"/> with a Name and a Path.
   /// </summary>
   [Serializable]
   public class MultimediaSegment : MediaSegmentDescriptor, IEquatable<MultimediaSegment>
