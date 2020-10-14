@@ -50,6 +50,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
             config = CineastConfig.GetDefault();
           }
         }
+
+        config.SanitizeCategories();
         return config;
       }
       set => config = value;

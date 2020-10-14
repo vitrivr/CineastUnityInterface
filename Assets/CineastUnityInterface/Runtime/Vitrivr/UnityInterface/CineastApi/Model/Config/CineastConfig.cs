@@ -86,6 +86,13 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     {
       return new CineastConfig("http://localhost:4567/", "http://localhost/", "thumbnails/:o/:s", ".jpg", "collection/:p");
     }
-    
+
+    public void SanitizeCategories()
+    {
+      if (categoryMappings.mapping.Count == 0)
+      {
+        categoryMappings = CategoryMappings.GetDefault();
+      }
+    }
   }
 }

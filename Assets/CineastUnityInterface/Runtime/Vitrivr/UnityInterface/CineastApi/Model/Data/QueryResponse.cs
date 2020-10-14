@@ -11,7 +11,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   /// Data object containing all information associated with an executed query.
   /// </summary>
   [Serializable]
-  public class QueryData
+  public class QueryResponse
   {
     /// <summary>
     /// The executed query leading to the stored results.
@@ -26,7 +26,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     /// <param name="query">Query to store data for</param>
     /// <param name="results">Dictionary of results by result category</param>
-    public QueryData(SimilarityQuery query, Dictionary<string, List<ScoredSegment>> results)
+    public QueryResponse(SimilarityQuery query, Dictionary<string, List<ScoredSegment>> results)
     {
       this.query = query;
       this.results = results;

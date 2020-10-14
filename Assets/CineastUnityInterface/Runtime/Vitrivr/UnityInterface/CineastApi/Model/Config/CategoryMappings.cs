@@ -30,6 +30,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     {
       
     }
+    
+    
 
     
     /// <summary>

@@ -41,7 +41,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     public SegmentData(MediaSegmentDescriptor descriptor)
     {
       this.descriptor = descriptor;
-
+      this.id = descriptor.SegmentId;
       initialized = true;
     }
 
@@ -196,5 +196,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return descriptor.Endabs;
     }
+    
+    
+    
   }
 }

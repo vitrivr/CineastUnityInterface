@@ -17,9 +17,11 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
   /// </summary>
   public class CineastWrapper : MonoBehaviour
   {
+    public static readonly ObjectApi ObjectApi = new ObjectApi(CineastConfigManager.Instance.ApiConfiguration);
     public static readonly SegmentsApi SegmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
     public static readonly SegmentApi SegmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
     public static readonly TagApi TagApi = new TagApi(CineastConfigManager.Instance.ApiConfiguration);
+    public static readonly MetadataApi MetadataApi = new MetadataApi(CineastConfigManager.Instance.ApiConfiguration);
 
     public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
 
@@ -36,14 +38,14 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     /// <param name="query">Query to execute</param>
     /// <param name="maxResults">Maximum number of results to retain</param>
     /// <param name="prefetch">Number of segments to prefetch data for</param>
-    /// <returns><see cref="QueryData"/> for the query including the result list</returns>
-    public static async Task<QueryData> ExecuteQuery(SimilarityQuery query, int maxResults, int prefetch)
+    /// <returns><see cref="QueryResponse"/> for the query including the result list</returns>
+    public static async Task<QueryResponse> ExecuteQuery(SimilarityQuery query, int maxResults, int prefetch)
     {
       var queryResults = await Task.Run(() => CineastWrapper.SegmentsApi.FindSegmentSimilar(query));
 
       var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
 
-      var queryData = new QueryData(query, querySegments);
+      var queryData = new QueryResponse(query, querySegments);
       if (prefetch > 0)
       {
         await queryData.Prefetch(prefetch);
