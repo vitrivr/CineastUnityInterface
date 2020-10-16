@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
 {
-  public class ResultUtils
+  public static class ResultUtils
   {
     /// <summary>
     /// Extracts an <see cref="IdList"/> from a given similarity result.

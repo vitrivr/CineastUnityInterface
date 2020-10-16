@@ -3,9 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
 using Org.Vitrivr.CineastApi.Model;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries
 {
   /// <summary>
   ///   Class for instantiation and management of <see cref="ObjectData"/>.
@@ -15,7 +16,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Internal storage and dictionary for media objects
     /// </summary>
-    private static readonly ConcurrentDictionary<string, ObjectData> Registry = new ConcurrentDictionary<string, ObjectData>();
+    private static readonly ConcurrentDictionary<string, ObjectData> Registry =
+      new ConcurrentDictionary<string, ObjectData>();
 
     /// <summary>
     /// Returns whether the registry has an item for the given id.
@@ -47,6 +49,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       {
         Registry.TryAdd(id, new ObjectData(id));
       }
+
       return Registry[id];
     }
 
@@ -76,8 +79,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return SegmentRegistry.GetObjectOf(segmentId);
     }
-    
-    public static async Task BatchFetchObjectData(List<ObjectData> objects)
+
+    public static async Task BatchFetchObjectData(IEnumerable<ObjectData> objects)
     {
       var toInit = objects.Where(obj => !obj.Initialized).Select(obj => obj.Id).ToList();
       var results = await Task.Run(() => CineastWrapper.ObjectApi.FindObjectsByIdBatched(new IdList(toInit)));
@@ -94,7 +97,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       }
     }
 
-    public static async Task BatchFetchObjectMetadata(List<ObjectData> objects)
+    public static async Task BatchFetchObjectMetadata(IEnumerable<ObjectData> objects)
     {
       var toInitObj = objects.Where(obj => !obj.Metadata.Initialized).ToList();
       var toInit = toInitObj.Select(obj => obj.Id).ToList();
@@ -105,7 +108,5 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         obj.Metadata.Initialize(result);
       }
     }
-    
-    
   }
 }

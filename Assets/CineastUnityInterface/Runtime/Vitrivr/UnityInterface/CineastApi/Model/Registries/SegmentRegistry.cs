@@ -3,9 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
 using Org.Vitrivr.CineastApi.Model;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries
 {
   /// <summary>
   /// Class for the instantiation and management of <see cref="SegmentData"/> objects.
@@ -13,7 +14,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   public static class SegmentRegistry
   {
     /// <summary>
-    /// Internal storage / dict of ids  SegmentData
+    /// Internal storage / dict of ids &lt;-&gt; SegmentData
     /// </summary>
     private static readonly ConcurrentDictionary<string, SegmentData> Registry =
       new ConcurrentDictionary<string, SegmentData>();
@@ -74,9 +75,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <returns></returns>
     public static List<ObjectData> GetObjects()
     {
-      var oids = new HashSet<string>();
-      Registry.Values.Where(segment => segment.Initialized).ToList().ForEach(segment => oids.Add(segment.GetObjectId().Result));
-      return oids.Select(oid => new ObjectData(oid)).ToList();
+      var oIds = new HashSet<string>();
+      Registry.Values.Where(segment => segment.Initialized).ToList()
+        .ForEach(segment => oIds.Add(segment.GetObjectId().Result));
+      return oIds.Select(oid => new ObjectData(oid)).ToList();
     }
 
     /// <summary>
@@ -119,13 +121,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       {
         return ObjectRegistry.GetObject(segment.GetObjectId().Result);
       }
-      else
-      {
-        Task.WaitAll(segment.GetObjectId());
-        return ObjectRegistry.GetObject(segment.GetObjectId().Result);
-      }
+
+      Task.WaitAll(segment.GetObjectId());
+      return ObjectRegistry.GetObject(segment.GetObjectId().Result);
     }
-    
-    
   }
 }
