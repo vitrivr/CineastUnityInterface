@@ -13,7 +13,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   public static class SegmentRegistry
   {
     /// <summary>
-    /// Internal storage / dict of ids <-> SegmentData
+    /// Internal storage / dict of ids  SegmentData
     /// </summary>
     private static readonly ConcurrentDictionary<string, SegmentData> Registry =
       new ConcurrentDictionary<string, SegmentData>();
@@ -69,7 +69,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     }
 
     /// <summary>
-    /// Extracts the object of previoulsy initialised segments.
+    /// Extracts the object of previously initialised segments.
     /// </summary>
     /// <returns></returns>
     public static List<ObjectData> GetObjects()

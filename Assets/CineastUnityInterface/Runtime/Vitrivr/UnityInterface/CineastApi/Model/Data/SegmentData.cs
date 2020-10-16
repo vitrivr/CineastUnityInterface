@@ -110,6 +110,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       } 
     }
 
+    
 
     public bool Initialized => initialized;
 
