@@ -12,6 +12,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   [Serializable]
   public class MetadataStore
   {
+
+    public MetadataStore(string id)
+    {
+      ObjectId = id;
+      Initialized = false;
+    }
     
     /// <summary>
     /// Actual internal storage of metadata
@@ -77,5 +83,24 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       var items = storage[domain];
       return items.Keys.Select(key => (key, items[key])).ToList();
     }
+
+    public bool Exists(string domain, string key)
+    {
+      if (DomainExists(domain))
+      {
+        foreach (var valueTuple in GetDomain(domain))
+        {
+          if (valueTuple.Key == key)
+          {
+            return true;
+          }
+        }
+      }
+
+      return false;
+    }
+    
+    
+    
   }
 }

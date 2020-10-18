@@ -52,7 +52,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     public bool Initialized { get; private set; }
 
     public MetadataStore Metadata { get; private set; }
-    
+
     /// <summary>
     ///   ID of this object's <see cref="MediaObjectDescriptor" />
     /// </summary>
@@ -113,6 +113,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         Debug.LogError($"Attempt to init failed. This id ({id}) and descriptor's {descriptor.ObjectId} do not match.");
         return;
       }
+      this.Metadata = new MetadataStore(id);
 
       this.descriptor = descriptor;
       Initialized = true;
@@ -139,7 +140,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return descriptor.ObjectId;
     }
-    
+
     /// <summary>
     ///   The name
     /// </summary>
@@ -153,7 +154,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return descriptor.Name;
     }
-    
+
     /// <summary>
     ///   The path that point to the file, relative to its original import direction.
     /// </summary>
@@ -167,7 +168,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return descriptor.Path;
     }
-    
+
     [Obsolete("This field is not properly set in cineast 3.0")]
     public async Task<string> GetContentUrl()
     {
@@ -208,5 +209,18 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     }
 
     public static IEqualityComparer<ObjectData> IdComparer { get; } = new IdEqualityComparer();
+
+    public MediaObjectDescriptor MediaObject
+    {
+      get
+      {
+        if (Initialized)
+        {
+          return descriptor;
+        }
+
+        throw new ArgumentException("Cannot get descriptor of uninitialised object: " + Id);
+      }
+    }
   }
 }

@@ -50,7 +50,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       {
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
-      return double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_LATITUDE));
+
+      return store.Exists(SPATIAL_DOMAIN, SPATIAL_LATITUDE)
+        ? double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_LATITUDE))
+        : double.NaN;
     }
 
     /// <summary>
@@ -65,7 +68,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       {
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
-      return double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_LONGITUDE));
+
+      return store.Exists(SPATIAL_DOMAIN, SPATIAL_LONGITUDE)
+        ? double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_LONGITUDE))
+        : double.NaN;
     }
 
     /// <summary>
@@ -80,7 +86,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       {
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
-      return double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_BEARING));
+      return store.Exists(MetadataUtils.SPATIAL_DOMAIN, MetadataUtils.SPATIAL_BEARING)
+        ? double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_BEARING)) : double.NaN;
     }
 
     /// <summary>
@@ -95,7 +102,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       {
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
-      return store.Get(TEMPORAL_DOMAIIN, TEMPORAL_DATETIME);
+
+      return store.Exists(TEMPORAL_DOMAIIN, TEMPORAL_DATETIME) ? store.Get(TEMPORAL_DOMAIIN, TEMPORAL_DATETIME) : "";
     }
 
 

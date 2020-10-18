@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
 using Org.Vitrivr.CineastApi.Model;
+using UnityEngine;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries
 {
@@ -18,6 +19,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// </summary>
     private static readonly ConcurrentDictionary<string, ObjectData> Registry =
       new ConcurrentDictionary<string, ObjectData>();
+
+    public static List<ObjectData> Objects => Registry.Values.ToList();
 
     /// <summary>
     /// Returns whether the registry has an item for the given id.
@@ -89,24 +92,23 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     public static async Task BatchFetchObjectDataWithMeta(List<ObjectData> objects)
     {
-      var tasks = new List<Task> {BatchFetchObjectData(objects), BatchFetchObjectMetadata(objects)};
-      while (tasks.Count > 0)
-      {
-        Task finished = await Task.WhenAny(tasks);
-        tasks.Remove(finished);
-      }
+      Debug.Log("Fetching obj data, then metadata");
+      await Task.Run(() => BatchFetchObjectData(objects));
+      await Task.Run(() => BatchFetchObjectMetadata(objects));
     }
 
     public static async Task BatchFetchObjectMetadata(IEnumerable<ObjectData> objects)
     {
       var toInitObj = objects.Where(obj => !obj.Metadata.Initialized).ToList();
       var toInit = toInitObj.Select(obj => obj.Id).ToList();
+      Debug.Log($"Having to initialise {toInit.Count} obj's metadata");
       var result = await Task.Run(() =>
         CineastWrapper.MetadataApi.FindMetadataForObjectIdBatchedAsync(new OptionallyFilteredIdList(ids: toInit)));
       foreach (var obj in toInitObj)
       {
         obj.Metadata.Initialize(result);
       }
+      Debug.Log("Finished fetching obj");
     }
   }
 }
