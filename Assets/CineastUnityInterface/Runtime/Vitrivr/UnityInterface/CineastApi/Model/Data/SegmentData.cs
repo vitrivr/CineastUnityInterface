@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 
@@ -14,21 +13,15 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
   [Serializable]
   public class SegmentData
   {
-
     /// <summary>
     /// actual data
     /// </summary>
     private MediaSegmentDescriptor descriptor;
-    
+
     /// <summary>
     /// Segment ID uniquely identifying the corresponding media segment.
     /// </summary>
     private readonly string id;
-
-/// <summary>
-/// Private flag whether actual data is available or not
-/// </summary>
-    private bool initialized;
 
     // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
     private static readonly SemaphoreSlim InitLock = new SemaphoreSlim(1, 1);
@@ -42,8 +35,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     public SegmentData(MediaSegmentDescriptor descriptor)
     {
       this.descriptor = descriptor;
-      this.id = descriptor.SegmentId;
-      initialized = true;
+      id = descriptor.SegmentId;
+      Initialized = true;
     }
 
     /// <summary>
@@ -54,13 +47,19 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       await InitLock.WaitAsync();
       try
       {
-        if (initialized)
+        if (Initialized)
         {
           Debug.LogError($"Attempted to initialize already initialized segment with id \"{id}\"!");
           return;
         }
 
         var queryResult = await CineastWrapper.SegmentApi.FindSegmentByIdAsync(id);
+        if (queryResult.Content.Count != 1)
+        {
+          Debug.LogError(
+            $"Unexpected number of segment data results for segment \"{id}\": {queryResult.Content.Count}");
+        }
+
         // TODO: Error handling in the data breaking case there is no or more than one segment returned
         var result = queryResult.Content[0];
         Initialize(result);
@@ -77,7 +76,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <param name="data"><see cref="MediaSegmentDescriptor"/> containing the data for this media segment.</param>
     public void Initialize(MediaSegmentDescriptor data)
     {
-      if (initialized)
+      if (Initialized)
       {
         Debug.LogError($"Attempted to initialize already initialized segment with id \"{id}\"!");
         return;
@@ -92,8 +91,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       descriptor = data;
 
-      initialized = true;
+      Initialized = true;
     }
+
     /// <summary>
     /// ID of the <see cref="MediaSegmentDescriptor"/>
     /// </summary>
@@ -107,13 +107,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         {
           return descriptor;
         }
+
         throw new Exception("Not initialized"); // TODO
-      } 
+      }
     }
 
-    
 
-    public bool Initialized => initialized;
+    /// <summary>
+    /// Private flag whether actual data is available or not
+    /// </summary>
+    public bool Initialized { get; private set; }
+
 
     /// <summary>
     /// ID of the <see cref="MediaObjectDescriptor"/> this <see cref="MediaSegmentDescriptor"/> belongs to.
@@ -198,8 +202,5 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
       return descriptor.Endabs;
     }
-    
-    
-    
   }
 }
