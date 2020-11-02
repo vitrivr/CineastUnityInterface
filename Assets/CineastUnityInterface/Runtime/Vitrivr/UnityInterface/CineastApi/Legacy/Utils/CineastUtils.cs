@@ -256,7 +256,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Legacy
 
         public static string GetImageUrl(MultimediaObject mmo)
         {
-            return Configuration.imagesHost + "/images/"+ mmo.path;
+            return Configuration.imagesHost + "objects/"+ mmo.path;
         }
 
         public static string GetThumbnailUrl(MultimediaObject mmo)
