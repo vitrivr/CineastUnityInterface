@@ -43,7 +43,11 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         {
           if (File.Exists(GetFilePath()))
           {
-            config = FileUtils.ReadJson<CineastConfig>(GetFilePath());
+            var streamReader = File.OpenText(GetFilePath());
+            var json = streamReader.ReadToEnd();
+            streamReader.Close();
+            config = CineastConfig.GetDefault();
+            JsonUtility.FromJsonOverwrite(json, config);
           }
           else
           {
