@@ -23,7 +23,7 @@ To use this package in unity, the `manifest.json` has to be expanded by the foll
 "com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/UnityInterface.git#release"
 ```
 
-The Untiy Package Manager ( _upm_ ) will take care of downloading and linking this package.
+The Unity Package Manager ( _upm_ ) will take care of downloading and linking this package.
 
 ### Versions
 
@@ -54,21 +54,9 @@ For the underlying API documentation, please refer to `Generated/README.md` and 
 This is a Unity3d project setup to easily develop (and test) the Unity3d Cineast Interface.
 To actively develop this package, follow these steps:
 
-1. Open the root folder of this repo as Unity project
-2. If necessary, update the OpenApi Specs (OAS) of vitrivr. Reade more in [Generate OpenApi Dependencies](#generate-openapi-dependencies).
-3. Switch back to unity
-4. Publish your changes using the provided `publish.py` script. 
-   You specify the package tag (to use in the `manifest.json` of your dependent unity project) using the `--release` argument:
-   
-   ```
-   $> python publish.py --release="tag"
-   ```
-   
-   However, there are two reserved tags: `release` and `latest`.
-5. Navigate to your dependent unity project and adjust the tag based on the previous step.
-6. Do not forget to create a PR of your work to include it in the main branch.
-
-This requires [Git Subtree](https://github.com/mwitkow/git-subtree) to be installed.
+1. If necessary, update the OpenApi Specs (OAS) of vitrivr. Reade more in [Generate OpenApi Dependencies](#generate-openapi-dependencies).
+2. To test your changes and generate the **required** `.meta` files for any files you may have added, import the root directory of this repository into a Unity project as a local package with the `file:` method.
+3. Do not forget to create a PR of your work to include it in the main branch.
 
 ### Generate OpenApi Dependencies
 
@@ -79,9 +67,10 @@ For unix systems, the build requires an installation of the [.NET Core SDK](http
 1. Have an updated, running cineast api.
 2. Issue the following `gradle` command:
    ```
-   $> ./gradlew deploy -Poas="http://cineast-host:port/openapi-specs"
+   $> ./gradlew clean deploy -Poas="http://cineast-host:port/openapi-specs tidy"
    ```
    Replace `cineast-host:port` with your running cineast api. Most propably this will be the default (`localhost:4567`), in this case you can ommit the argument.
+3. Generate the **required** `.meta` files for generated files by importing the root directory of this repository into a Unity project as a local package with the `file:` method.
 
 > _Notice_
 > These steps were tested under Windows 10 64bit, using OpenJDK 11 and Gradle 6.1.1. The publish script was tested with python 3.8.2.
@@ -94,6 +83,7 @@ One can contribute to this project by submitting a PR.
 ## Contribtors
 
  * Loris Sauter <loris.sauter@unibas.ch>
+ * Florian Spiess <florian.spiess@unibas.ch>
 
 ## License
 
