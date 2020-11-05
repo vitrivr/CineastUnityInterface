@@ -52,6 +52,18 @@ For the underlying API documentation, please refer to `Generated/README.md` and 
 ## Usage -- Developer
 
 This is a Unity3d project setup to easily develop (and test) the Unity3d Cineast Interface.
+We strongly recommend cloning this repository into the `Assets` directory of a Unity shell project to make development and generation of `.meta` files easier.
+To allow the shell project to function without compile errors, it is currently necessary to include the `jillejr.newtonsoft.json-for-unity` package as a workaround. Add the following to the root object in `manifest.json` on the same level as `dependencies`:
+```json
+"scopedRegistries": [
+  {
+    "name": "Packages from jillejr",
+    "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity/",
+    "scopes": ["jillejr"]
+  }
+]
+```
+And add the following line to the dependencies: `"jillejr.newtonsoft.json-for-unity": "12.0.201"`
 To actively develop this package, follow these steps:
 
 1. If necessary, update the OpenApi Specs (OAS) of vitrivr. Reade more in [Generate OpenApi Dependencies](#generate-openapi-dependencies).
