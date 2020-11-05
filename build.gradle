@@ -23,12 +23,12 @@ openApiGenerate {
 
 /* Customized clean task to delete OpenAPI generated*/
 task clean(type: Delete){
-  delete "$rootDir/Generated", fileTree("$rootDir/Assets/CineastUnityInterface/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta"}
+  delete "$rootDir/Generated", fileTree("$rootDir/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta"}
 }
 
 /* Task to clean only unused files */
 task tidy(type: Delete){
-    delete "$rootDir/Generated", "$rootDir/Assets/CineastUnityInterface/Runtime/Libs/Newtonsoft.Json.dll"
+    delete "$rootDir/Generated", "$rootDir/Runtime/Libs/Newtonsoft.Json.dll"
 }
 
 /* Build the openapi dll */
@@ -57,13 +57,13 @@ task modex(type: Exec){
 /* Copy what buildOpenApi produced to unity folder */
 task deployLibs(type: Copy){
   from(file("$rootDir/Generated/bin"))
-  into(file("$rootDir/Assets/CineastUnityInterface/Runtime/Libs"))
+  into(file("$rootDir/Runtime/Libs"))
 }
 
 /* Copy the mandatory link.xml */
 task deployLink(type:Copy){
   from file("$rootDir/link.xml")
-  into(file("$rootDir/Assets/CineastUnityInterface/Runtime/Libs"))
+  into(file("$rootDir/Runtime/Libs"))
 }
 
 /* Do all the things */
