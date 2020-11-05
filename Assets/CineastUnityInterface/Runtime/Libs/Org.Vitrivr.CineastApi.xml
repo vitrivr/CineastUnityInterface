@@ -1222,11 +1222,11 @@
              <param name="resultsPerModule">resultsPerModule.</param>
              <param name="maxResults">maxResults.</param>
              <param name="relevantSegmentIds">relevantSegmentIds.</param>
-             <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
              <param name="distanceIfEmpty">distanceIfEmpty.</param>
+             <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
              <param name="correspondenceFunction">correspondenceFunction.</param>
-             <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
              <param name="normIfEmpty">normIfEmpty.</param>
+             <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
              <param name="rawResultsPerModule">rawResultsPerModule.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.QueryId">
@@ -1259,14 +1259,14 @@
              Gets or Sets RelevantSegmentIds
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunctionIfEmpty">
-             <summary>
-             Gets or Sets CorrespondenceFunctionIfEmpty
-             </summary>
-            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceIfEmpty">
              <summary>
              Gets or Sets DistanceIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunctionIfEmpty">
+             <summary>
+             Gets or Sets CorrespondenceFunctionIfEmpty
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunction">
@@ -1274,14 +1274,14 @@
              Gets or Sets CorrespondenceFunction
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceWeightsIfEmpty">
-             <summary>
-             Gets or Sets DistanceWeightsIfEmpty
-             </summary>
-            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.NormIfEmpty">
              <summary>
              Gets or Sets NormIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceWeightsIfEmpty">
+             <summary>
+             Gets or Sets DistanceWeightsIfEmpty
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.RawResultsPerModule">

@@ -8,9 +8,9 @@
     <assembly fullname="RestSharp">
         <type fullname="*" preserve="all" />
     </assembly>
-    <assembly fullname="Newtonsoft.Json">
-        <type fullname="*" preserve="all" />
-    </assembly>
+<!--    <assembly fullname="Newtonsoft.Json">-->
+<!--        <type fullname="*" preserve="all" />-->
+<!--    </assembly>-->
     <assembly fullname="JsonSubTypes">
         <type fullname="*" preserve="all" />
     </assembly>

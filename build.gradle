@@ -26,6 +26,11 @@ task clean(type: Delete){
   delete "$rootDir/Generated", fileTree("$rootDir/Assets/CineastUnityInterface/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta"}
 }
 
+/* Task to clean only unused files */
+task tidy(type: Delete){
+    delete "$rootDir/Generated", "$rootDir/Assets/CineastUnityInterface/Runtime/Libs/Newtonsoft.Json.dll"
+}
+
 /* Build the openapi dll */
 task buildOpenApi(type: Exec){
   dependsOn tasks.openApiGenerate
