@@ -79,10 +79,11 @@ For unix systems, the build requires an installation of the [.NET Core SDK](http
 1. Have an updated, running cineast api.
 2. Issue the following `gradle` command:
    ```
-   $> ./gradlew clean deploy -Poas="http://cineast-host:port/openapi-specs tidy"
+   $> ./gradlew clean deploy -Poas="http://cineast-host:port/openapi-specs" tidy
    ```
    Replace `cineast-host:port` with your running cineast api. Most propably this will be the default (`localhost:4567`), in this case you can ommit the argument.
-3. Generate the **required** `.meta` files for generated files by importing the root directory of this repository into a Unity project as a local package with the `file:` method.
+3. (Android Only) Delete the file `Runtime/Libs/Newtonsoft.Json.dll`.
+4. Generate the **required** `.meta` files for generated files by importing the root directory of this repository into a Unity project as a local package with the `file:` method.
 
 > _Notice_
 > These steps were tested under Windows 10 64bit, using OpenJDK 11 and Gradle 6.1.1. The publish script was tested with python 3.8.2.

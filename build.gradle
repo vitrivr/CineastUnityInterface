@@ -28,7 +28,7 @@ task clean(type: Delete){
 
 /* Task to clean only unused files */
 task tidy(type: Delete){
-    delete "$rootDir/Generated", "$rootDir/Runtime/Libs/Newtonsoft.Json.dll"
+    delete "$rootDir/Generated"
 }
 
 /* Build the openapi dll */
