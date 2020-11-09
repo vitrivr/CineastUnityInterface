@@ -20,7 +20,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     {
       if (result.Results.Count < 1)
       {
-        throw new IndexOutOfRangeException("Cannot extract ids from nonexisting results object");
+        throw new IndexOutOfRangeException("Cannot extract ids from nonexistent results object");
       }
 
       var theIds = result.Results[0].Content.Take(maxResults).Select(res => res.Key).ToList();

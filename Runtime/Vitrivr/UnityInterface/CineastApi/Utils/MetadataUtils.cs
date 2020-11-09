@@ -15,10 +15,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// </summary>
     public const string SPATIAL_DOMAIN = "LOCATION";
     /// <summary>
-    /// The damain name for temporal meta data.
+    /// The domain name for temporal meta data.
     /// Given by cineast
     /// </summary>
-    public const string TEMPORAL_DOMAIIN = "TIME";
+    public const string TEMPORAL_DOMAIN = "TIME";
 
     /// <summary>
     /// Metadata key for latitude, in the spatial domain
@@ -86,7 +86,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       {
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
-      return store.Exists(MetadataUtils.SPATIAL_DOMAIN, MetadataUtils.SPATIAL_BEARING)
+      return store.Exists(SPATIAL_DOMAIN, SPATIAL_BEARING)
         ? double.Parse(store.Get(SPATIAL_DOMAIN, SPATIAL_BEARING)) : double.NaN;
     }
 
@@ -103,7 +103,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         throw new ArgumentException("MetadataStore has to be initialised!");
       }
 
-      return store.Exists(TEMPORAL_DOMAIIN, TEMPORAL_DATETIME) ? store.Get(TEMPORAL_DOMAIIN, TEMPORAL_DATETIME) : "";
+      return store.Exists(TEMPORAL_DOMAIN, TEMPORAL_DATETIME) ? store.Get(TEMPORAL_DOMAIN, TEMPORAL_DATETIME) : "";
     }
 
 

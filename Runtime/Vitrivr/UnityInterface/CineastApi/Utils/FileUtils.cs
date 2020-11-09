@@ -14,10 +14,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         /// <returns></returns>
         public static T ReadJsonUnity<T>(string path)
         {
-            StreamReader sr = File.OpenText(path);
-            string content = sr.ReadToEnd();
+            var sr = File.OpenText(path);
+            var content = sr.ReadToEnd();
             sr.Close();
-            return UnityEngine.JsonUtility.FromJson<T>(content);
+            return JsonUtility.FromJson<T>(content);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         /// <param name="path"></param>
         public static void WriteJsonUnity(object obj, string path)
         {
-            StreamWriter sw = File.CreateText(path);
+            var sw = File.CreateText(path);
             sw.Write(JsonUtility.ToJson(obj));
             sw.WriteLine(""); // empty line at EOF
             sw.Flush();
@@ -42,8 +42,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         /// <returns></returns>
         public static T ReadJson<T>(string path)
         {
-            StreamReader sr = File.OpenText(path);
-            string content = sr.ReadToEnd();
+            var sr = File.OpenText(path);
+            var content = sr.ReadToEnd();
             sr.Close();
             return JsonConvert.DeserializeObject<T>(content);
         }
@@ -55,7 +55,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         /// <param name="path"></param>
         public static void WriteJson(object obj, string path)
         {
-            StreamWriter sw = File.CreateText(path);
+            var sw = File.CreateText(path);
             sw.Write(JsonConvert.SerializeObject(obj));
             sw.WriteLine(""); // empty line at EOF
             sw.Flush();

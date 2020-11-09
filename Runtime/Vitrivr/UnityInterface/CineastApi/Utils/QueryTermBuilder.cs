@@ -41,7 +41,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         {
             var qt = new QueryTerm(
                 QueryTerm.TypeEnum.LOCATION,
-                String.Format("[{0},{1}]", latitude, longitude),
+                $"[{latitude},{longitude}]",
                 new List<string> {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY]});
             return qt;
         }
@@ -64,12 +64,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         /// </summary>
         /// <param name="tags">List of (tag ID, tag name) pairs</param>
         /// <returns>The corresponding query term for the given tags string</returns>
-        public static QueryTerm BuildTagTerm(List<(string id, string name)> tags)
+        public static QueryTerm BuildTagTerm(IEnumerable<(string id, string name)> tags)
         {
             var tagStrings = tags.Select(tag => 
                 $"{{\"id\":\"{tag.id}\",\"name\":\"{tag.name}\",\"description\":\"\"}}");
 
-            var tagList = $"[{String.Join(",", tagStrings)}]";
+            var tagList = $"[{string.Join(",", tagStrings)}]";
             
             var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
                 "data:application/json;base64," + StringConverter.ToBase64(tagList),

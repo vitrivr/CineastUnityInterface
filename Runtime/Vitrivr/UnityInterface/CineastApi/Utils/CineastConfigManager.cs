@@ -28,7 +28,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     }
     
     /// <summary>
-    /// Cached cineast config. Acceess via public Config
+    /// Cached cineast config. Access via public Config
     /// </summary>
     private CineastConfig config;
 
@@ -81,11 +81,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
 
     public static string GetFilePath()
     {
-      var folder = "";
 #if UNITY_EDITOR
-      folder = Application.dataPath;
+      var folder = Application.dataPath;
 #else
-      folder = Application.persistentDataPath;
+      var folder = Application.persistentDataPath;
 #endif
       return Path.Combine(folder, $"{FILE_NAME}.{FILE_EXTENSION}");
     }
