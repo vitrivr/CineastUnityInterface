@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Processing;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
 using Org.Vitrivr.CineastApi.Api;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
-using Object = System.Object;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
 {
@@ -24,9 +21,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     public static readonly MetadataApi MetadataApi = new MetadataApi(CineastConfigManager.Instance.ApiConfiguration);
 
     public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
-
-    private Dictionary<Guid, ResponseHandler<Object>> guidHandlerMap = new Dictionary<Guid, ResponseHandler<Object>>();
-
+    
     private bool queryRunning;
 
     public bool QueryRunning => queryRunning;
@@ -77,25 +72,6 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       var result = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
       queryRunning = false;
       return result;
-    }
-
-    public async void
-      SimilarityRequestAsync(SimilarityQuery query, ResponseHandler<Object> handler) // FIXME Use proper object
-    {
-      if (QueryRunning)
-      {
-        return;
-      }
-
-      guidHandlerMap.Add(handler.Guid, handler);
-      queryRunning = true;
-      // === Initial Similarity Query ===
-      var similarResults = await Task.Run(() => SegmentsApi.FindSegmentSimilarAsync(query));
-
-      // TODO handle errors
-
-      // === SEGMENTS ===
-      var segmentResults = await Task.Run(() => SegmentApi.FindSegmentByIdBatched(ResultUtils.IdsOf(similarResults)));
     }
   }
 }
