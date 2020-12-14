@@ -32,11 +32,20 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
         new List<string>
         {
           CineastConfigManager.Instance.Config.categoryMappings.mapping[
-            CategoryMappings.GLOBAL_COLOR_CATEGORY],
-          CineastConfigManager.Instance.Config.categoryMappings.mapping[
-            CategoryMappings.EDGE_CATEGORY]
+            CategoryMappings.GLOBAL_COLOR_CATEGORY]
         });
       return qt;
+    }
+
+    /// <summary>
+    /// Builds a <see cref="QueryTerm"/> of type IMAGE with given categories
+    /// </summary>
+    /// <param name="data">Base64 encoded image</param>
+    /// <param name="categories">A list of categories</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildImageTermForCategories(string data, List<string> categories)
+    {
+      return new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, categories);
     }
 
     public static QueryTerm BuildLocationTerm(double latitude, double longitude)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Org.Vitrivr.CineastApi.Model;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
@@ -37,6 +38,22 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     public static SimilarityQuery BuildTemporalSimilarityQuery(string utcTime)
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildTimeTerm(utcTime));
+    }
+
+    /// <summary>
+    /// A simple Query-by-Example query, using Edge and Global color categories
+    /// </summary>
+    /// <param name="base64">Base64 encoded image</param>
+    /// <returns></returns>
+    public static SimilarityQuery BuildSimpleQbEQuery(string base64)
+    {
+      return BuildSimilarityQuery(QueryTermBuilder.BuildImageTermForCategories(base64, new List<string>
+      {
+        CineastConfigManager.Instance.Config.categoryMappings.mapping[
+          CategoryMappings.GLOBAL_COLOR_CATEGORY],
+        CineastConfigManager.Instance.Config.categoryMappings.mapping[
+          CategoryMappings.EDGE_CATEGORY],
+      }));
     }
 
     /// <summary>
