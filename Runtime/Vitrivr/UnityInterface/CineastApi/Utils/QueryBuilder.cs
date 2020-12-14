@@ -21,14 +21,19 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     /// <summary>
     /// Convenience method to create spatial similarity query
     /// </summary>
-    /// <param name="lat"></param>
-    /// <param name="lon"></param>
+    /// <param name="lat">Latitude in WSG85 degrees</param>
+    /// <param name="lon">Longitude in WSG85</param>
     /// <returns></returns>
     public static SimilarityQuery BuildSpatialSimilarityQuery(double lat, double lon)
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildLocationTerm(lat, lon));
     }
 
+    /// <summary>
+    /// Convenience method to create temporal similarity query
+    /// </summary>
+    /// <param name="utcTime">The timestamp in UTC time format</param>
+    /// <returns></returns>
     public static SimilarityQuery BuildTemporalSimilarityQuery(string utcTime)
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildTimeTerm(utcTime));
