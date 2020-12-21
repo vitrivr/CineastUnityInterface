@@ -21,10 +21,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     public static readonly MetadataApi MetadataApi = new MetadataApi(CineastConfigManager.Instance.ApiConfiguration);
 
     public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
-    
-    private bool queryRunning;
 
-    public bool QueryRunning => queryRunning;
+    public bool QueryRunning { get; private set; }
 
     /// <summary>
     /// Executes a <see cref="SimilarityQuery"/>, reduces the result set to the specified number of maximum results and
@@ -36,7 +34,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
     /// <returns><see cref="QueryResponse"/> for the query including the result list</returns>
     public static async Task<QueryResponse> ExecuteQuery(SimilarityQuery query, int maxResults, int prefetch)
     {
-      var queryResults = await Task.Run(() => CineastWrapper.SegmentsApi.FindSegmentSimilar(query));
+      var queryResults = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
 
       var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
 
@@ -68,9 +66,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
         return null;
       }
 
-      queryRunning = true;
+      QueryRunning = true;
       var result = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
-      queryRunning = false;
+      QueryRunning = false;
       return result;
     }
   }

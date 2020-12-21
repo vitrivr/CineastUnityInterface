@@ -19,12 +19,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     ///   ObjectId uniquely identifying the corresponding media object.
     /// </summary>
-    private readonly string id;
+    private readonly string _id;
 
     /// <summary>
-    ///   The actual multimedia object
+    ///   The actual multimedia object.
     /// </summary>
-    private MediaObjectDescriptor descriptor;
+    private MediaObjectDescriptor _descriptor;
+
+    /// <summary>
+    ///   The Segments contained in this Media Object.
+    /// </summary>
+    private List<SegmentData> _segments;
 
     /// <summary>
     ///   Constructs a new instance with the given id, for lazy loading.
@@ -32,7 +37,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <param name="id"></param>
     public ObjectData(string id)
     {
-      this.id = id;
+      _id = id;
     }
 
     /// <summary>
@@ -41,8 +46,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <param name="descriptor"></param>
     public ObjectData(MediaObjectDescriptor descriptor)
     {
-      this.descriptor = descriptor;
-      this.id = descriptor.ObjectId;
+      _descriptor = descriptor;
+      _id = descriptor.ObjectId;
       Initialized = true;
     }
 
@@ -56,7 +61,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     ///   ID of this object's <see cref="MediaObjectDescriptor" />
     /// </summary>
-    public string Id => Initialized ? descriptor.ObjectId : id;
+    public string Id => Initialized ? _descriptor.ObjectId : _id;
 
     /// <summary>
     ///   Async (lazy loading) call to fill wrapper with content
@@ -73,18 +78,18 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
           return;
         }
 
-        var result = await CineastWrapper.ObjectApi.FindObjectsByAttributeAsync("id", id);
+        var result = await CineastWrapper.ObjectApi.FindObjectsByAttributeAsync("id", _id);
 
         if (result.Content.Count != 1)
         {
-          Debug.LogError($"Did not retrieve MediaObjectDescriptor for id {id}");
+          Debug.LogError($"Did not retrieve MediaObjectDescriptor for id {_id}");
         }
         else
         {
           Initialize(result.Content[0]);
         }
 
-        var metares = await CineastWrapper.MetadataApi.FindMetaByIdAsync(id);
+        var metares = await CineastWrapper.MetadataApi.FindMetaByIdAsync(_id);
         if (!Metadata.Initialized)
         {
           Metadata.Initialize(metares);
@@ -108,14 +113,15 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         return;
       }
 
-      if (descriptor.ObjectId != id)
+      if (descriptor.ObjectId != _id)
       {
-        Debug.LogError($"Attempt to init failed. This id ({id}) and descriptor's {descriptor.ObjectId} do not match.");
+        Debug.LogError($"Attempt to init failed. This id ({_id}) and descriptor's {descriptor.ObjectId} do not match.");
         return;
       }
-      this.Metadata = new MetadataStore(id);
 
-      this.descriptor = descriptor;
+      Metadata = new MetadataStore(_id);
+
+      _descriptor = descriptor;
       Initialized = true;
     }
 
@@ -138,7 +144,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         await InitializeAsync();
       }
 
-      return descriptor.ObjectId;
+      return _descriptor.ObjectId;
     }
 
     /// <summary>
@@ -152,7 +158,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         await InitializeAsync();
       }
 
-      return descriptor.Name;
+      return _descriptor.Name;
     }
 
     /// <summary>
@@ -166,7 +172,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         await InitializeAsync();
       }
 
-      return descriptor.Path;
+      return _descriptor.Path;
     }
 
     [Obsolete("This field is not properly set in cineast 3.0")]
@@ -177,7 +183,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         await InitializeAsync();
       }
 
-      return descriptor.ContentURL;
+      return _descriptor.ContentURL;
     }
 
     /// <summary>
@@ -186,9 +192,16 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <b>Note</b> The segments have to be initialised beforehand, as only initialised segments are retrieved.
     /// </summary>
     /// <returns></returns>
-    public List<SegmentData> GetSegments()
+    public async Task<List<SegmentData>> GetSegments()
     {
-      return SegmentRegistry.GetSegmentsOf(this.Id);
+      if (_segments != null)
+      {
+        return _segments;
+      }
+
+      _segments = await SegmentRegistry.GetSegmentsOf(Id);
+
+      return _segments;
     }
 
     private sealed class IdEqualityComparer : IEqualityComparer<ObjectData>
@@ -199,12 +212,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         if (ReferenceEquals(x, null)) return false;
         if (ReferenceEquals(y, null)) return false;
         if (x.GetType() != y.GetType()) return false;
-        return x.id == y.id;
+        return x._id == y._id;
       }
 
       public int GetHashCode(ObjectData obj)
       {
-        return (obj.id != null ? obj.id.GetHashCode() : 0);
+        return obj._id != null ? obj._id.GetHashCode() : 0;
       }
     }
 
@@ -216,7 +229,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       {
         if (Initialized)
         {
-          return descriptor;
+          return _descriptor;
         }
 
         throw new ArgumentException("Cannot get descriptor of uninitialised object: " + Id);
