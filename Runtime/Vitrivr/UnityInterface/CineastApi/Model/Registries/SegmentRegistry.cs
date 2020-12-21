@@ -42,10 +42,20 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// </summary>
     /// <param name="objectId"></param>
     /// <returns></returns>
-    public static List<SegmentData> GetSegmentsOf(string objectId)
+    public static async Task<List<SegmentData>> GetSegmentsOf(string objectId)
     {
-      // TODO Could also be a dedicated cache / dict
-      return Registry.Values.Where(seg => seg.Initialized).Where(seg => seg.GetObjectId().Result == objectId).ToList();
+      var results = await Task.Run(() => CineastWrapper.SegmentApi.FindSegmentByObjectId(objectId));
+      var segmentDescriptors = results.Content;
+      return segmentDescriptors.Select(descriptor =>
+      {
+        var segment = GetSegment(descriptor.SegmentId);
+        if (!segment.Initialized)
+        {
+          segment.Initialize(descriptor);
+        }
+
+        return segment;
+      }).ToList();
     }
 
     /// <summary>
@@ -53,7 +63,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// </summary>
     /// <param name="segments">The segments for which to fetch the data.</param>
     /// <returns></returns>
-    public static async Task BatchFetchSegmentData(List<SegmentData> segments)
+    public static async Task BatchFetchSegmentData(IEnumerable<SegmentData> segments)
     {
       var uninitializedSegments = segments.Where(segment => !segment.Initialized).ToList();
       if (uninitializedSegments.Count == 0)
