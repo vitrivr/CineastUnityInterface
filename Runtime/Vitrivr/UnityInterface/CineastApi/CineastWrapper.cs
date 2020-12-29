@@ -71,5 +71,39 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       QueryRunning = false;
       return result;
     }
+
+    /// <summary>
+    /// Returns the URL to the Thumbnail of the given segment data. Needs to be registered and loaded previously!
+    /// </summary>
+    /// <param name="segment"></param>
+    /// <returns></returns>
+    public static string GetThumbnailUrlOf(SegmentData segment)
+    {
+      if (CineastConfig.cineastServesMedia)
+      {
+        return CineastConfig.cineastHost + "/thumbnails/" + segment.Id;
+      }
+      else
+      {
+        return CineastConfig.mediaHost + "thumbnails/" + segment.GetObjectId().Result + "/" + segment.Id + ".png"; // or .jpg
+      }
+    }
+    
+    /// <summary>
+    /// Returns the URL to the media of the given object data. Needs to be registered and laoded previously!
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public static string GetMediaUrlOf(ObjectData obj)
+    {
+      if (CineastConfig.cineastServesMedia)
+      {
+        return CineastConfig.cineastHost + "/objects/" + obj.Id;
+      }
+      else
+      {
+       return CineastConfig.mediaHost + "/images/"+ obj.GetPath().Result;
+      }
+    }
   }
 }
