@@ -1,15 +1,15 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Org.Vitrivr.CineastApi.Model;
+using UnityEngine;
 
 namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
 {
   public class QueryTermBuilder
   {
     /// <summary>
-    /// Builds a QueryTerm of type IMAGE with category edge.
+    /// Builds a <see cref="QueryTerm"/> of type IMAGE with category edge.
     /// </summary>
     /// <param name="data">Base64 encoded image</param>
     /// <returns>The corresponding query term</returns>
@@ -19,6 +19,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       qt.Categories.Add(
         CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.EDGE_CATEGORY]);
       return qt;
+    }
+
+    /// <summary>
+    /// Builds a <see cref="QueryTerm"/> of type IMAGE with category edge.
+    /// </summary>
+    /// <param name="image">Image to use for query</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildEdgeTerm(Texture2D image)
+    {
+      var encodedImage = Base64Converter.PNGPrefix + Base64Converter.ImageToBase64PNG(image);
+      return BuildEdgeTerm(encodedImage);
     }
 
     /// <summary>
@@ -38,6 +49,17 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     }
 
     /// <summary>
+    /// Builds a <see cref="QueryTerm"/> of type IMAGE with category global color
+    /// </summary>
+    /// <param name="image">Image to use for query</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildGlobalColorTerm(Texture2D image)
+    {
+      var encodedImage = Base64Converter.PNGPrefix + Base64Converter.ImageToBase64PNG(image);
+      return BuildGlobalColorTerm(encodedImage);
+    }
+
+    /// <summary>
     /// Builds a <see cref="QueryTerm"/> of type IMAGE with given categories
     /// </summary>
     /// <param name="data">Base64 encoded image</param>
@@ -46,6 +68,18 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
     public static QueryTerm BuildImageTermForCategories(string data, List<string> categories)
     {
       return new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, categories);
+    }
+
+    /// <summary>
+    /// Builds a <see cref="QueryTerm"/> of type IMAGE with given categories
+    /// </summary>
+    /// <param name="image">Image to use for query</param>
+    /// <param name="categories">A list of categories</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildImageTermForCategories(Texture2D image, List<string> categories)
+    {
+      var encodedImage = Base64Converter.PNGPrefix + Base64Converter.ImageToBase64PNG(image);
+      return BuildImageTermForCategories(encodedImage, categories);
     }
 
     public static QueryTerm BuildLocationTerm(double latitude, double longitude)
@@ -85,7 +119,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
       var tagList = $"[{string.Join(",", tagStrings)}]";
 
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
-        "data:application/json;base64," + StringConverter.ToBase64(tagList),
+        Base64Converter.JsonPrefix + Base64Converter.StringToBase64(tagList),
         new List<string>
           {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
       return qt;
