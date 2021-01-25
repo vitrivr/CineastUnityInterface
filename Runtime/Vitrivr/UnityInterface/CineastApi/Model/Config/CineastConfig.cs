@@ -16,6 +16,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// Defaults to http://localhost/
     /// </summary>
     public string mediaHost;
+
+    /// <summary>
+    /// If true, cineast is expected to serve the media as "thumbnails/:s" and "objects/:o", hence we'll try to load them from there
+    /// </summary>
+    public bool cineastServesMedia;
+    
     /// <summary>
     /// The path to thumbnail files.
     /// Defaults to "thumbnails/:o/:s"
