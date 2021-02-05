@@ -38,6 +38,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     public ObjectData(string id)
     {
       _id = id;
+      Metadata = new MetadataStore(_id);
     }
 
     /// <summary>
@@ -46,9 +47,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <param name="descriptor"></param>
     public ObjectData(MediaObjectDescriptor descriptor)
     {
-      _descriptor = descriptor;
       _id = descriptor.ObjectId;
-      Initialized = true;
+      Metadata = new MetadataStore(_id);
+      Initialize(descriptor);
     }
 
     /// <summary>
@@ -66,8 +67,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     ///   Async (lazy loading) call to fill wrapper with content
     /// </summary>
-    /// <returns></returns>
-    private async Task InitializeAsync()
+    private async Task InitializeAsync(bool withMetadata = true)
     {
       await InitLock.WaitAsync();
       try
@@ -89,10 +89,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
           Initialize(result.Content[0]);
         }
 
-        var metares = await CineastWrapper.MetadataApi.FindMetaByIdAsync(_id);
-        if (!Metadata.Initialized)
+        if (withMetadata)
         {
-          Metadata.Initialize(metares);
+          await Metadata.InitializeAsync();
         }
       }
       finally
@@ -119,38 +118,26 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         return;
       }
 
-      Metadata = new MetadataStore(_id);
-
       _descriptor = descriptor;
       Initialized = true;
     }
 
     public void InitializeMeta(MediaObjectMetadataQueryResult meta)
     {
-      if (!Metadata.Initialized)
+      if (Metadata.Initialized)
       {
-        Metadata.Initialize(meta);
+        Debug.LogWarning("Attempt to initialize already initialized object metadata for media object with id " +
+                         $"\"{Id}\". Using cached data.");
+        return;
       }
+
+      Metadata.Initialize(meta);
     }
 
     /// <summary>
-    ///   The id
+    ///   The name of the media object.
     /// </summary>
-    /// <returns></returns>
-    public async Task<string> GetObjectId()
-    {
-      if (!Initialized)
-      {
-        await InitializeAsync();
-      }
-
-      return _descriptor.ObjectId;
-    }
-
-    /// <summary>
-    ///   The name
-    /// </summary>
-    /// <returns></returns>
+    /// <returns>Media object name.</returns>
     public async Task<string> GetName()
     {
       if (!Initialized)
@@ -164,7 +151,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     ///   The path that point to the file, relative to its original import direction.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Path to media object file.</returns>
     public async Task<string> GetPath()
     {
       if (!Initialized)

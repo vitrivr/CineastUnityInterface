@@ -73,14 +73,9 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       }
     }
 
-    public static ObjectData GetObjectOf(string segmentId)
+    public static async Task<ObjectData> GetObjectOf(string segmentId)
     {
-      if (!SegmentRegistry.Exists(segmentId))
-      {
-        throw new ArgumentException($"The given segment id '{segmentId}' is not known to the registry");
-      }
-
-      return SegmentRegistry.GetObjectOf(segmentId);
+      return await SegmentRegistry.GetObjectOf(segmentId);
     }
 
     public static async Task BatchFetchObjectData(IEnumerable<ObjectData> objects)
@@ -93,8 +88,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     public static async Task BatchFetchObjectDataWithMeta(List<ObjectData> objects)
     {
       Debug.Log("Fetching obj data, then metadata");
-      await Task.Run(() => BatchFetchObjectData(objects));
-      await Task.Run(() => BatchFetchObjectMetadata(objects));
+      await BatchFetchObjectData(objects);
+      await BatchFetchObjectMetadata(objects);
     }
 
     public static async Task BatchFetchObjectMetadata(IEnumerable<ObjectData> objects)

@@ -38,7 +38,6 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
 
     /// <summary>
     /// Returns segments corresponding to an object, by its id.
-    /// <b>Note</b> This expects the segments to be loaded beforehand!
     /// </summary>
     /// <param name="objectId"></param>
     /// <returns></returns>
@@ -62,7 +61,6 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// Batch fetches data for the given segments.
     /// </summary>
     /// <param name="segments">The segments for which to fetch the data.</param>
-    /// <returns></returns>
     public static async Task BatchFetchSegmentData(IEnumerable<SegmentData> segments)
     {
       var uninitializedSegments = segments.Where(segment => !segment.Initialized).ToList();
@@ -77,6 +75,14 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
       var results = await Task.Run(() => CineastWrapper.SegmentApi.FindSegmentByIdBatched(new IdList(segmentIds)));
 
       results.Content.ForEach(data => GetSegment(data.SegmentId).Initialize(data));
+    }
+
+    /// <summary>
+    /// Batch fetches all uninitialized segments in the registry.
+    /// </summary>
+    public static async Task BatchFetchAll()
+    {
+      await BatchFetchSegmentData(Registry.Values);
     }
 
     /// <summary>
@@ -118,12 +124,12 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <param name="segmentId"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ObjectData GetObjectOf(string segmentId)
+    public static async Task<ObjectData> GetObjectOf(string segmentId)
     {
       // TODO might require a dedicated cache
       if (!Exists(segmentId))
       {
-        throw new ArgumentException($"Cannot get object of unkown segment with id {segmentId}");
+        throw new ArgumentException($"Cannot get object of unknown segment with id {segmentId}");
       }
 
       var segment = Registry[segmentId];
@@ -132,8 +138,8 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         return ObjectRegistry.GetObject(segment.GetObjectId().Result);
       }
 
-      Task.WaitAll(segment.GetObjectId());
-      return ObjectRegistry.GetObject(segment.GetObjectId().Result);
+      var objectId = await segment.GetObjectId();
+      return ObjectRegistry.GetObject(objectId);
     }
   }
 }
