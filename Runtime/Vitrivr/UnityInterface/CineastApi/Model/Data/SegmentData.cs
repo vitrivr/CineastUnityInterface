@@ -57,11 +57,10 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
         var queryResult = await CineastWrapper.SegmentApi.FindSegmentByIdAsync(_id);
         if (queryResult.Content.Count != 1)
         {
-          Debug.LogError(
+          throw new Exception(
             $"Unexpected number of segment data results for segment \"{_id}\": {queryResult.Content.Count}");
         }
 
-        // TODO: Error handling in the data breaking case there is no or more than one segment returned
         var result = queryResult.Content[0];
         Initialize(result);
       }
@@ -123,7 +122,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// ID of the <see cref="MediaObjectDescriptor"/> this <see cref="MediaSegmentDescriptor"/> belongs to.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Id of associated media object.</returns>
     public async Task<string> GetObjectId()
     {
       if (!Initialized)
@@ -137,7 +136,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Segment start in frames.</returns>
     public async Task<int> GetStart()
     {
       if (!Initialized)
@@ -151,7 +150,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// End of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Segment end in frames.</returns>
     public async Task<int> GetEnd()
     {
       if (!Initialized)
@@ -165,7 +164,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Relative position of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} (starts with 1)
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Sequence number of this segment.</returns>
     public async Task<int> GetSequenceNumber()
     {
       if (!Initialized)
@@ -179,7 +178,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Absolute start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in seconds (e.g. for videos or audio).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Segment start in seconds.</returns>
     public async Task<float> GetAbsoluteStart()
     {
       if (!Initialized)
@@ -193,7 +192,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.
     /// <summary>
     /// Absolute end of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in seconds (e.g. for videos or audio).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Segment end in seconds.</returns>
     public async Task<float> GetAbsoluteEnd()
     {
       if (!Initialized)
