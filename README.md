@@ -15,7 +15,7 @@ See [Cineast](https://github.com/vitrivr/cineast) for further API informations
 To use this package with upm, add the following dependency to your `manifest.json`:
 
 ```
-"com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/UnityInterface.git#release"
+"com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/CineastUnityInterface.git#release"
 ```
 
 ### API
