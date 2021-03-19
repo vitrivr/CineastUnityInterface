@@ -19,6 +19,7 @@ openApiGenerate {
   inputSpec = cineastOAS
   outputDir = "$rootDir/Generated"
   packageName = "Org.Vitrivr.CineastApi"
+  skipValidateSpec = true
 }
 
 /* Customized clean task to delete OpenAPI generated*/
