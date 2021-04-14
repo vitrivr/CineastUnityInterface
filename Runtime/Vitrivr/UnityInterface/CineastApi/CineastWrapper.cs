@@ -113,18 +113,20 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// Returns the URL to the media of the given object data asynchronously.
     /// </summary>
     /// <param name="obj">Media object to get URL of.</param>
+    /// <param name="segmentId">Optional segment ID to support legacy use cases.</param>
     /// <returns>URL of this media object file.</returns>
-    public static async Task<string> GetMediaUrlOfAsync(ObjectData obj)
+    public static async Task<string> GetMediaUrlOfAsync(ObjectData obj, string segmentId = null)
     {
       if (CineastConfig.cineastServesMedia)
       {
         return PathResolver.CombineUrl(CineastConfig.cineastHost, $"/objects/{obj.Id}");
       }
 
-      var mediaPath = await obj.GetPath();
+      var objectPath = await obj.GetPath();
+      var objectName = await obj.GetName();
       var mediaType = await obj.GetMediaType();
-      var path = PathResolver.ResolvePath(CineastConfig.mediaPath, obj.Id, mediaPath: mediaPath,
-        mediaType: mediaType.ToString());
+      var path = PathResolver.ResolvePath(CineastConfig.mediaPath, obj.Id, segmentId, objectName, objectPath,
+        mediaType.ToString());
       return PathResolver.CombineUrl(CineastConfig.mediaHost, path);
     }
   }

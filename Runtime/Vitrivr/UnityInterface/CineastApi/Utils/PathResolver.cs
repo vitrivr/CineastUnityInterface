@@ -10,20 +10,28 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <param name="path">The path to resolve</param>
     /// <param name="objectId">The ID of the media object</param>
     /// <param name="segmentId">The ID of the media object segment</param>
-    /// <param name="mediaPath">The path of the media object in its resource location</param>
+    /// <param name="objectName">The file name of the media object</param>
+    /// <param name="objectPath">The path of the media object in its resource location</param>
     /// <param name="mediaType">The media type of the media object</param>
+    /// <param name="extension">The file extension</param>
     /// <returns>The resolved path</returns>
     public static string ResolvePath(string path,
       string objectId = null,
       string segmentId = null,
-      string mediaPath = null,
-      string mediaType = null)
+      string objectName = null,
+      string objectPath = null,
+      string mediaType = null,
+      string extension = null)
     {
       return path
         .Replace(":o", objectId)
         .Replace(":s", segmentId)
-        .Replace(":p", mediaPath)
-        .Replace(":t", mediaType);
+        .Replace(":S", segmentId?.Substring(3))
+        .Replace(":n", objectName)
+        .Replace(":p", objectPath)
+        .Replace(":t", mediaType)
+        .Replace(":T", mediaType?.ToUpper())
+        .Replace(":x", extension);
     }
 
     /// <summary>
