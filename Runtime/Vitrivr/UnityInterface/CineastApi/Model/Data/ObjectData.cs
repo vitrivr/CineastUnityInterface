@@ -162,6 +162,20 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       return _descriptor.Path;
     }
 
+    /// <summary>
+    /// Gets the media type of the media object.
+    /// </summary>
+    /// <returns>Media type of the media object.</returns>
+    public async Task<MediaObjectDescriptor.MediatypeEnum?> GetMediaType()
+    {
+      if (!Initialized)
+      {
+        await InitializeAsync();
+      }
+
+      return _descriptor.Mediatype;
+    }
+
     [Obsolete("This field is not properly set in cineast 3.0")]
     public async Task<string> GetContentUrl()
     {

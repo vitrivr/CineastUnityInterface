@@ -75,35 +75,57 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <summary>
     /// Returns the URL to the Thumbnail of the given segment data. Needs to be registered and loaded previously!
     /// </summary>
-    /// <param name="segment"></param>
-    /// <returns></returns>
+    /// <param name="segment">Segment to get thumbnail URL of.</param>
+    /// <returns>Thumbnail URL of the segment.</returns>
     public static string GetThumbnailUrlOf(SegmentData segment)
     {
-      if (CineastConfig.cineastServesMedia)
-      {
-        return CineastConfig.cineastHost + "/thumbnails/" + segment.Id;
-      }
-      else
-      {
-        return CineastConfig.mediaHost + "thumbnails/" + segment.GetObjectId().Result + "/" + segment.Id + ".png"; // or .jpg
-      }
+      return GetThumbnailUrlOfAsync(segment).Result;
     }
 
     /// <summary>
-    /// Returns the URL to the media of the given object data. Needs to be registered and laoded previously!
+    /// Returns the URL to the Thumbnail of the given segment data asynchronously.
     /// </summary>
-    /// <param name="obj"></param>
-    /// <returns></returns>
-    public static string GetMediaUrlOf(ObjectData obj)
+    /// <param name="segment">Segment to get thumbnail URL of.</param>
+    /// <returns>Thumbnail URL of the segment.</returns>
+    public static async Task<string> GetThumbnailUrlOfAsync(SegmentData segment)
     {
       if (CineastConfig.cineastServesMedia)
       {
-        return CineastConfig.cineastHost + "/objects/" + obj.Id;
+        return PathResolver.CombineUrl(CineastConfig.cineastHost, $"/thumbnails/{segment.Id}");
       }
-      else
+
+      var objectId = await segment.GetObjectId();
+      var path = PathResolver.ResolvePath(CineastConfig.thumbnailPath, objectId, segment.Id);
+      return PathResolver.CombineUrl(CineastConfig.mediaHost, path + CineastConfig.thumbnailExtension);
+    }
+
+    /// <summary>
+    /// Returns the URL to the media of the given object data. Needs to be registered and loaded previously!
+    /// </summary>
+    /// <param name="obj">Media object to get URL of.</param>
+    /// <returns>URL of this media object file.</returns>
+    public static string GetMediaUrlOf(ObjectData obj)
+    {
+      return GetMediaUrlOfAsync(obj).Result;
+    }
+
+    /// <summary>
+    /// Returns the URL to the media of the given object data asynchronously.
+    /// </summary>
+    /// <param name="obj">Media object to get URL of.</param>
+    /// <returns>URL of this media object file.</returns>
+    public static async Task<string> GetMediaUrlOfAsync(ObjectData obj)
+    {
+      if (CineastConfig.cineastServesMedia)
       {
-        return CineastConfig.mediaHost + "/images/" + obj.GetPath().Result;
+        return PathResolver.CombineUrl(CineastConfig.cineastHost, $"/objects/{obj.Id}");
       }
+
+      var mediaPath = await obj.GetPath();
+      var mediaType = await obj.GetMediaType();
+      var path = PathResolver.ResolvePath(CineastConfig.mediaPath, obj.Id, mediaPath: mediaPath,
+        mediaType: mediaType.ToString());
+      return PathResolver.CombineUrl(CineastConfig.mediaHost, path);
     }
   }
 }
