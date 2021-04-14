@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
+using Vitrivr.UnityInterface.CineastApi.Model.Config;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
   public class QueryTermBuilder
   {

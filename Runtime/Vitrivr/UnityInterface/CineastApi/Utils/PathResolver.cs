@@ -1,4 +1,4 @@
-﻿namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+﻿namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
     public class PathResolver
     {

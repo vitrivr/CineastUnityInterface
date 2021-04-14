@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
 using Org.Vitrivr.CineastApi.Api;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
+using Vitrivr.UnityInterface.CineastApi.Model.Config;
+using Vitrivr.UnityInterface.CineastApi.Model.Data;
+using Vitrivr.UnityInterface.CineastApi.Utils;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
+namespace Vitrivr.UnityInterface.CineastApi
 {
   /// <summary>
   /// Wrapper for cineast
@@ -88,7 +88,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
         return CineastConfig.mediaHost + "thumbnails/" + segment.GetObjectId().Result + "/" + segment.Id + ".png"; // or .jpg
       }
     }
-    
+
     /// <summary>
     /// Returns the URL to the media of the given object data. Needs to be registered and laoded previously!
     /// </summary>
@@ -102,7 +102,7 @@ namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi
       }
       else
       {
-       return CineastConfig.mediaHost + "/images/"+ obj.GetPath().Result;
+        return CineastConfig.mediaHost + "/images/" + obj.GetPath().Result;
       }
     }
   }

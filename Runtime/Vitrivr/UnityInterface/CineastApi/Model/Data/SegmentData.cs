@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
+using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
   /// Data object containing all information on a specific media segment. Use <see cref="SegmentRegistry"/> to

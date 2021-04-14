@@ -1,9 +1,9 @@
 ﻿using System.IO;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Org.Vitrivr.CineastApi.Client;
 using UnityEngine;
+using Vitrivr.UnityInterface.CineastApi.Model.Config;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
   /// <summary>
   /// Manager to load and store the configuration from the file system

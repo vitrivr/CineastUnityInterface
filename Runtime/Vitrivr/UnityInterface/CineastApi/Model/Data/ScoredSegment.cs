@@ -1,6 +1,6 @@
 using System;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
   /// Data class for segment with associated score.

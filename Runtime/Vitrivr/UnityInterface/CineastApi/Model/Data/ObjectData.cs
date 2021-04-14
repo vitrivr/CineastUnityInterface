@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
+using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
   ///   Wrapper object for <see cref="MediaObjectDescriptor" />, a specific media object.

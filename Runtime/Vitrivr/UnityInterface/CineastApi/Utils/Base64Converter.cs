@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
   public static class Base64Converter
   {

@@ -1,7 +1,7 @@
 ﻿using System;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
+using Vitrivr.UnityInterface.CineastApi.Model.Data;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils
+namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
   /// <summary>
   /// Utilities for metadata, including helper methods for "built-it" metadata

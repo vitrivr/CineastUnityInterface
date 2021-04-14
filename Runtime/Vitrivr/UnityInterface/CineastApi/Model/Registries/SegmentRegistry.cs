@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data;
 using Org.Vitrivr.CineastApi.Model;
+using Vitrivr.UnityInterface.CineastApi.Model.Data;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries
+namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
 {
   /// <summary>
   /// Class for the instantiation and management of <see cref="SegmentData"/> objects.

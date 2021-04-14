@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
   /// Access and local representation of metadata

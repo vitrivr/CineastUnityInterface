@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Registries;
-using CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Utils;
 using Org.Vitrivr.CineastApi.Model;
+using Vitrivr.UnityInterface.CineastApi.Model.Registries;
+using Vitrivr.UnityInterface.CineastApi.Utils;
 
-namespace CineastUnityInterface.Runtime.Vitrivr.UnityInterface.CineastApi.Model.Data
+namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
   /// Data object containing all information associated with an executed query.
