@@ -7,12 +7,20 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
   {
     private const string PrefixPrefix = "data:";
     private const string PrefixSuffix = ";base64,";
-    public static readonly string JsonPrefix = PrefixPrefix + "application/json" + PrefixSuffix;
-    public static readonly string PNGPrefix = PrefixPrefix + "image/png" + PrefixSuffix;
+    public const string JsonPrefix = PrefixPrefix + "application/json" + PrefixSuffix;
+    public const string PNGPrefix = PrefixPrefix + "image/png" + PrefixSuffix;
 
     public static string StringToBase64(string str)
     {
       return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(str));
+    }
+
+    /// <summary>
+    /// Converts the given JSON string to a base 64 string with a plaintext JSON prefix.
+    /// </summary>
+    public static string JsonToBase64(string json)
+    {
+      return JsonPrefix + StringToBase64(json);
     }
 
     public static string StringFromBase64(string str)

@@ -3,11 +3,58 @@ using System.Linq;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 using Vitrivr.UnityInterface.CineastApi.Model.Config;
+using Vitrivr.UnityInterface.CineastApi.Model.Query;
 
 namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
   public class QueryTermBuilder
   {
+    /// <summary>
+    /// Builds a Boolean <see cref="QueryTerm"/> consisting of a single condition.
+    /// </summary>
+    /// <param name="attribute">Attribute of condition</param>
+    /// <param name="op">Relational operator specifying condition operation</param>
+    /// <param name="values">Conditional values</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildBooleanTerm(string attribute, RelationalOperator op, params string[] values)
+    {
+      var expressionJson = BuildBooleanTermJson(attribute, op, values);
+      var data = Base64Converter.JsonToBase64($"[{expressionJson}]");
+
+      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> {"boolean"});
+    }
+
+    /// <summary>
+    /// Builds a Boolean <see cref="QueryTerm"/> consisting of multiple conditions.
+    /// </summary>
+    /// <param name="conditions">Enumerable of conditions</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildBooleanTerm(
+      IEnumerable<(string attribute, RelationalOperator op, string[] values)> conditions)
+    {
+      var conditionsJson = conditions.Select(c => BuildBooleanTermJson(c.attribute, c.op, c.values));
+      var data = Base64Converter.JsonToBase64($"[{string.Join(",", conditionsJson)}]");
+
+      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> {"boolean"});
+    }
+
+    /// <summary>
+    /// Converts the given Boolean query term condition parameters into the expected JSON format.
+    /// </summary>
+    /// <param name="attribute">Attribute of condition</param>
+    /// <param name="op">Relational operator specifying condition operation</param>
+    /// <param name="values">Conditional values</param>
+    /// <returns>The condition as JSON string</returns>
+    public static string BuildBooleanTermJson(string attribute, RelationalOperator op, params string[] values)
+    {
+      var attributeJson = $"\"attribute\":\"{attribute}\"";
+      var operatorJson = $"\"operator\":\"{op.ToString().ToUpper()}\"";
+      var valuesString = values.Length == 1 ? $"\"{values[0]}\"" : $"[\"{string.Join("\",\"", values)}\"]";
+      var valuesJson = $"\"values\":{valuesString}";
+
+      return $"{{{attributeJson},{operatorJson},{valuesJson}}}";
+    }
+
     /// <summary>
     /// Builds a <see cref="QueryTerm"/> of type IMAGE with category edge.
     /// </summary>
@@ -100,7 +147,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     public static QueryTerm BuildTagTerm(string tags)
     {
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
-        "data:application/json;base64," + tags,
+        Base64Converter.JsonPrefix + tags,
         new List<string>
           {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
       return qt;
@@ -119,7 +166,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var tagList = $"[{string.Join(",", tagStrings)}]";
 
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
-        Base64Converter.JsonPrefix + Base64Converter.StringToBase64(tagList),
+        Base64Converter.JsonToBase64(tagList),
         new List<string>
           {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
       return qt;

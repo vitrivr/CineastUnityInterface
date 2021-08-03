@@ -19,6 +19,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     public static readonly SegmentApi SegmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
     public static readonly TagApi TagApi = new TagApi(CineastConfigManager.Instance.ApiConfiguration);
     public static readonly MetadataApi MetadataApi = new MetadataApi(CineastConfigManager.Instance.ApiConfiguration);
+    public static readonly MiscApi MiscApi = new MiscApi(CineastConfigManager.Instance.ApiConfiguration);
 
     public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
 
@@ -70,6 +71,19 @@ namespace Vitrivr.UnityInterface.CineastApi
       var result = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
       QueryRunning = false;
       return result;
+    }
+
+    /// <summary>
+    /// Retrieves the distinct values of a specific Boolean query table and column.
+    /// </summary>
+    /// <param name="table">Table name</param>
+    /// <param name="column">Column name</param>
+    /// <returns>List of distinct values occuring in the specified column of the specified table</returns>
+    public static async Task<List<string>> GetDistinctTableValues(string table, string column)
+    {
+      var columnSpec = new ColumnSpecification(column, table); 
+      var results = await Task.Run(() => MiscApi.FindDistinctElementsByColumn(columnSpec));
+      return results.DistinctElements;
     }
 
     /// <summary>
