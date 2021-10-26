@@ -39,10 +39,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     public const string TEMPORAL_DATETIME = "datetime";
 
     /// <summary>
-    /// Quick-access to latitude
+    /// Quick-access to latitude.
     /// </summary>
-    /// <param name="store"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException">If the store was not initialised previously</exception>
     public static double GetLatitude(MetadataStore store)
     {
@@ -57,10 +55,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     }
 
     /// <summary>
-    /// Quick-access to longitude
+    /// Quick-access to longitude.
     /// </summary>
-    /// <param name="store"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException">If the store was not initialised previously</exception>
     public static double GetLongitude(MetadataStore store)
     {
@@ -75,10 +71,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     }
 
     /// <summary>
-    /// Quick-access to bearing
+    /// Quick-access to bearing.
     /// </summary>
-    /// <param name="store"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException">If the store was not initialised previously</exception>
     public static double GetBearing(MetadataStore store)
     {
@@ -91,10 +85,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     }
 
     /// <summary>
-    /// Quick-access to datetime
+    /// Quick-access to datetime.
     /// </summary>
-    /// <param name="store"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException">If the store was not initialised previously</exception>
     public static string GetDateTime(MetadataStore store)
     {
