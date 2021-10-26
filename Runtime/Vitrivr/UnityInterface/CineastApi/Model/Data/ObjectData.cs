@@ -31,24 +31,24 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// </summary>
     private List<SegmentData> _segments;
 
+    public ObjectMetadataStore Metadata { get; private set; }
+
     /// <summary>
     ///   Constructs a new instance with the given id, for lazy loading.
     /// </summary>
-    /// <param name="id"></param>
     public ObjectData(string id)
     {
       _id = id;
-      Metadata = new MetadataStore(_id);
+      Metadata = new ObjectMetadataStore(_id);
     }
 
     /// <summary>
     ///   Constructs a new instance with the given wrapper content.
     /// </summary>
-    /// <param name="descriptor"></param>
     public ObjectData(MediaObjectDescriptor descriptor)
     {
       _id = descriptor.ObjectId;
-      Metadata = new MetadataStore(_id);
+      Metadata = new ObjectMetadataStore(_id);
       Initialize(descriptor);
     }
 
@@ -56,8 +56,6 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     ///   Private flag whether actual data is available or not
     /// </summary>
     public bool Initialized { get; private set; }
-
-    public MetadataStore Metadata { get; private set; }
 
     /// <summary>
     ///   ID of this object's <see cref="MediaObjectDescriptor" />

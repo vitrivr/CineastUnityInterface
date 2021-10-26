@@ -1,70 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Org.Vitrivr.CineastApi.Model;
-using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
-  /// <summary>
-  /// Access and local representation of metadata
-  /// </summary>
   [Serializable]
-  public class MetadataStore
+  public abstract class MetadataStore
   {
-    public MetadataStore(string id)
-    {
-      ObjectId = id;
-      Initialized = false;
-    }
-
     /// <summary>
     /// Actual internal storage of metadata
     /// </summary>
-    private Dictionary<string, Dictionary<string, string>> _storage =
+    protected Dictionary<string, Dictionary<string, string>> Storage =
       new Dictionary<string, Dictionary<string, string>>();
 
-    public string ObjectId { get; private set; }
+    public bool Initialized { get; protected set; }
 
-    public bool Initialized { get; private set; }
-
-    public void Initialize(MediaObjectMetadataQueryResult data)
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning("Attempt to init already init'ed metadata container using cache data");
-        return;
-      }
-
-      foreach (var meta in data.Content.Where(meta => meta.ObjectId == ObjectId))
-      {
-        if (!DomainExists(meta.Domain))
-        {
-          _storage.Add(meta.Domain, new Dictionary<string, string>());
-        }
-
-        var domain = _storage[meta.Domain];
-        domain.Add(meta.Key, meta.Value);
-      }
-
-      Initialized = true;
-    }
-
-    public async Task InitializeAsync()
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning($"Attempted to initialize already initialized metadata for media object {ObjectId}!");
-        return;
-      }
-
-      var metadataResult = await CineastWrapper.MetadataApi.FindMetaByIdAsync(ObjectId);
-      if (!Initialized)
-      {
-        Initialize(metadataResult);
-      }
-    }
+    public abstract Task InitializeAsync();
 
     public async Task<Dictionary<string, Dictionary<string, string>>> GetAll()
     {
@@ -73,44 +26,56 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         await InitializeAsync();
       }
 
-      return _storage;
+      return Storage;
     }
 
     public bool DomainExists(string domain)
     {
-      return _storage.ContainsKey(domain);
+      Assert.IsTrue(Initialized);
+      return Storage.ContainsKey(domain);
     }
 
     public string Get(string domain, string key)
     {
-      return _storage[domain][key];
+      Assert.IsTrue(Initialized);
+      return Storage[domain][key];
     }
 
     /// <summary>
-    /// Retrieves a metadata value using the DOMAIN.KEY notation
+    /// Retrieves a metadata value using the DOMAIN.KEY notation.
+    /// Requires metadata to be initialized.
     /// </summary>
-    /// <param name="str"></param>
-    /// <returns></returns>
     public string Get(string str)
     {
+      Assert.IsTrue(Initialized);
       var domainAndKey = str.Split('.');
       if (domainAndKey.Length >= 1)
       {
-        return _storage[domainAndKey[0]][domainAndKey[1]];
+        return Storage[domainAndKey[0]][domainAndKey[1]];
       }
 
       throw new ArgumentException("Cannot retrieve without domain");
     }
 
+    /// <summary>
+    /// Retrieves all metadata of a specific domain.
+    /// Requires metadata to be initialized.
+    /// </summary>
     public List<(string Key, string Value)> GetDomain(string domain)
     {
-      var items = _storage[domain];
+      Assert.IsTrue(Initialized);
+      var items = Storage[domain];
       return items.Keys.Select(key => (key, items[key])).ToList();
     }
 
+    /// <summary>
+    /// Checks if a domain key pair exists in the metadata.
+    /// Requires metadata to be initialized.
+    /// </summary>
     public bool Exists(string domain, string key)
     {
-      return DomainExists(domain) && _storage[domain].ContainsKey(key);
+      Assert.IsTrue(Initialized);
+      return DomainExists(domain) && Storage[domain].ContainsKey(key);
     }
   }
 }
