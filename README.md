@@ -20,7 +20,7 @@ For a guide on how to setup cineast, please see [Cineast's Github page](https://
 To use this package in unity, the `manifest.json` has to be expanded by the following entry:
 
 ```json
-"com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/UnityInterface.git#release"
+"com.vitrivr.unityinterface.cineastapi": "https://github.com/vitrivr/CineastUnityInterface.git"
 ```
 
 The Unity Package Manager ( _upm_ ) will take care of downloading and linking this package.
