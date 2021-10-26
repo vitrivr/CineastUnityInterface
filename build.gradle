@@ -1,0 +1,83 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+/* Import to determine os*/
+
+/* Get the openapi generator plugin */
+plugins {
+  id "org.openapi.generator" version "4.3.1"
+}
+
+/* Setup OpenApi Specs (OAS): Defaults to default.*/
+def cineastOAS = "http://localhost:4567/openapi-specs"
+/* If gradle gets 'oas' argument (with -Poas="path/to/OAS"), take these */
+if(project.hasProperty('oas')){
+    cineastOAS = oas
+}
+
+/* The OpenApi generator task */
+openApiGenerate {
+  generatorName = "csharp"
+  inputSpec = cineastOAS
+  outputDir = "$rootDir/Generated"
+  packageName = "Org.Vitrivr.CineastApi"
+  skipValidateSpec = true
+}
+
+/* Customized clean task to delete OpenAPI generated*/
+task clean(type: Delete){
+  delete "$rootDir/Generated", fileTree("$rootDir/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta"}
+}
+
+/* Task to clean only unused files */
+task tidy(type: Delete){
+    delete "$rootDir/Generated"
+}
+
+/* Build the openapi dll */
+task buildOpenApi(type: Exec){
+  dependsOn tasks.openApiGenerate
+  workingDir "$rootDir/Generated"
+  if( Os.isFamily(Os.FAMILY_WINDOWS)){
+    /* only windows */
+    commandLine = "$rootDir/Generated/build.bat"
+  }else{
+    /* Should work with .sh */
+    dependsOn "modex"
+    commandLine = "$rootDir/Generated/build.sh"
+  }
+}
+
+task modex(type: Exec){
+  workingDir "$rootDir/Generated"
+  if( !Os.isFamily(Os.FAMILY_WINDOWS)){
+    /* Should work with .sh */
+    commandLine "chmod", "+x", "$rootDir/Generated/build.sh"
+  }
+}
+
+
+/* Copy what buildOpenApi produced to unity folder */
+task deployLibs(type: Copy){
+  from(file("$rootDir/Generated/bin"))
+  into(file("$rootDir/Runtime/Libs"))
+  rename("RestSharp.dll", "RestSharp.Cineast.dll")
+  rename("Newtonsoft.Json.dll", "Newtonsoft.Json.Cineast.dll")
+  rename("JsonSubTypes.dll", "JsonSubTypes.Cineast.dll")
+}
+
+/* Copy the mandatory link.xml */
+task deployLink(type:Copy){
+  from file("$rootDir/link.xml")
+  into(file("$rootDir/Runtime/Libs"))
+}
+
+/* Do all the things */
+task('deploy'){
+  dependsOn 'deployLink'
+}
+
+/* Specify order */
+deployLibs.dependsOn buildOpenApi
+deployLink.dependsOn deployLibs
+tasks.openApiGenerate.mustRunAfter clean
+buildOpenApi.mustRunAfter tasks.openApiGenerate
+modex.mustRunAfter tasks.openApiGenerate
