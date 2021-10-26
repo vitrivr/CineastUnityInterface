@@ -93,14 +93,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
 
     public static async Task BatchFetchObjectMetadata(IEnumerable<ObjectData> objects)
     {
-      var toInitObj = objects.Where(obj => !obj.ObjectMetadata.Initialized).ToList();
+      var toInitObj = objects.Where(obj => !obj.Metadata.Initialized).ToList();
       var toInit = toInitObj.Select(obj => obj.Id).ToList();
       Debug.Log($"Having to initialise {toInit.Count} obj's metadata");
       var result = await Task.Run(() =>
         CineastWrapper.MetadataApi.FindMetadataForObjectIdBatchedAsync(new OptionallyFilteredIdList(ids: toInit)));
       foreach (var obj in toInitObj)
       {
-        obj.ObjectMetadata.Initialize(result);
+        obj.Metadata.Initialize(result);
       }
       Debug.Log("Finished fetching obj");
     }

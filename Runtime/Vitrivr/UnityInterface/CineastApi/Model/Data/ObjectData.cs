@@ -31,7 +31,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// </summary>
     private List<SegmentData> _segments;
 
-    public ObjectMetadataStore ObjectMetadata { get; private set; }
+    public ObjectMetadataStore Metadata { get; private set; }
 
     /// <summary>
     ///   Constructs a new instance with the given id, for lazy loading.
@@ -39,7 +39,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     public ObjectData(string id)
     {
       _id = id;
-      ObjectMetadata = new ObjectMetadataStore(_id);
+      Metadata = new ObjectMetadataStore(_id);
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     public ObjectData(MediaObjectDescriptor descriptor)
     {
       _id = descriptor.ObjectId;
-      ObjectMetadata = new ObjectMetadataStore(_id);
+      Metadata = new ObjectMetadataStore(_id);
       Initialize(descriptor);
     }
 
@@ -89,7 +89,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
         if (withMetadata)
         {
-          await ObjectMetadata.InitializeAsync();
+          await Metadata.InitializeAsync();
         }
       }
       finally
@@ -122,14 +122,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
     public void InitializeMeta(MediaObjectMetadataQueryResult meta)
     {
-      if (ObjectMetadata.Initialized)
+      if (Metadata.Initialized)
       {
         Debug.LogWarning("Attempt to initialize already initialized object metadata for media object with id " +
                          $"\"{Id}\". Using cached data.");
         return;
       }
 
-      ObjectMetadata.Initialize(meta);
+      Metadata.Initialize(meta);
     }
 
     /// <summary>

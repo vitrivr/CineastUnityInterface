@@ -27,20 +27,20 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
     private static readonly SemaphoreSlim InitLock = new SemaphoreSlim(1, 1);
 
-    public SegmentMetadataStore SegmentMetadata { get; private set; }
+    public SegmentMetadataStore Metadata { get; private set; }
 
 
     public SegmentData(string id)
     {
       _id = id;
-      SegmentMetadata = new SegmentMetadataStore(_id);
+      Metadata = new SegmentMetadataStore(_id);
     }
 
     public SegmentData(MediaSegmentDescriptor descriptor)
     {
       _descriptor = descriptor;
       _id = descriptor.SegmentId;
-      SegmentMetadata = new SegmentMetadataStore(_id);
+      Metadata = new SegmentMetadataStore(_id);
       Initialized = true;
     }
 
@@ -70,7 +70,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
         if (withMetadata)
         {
-          await SegmentMetadata.InitializeAsync();
+          await Metadata.InitializeAsync();
         }
       }
       finally
@@ -105,14 +105,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
     public void InitializeMeta(MediaSegmentMetadataQueryResult meta)
     {
-      if (SegmentMetadata.Initialized)
+      if (Metadata.Initialized)
       {
         Debug.LogWarning("Attempt to initialize already initialized segment metadata for media object with " +
                          $"id \"{Id}\". Using cached data.");
         return;
       }
 
-      SegmentMetadata.Initialize(meta);
+      Metadata.Initialize(meta);
     }
 
     /// <summary>
