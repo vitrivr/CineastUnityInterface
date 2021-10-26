@@ -59,6 +59,9 @@ task modex(type: Exec){
 task deployLibs(type: Copy){
   from(file("$rootDir/Generated/bin"))
   into(file("$rootDir/Runtime/Libs"))
+  rename("RestSharp.dll", "RestSharp.Cineast.dll")
+  rename("Newtonsoft.Json.dll", "Newtonsoft.Json.Cineast.dll")
+  rename("JsonSubTypes.dll", "JsonSubTypes.Cineast.dll")
 }
 
 /* Copy the mandatory link.xml */
