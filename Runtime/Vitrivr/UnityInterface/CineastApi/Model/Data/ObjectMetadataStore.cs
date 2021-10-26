@@ -31,12 +31,12 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
       foreach (var meta in data.Content.Where(meta => meta.ObjectId == ObjectId))
       {
-        if (!DomainExists(meta.Domain))
+        if (!Storage.ContainsKey(meta.Domain))
         {
-          _storage.Add(meta.Domain, new Dictionary<string, string>());
+          Storage.Add(meta.Domain, new Dictionary<string, string>());
         }
 
-        var domain = _storage[meta.Domain];
+        var domain = Storage[meta.Domain];
         domain.Add(meta.Key, meta.Value);
       }
 

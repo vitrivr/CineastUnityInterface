@@ -109,7 +109,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     }
 
     /// <summary>
-    /// Whether the given segmentId is known to this registry
+    /// Whether the given segmentId is known to this registry.
     /// </summary>
     /// <param name="segmentId"></param>
     /// <returns></returns>
@@ -119,14 +119,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     }
 
     /// <summary>
-    /// Gets the corresponding object of the segment specified
+    /// Gets the corresponding object of the segment specified.
     /// </summary>
-    /// <param name="segmentId"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     public static async Task<ObjectData> GetObjectOf(string segmentId)
     {
-      // TODO might require a dedicated cache
       if (!Exists(segmentId))
       {
         throw new ArgumentException($"Cannot get object of unknown segment with id {segmentId}");
