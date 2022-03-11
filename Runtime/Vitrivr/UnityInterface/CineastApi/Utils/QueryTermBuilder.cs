@@ -21,13 +21,13 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var expressionJson = BuildBooleanTermJson(attribute, op, values);
       var data = Base64Converter.JsonToBase64($"[{expressionJson}]");
 
-      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> {"boolean"});
+      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> { "boolean" });
     }
 
     /// <summary>
     /// Builds a Boolean <see cref="QueryTerm"/> consisting of multiple conditions.
     /// </summary>
-    /// <param name="conditions">Enumerable of conditions</param>
+    /// <param name="conditions">Enumerable of conditions, where string conditions must already be in quotes</param>
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildBooleanTerm(
       IEnumerable<(string attribute, RelationalOperator op, string[] values)> conditions)
@@ -35,7 +35,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var conditionsJson = conditions.Select(c => BuildBooleanTermJson(c.attribute, c.op, c.values));
       var data = Base64Converter.JsonToBase64($"[{string.Join(",", conditionsJson)}]");
 
-      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> {"boolean"});
+      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> { "boolean" });
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     {
       var attributeJson = $"\"attribute\":\"{attribute}\"";
       var operatorJson = $"\"operator\":\"{op.ToString().ToUpper()}\"";
-      var valuesString = values.Length == 1 ? $"\"{values[0]}\"" : $"[\"{string.Join("\",\"", values)}\"]";
+      var valuesString = values.Length == 1 ? $"{values[0]}" : $"[{string.Join(",", values)}]";
       var valuesJson = $"\"values\":{valuesString}";
 
       return $"{{{attributeJson},{operatorJson},{valuesJson}}}";
@@ -135,7 +135,31 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
         QueryTerm.TypeEnum.LOCATION,
         $"[{latitude},{longitude}]",
         new List<string>
-          {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY]});
+          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY] });
+      return qt;
+    }
+
+    /// <summary>
+    ///  Builds a <see cref="QueryTerm"/> of type PARAMETRIZED_LOCATION with the given half similarity distance.
+    /// </summary>
+    /// <param name="latitude">Latitude of term</param>
+    /// <param name="longitude">Longitude of term</param>
+    /// <param name="halfSimilarityDistance">Distance at which similarity should equal 0.5</param>
+    /// <returns>The corresponding query term</returns>
+    public static QueryTerm BuildLocationTerm(double latitude, double longitude, double halfSimilarityDistance)
+    {
+      var qt = new QueryTerm(
+        QueryTerm.TypeEnum.PARAMETERISEDLOCATION,
+        "{\"geoPoint\": " +
+        "{\"latitude\": " +
+        latitude +
+        ", \"longitude\": " +
+        longitude +
+        "}, \"parameter\": " +
+        halfSimilarityDistance +
+        "}",
+        new List<string>
+          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY] });
       return qt;
     }
 
@@ -149,7 +173,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
         Base64Converter.JsonPrefix + tags,
         new List<string>
-          {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
+          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY] });
       return qt;
     }
 
@@ -168,7 +192,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
         Base64Converter.JsonToBase64(tagList),
         new List<string>
-          {CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY]});
+          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY] });
       return qt;
     }
 
