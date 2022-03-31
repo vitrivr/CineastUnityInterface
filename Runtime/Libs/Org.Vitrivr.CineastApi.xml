@@ -4,6 +4,73 @@
         <name>Org.Vitrivr.CineastApi</name>
     </assembly>
     <members>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalObject">
+             <summary>
+             TemporalObject
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.#ctor(System.Collections.Generic.List{System.String},System.String,System.Double)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalObject" /> class.
+             </summary>
+             <param name="segments">segments.</param>
+             <param name="objectId">objectId.</param>
+             <param name="score">score.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalObject.Segments">
+             <summary>
+             Gets or Sets Segments
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalObject.ObjectId">
+             <summary>
+             Gets or Sets ObjectId
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalObject.Score">
+             <summary>
+             Gets or Sets Score
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.Equals(Org.Vitrivr.CineastApi.Model.TemporalObject)">
+             <summary>
+             Returns true if TemporalObject instances are equal
+             </summary>
+             <param name="input">Instance of TemporalObject to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalObject.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor">
              <summary>
              MediaObjectDescriptor
@@ -49,20 +116,21 @@
              Gets or Sets Mediatype
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.#ctor(System.String,System.String,System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum},System.Boolean,System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.#ctor(System.String,System.String,System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum},System.Boolean,System.String,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor" /> class.
              </summary>
-             <param name="objectId">objectId.</param>
+             <param name="objectid">objectid.</param>
              <param name="name">name.</param>
              <param name="path">path.</param>
              <param name="mediatype">mediatype.</param>
              <param name="exists">exists.</param>
+             <param name="objectId">objectId.</param>
              <param name="contentURL">contentURL.</param>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.ObjectId">
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.Objectid">
              <summary>
-             Gets or Sets ObjectId
+             Gets or Sets Objectid
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.Name">
@@ -78,6 +146,11 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.Exists">
              <summary>
              Gets or Sets Exists
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.ObjectId">
+             <summary>
+             Gets or Sets ObjectId
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.ContentURL">
@@ -178,6 +251,88 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification">
+             <summary>
+             MetadataAccessSpecification
+             </summary>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.TypeEnum">
+             <summary>
+             Defines Type
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.TypeEnum.OBJECT">
+             <summary>
+             Enum OBJECT for value: OBJECT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.TypeEnum.SEGMENT">
+             <summary>
+             Enum SEGMENT for value: SEGMENT
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.Type">
+             <summary>
+             Gets or Sets Type
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.#ctor(System.Nullable{Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.TypeEnum},System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification" /> class.
+             </summary>
+             <param name="type">type.</param>
+             <param name="domain">domain.</param>
+             <param name="key">key.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.Domain">
+             <summary>
+             Gets or Sets Domain
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.Key">
+             <summary>
+             Gets or Sets Key
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.Equals(Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification)">
+             <summary>
+             Returns true if MetadataAccessSpecification instances are equal
+             </summary>
+             <param name="input">Instance of MetadataAccessSpecification to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.ExtractionContainerMessage">
              <summary>
              ExtractionContainerMessage
@@ -268,6 +423,11 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.ExtractionContainerMessage.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.ExtractionContainerMessage.MessageType">
              <summary>
              Gets or Sets MessageType
@@ -318,6 +478,66 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.ExtractionContainerMessage.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.QueryStage">
+             <summary>
+             QueryStage
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryStage" /> class.
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryTerm})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryStage" /> class.
+             </summary>
+             <param name="terms">terms (required).</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryStage.Terms">
+             <summary>
+             Gets or Sets Terms
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.Equals(Org.Vitrivr.CineastApi.Model.QueryStage)">
+             <summary>
+             Returns true if QueryStage instances are equal
+             </summary>
+             <param name="input">Instance of QueryStage to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryStage.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -412,6 +632,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.MediaSegmentQueryResult.MessageTypeEnum.QRSIMILARITY">
              <summary>
              Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MediaSegmentQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentQueryResult.MessageType">
@@ -627,6 +852,11 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.SimilarityQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQueryResult.MessageType">
              <summary>
              Gets or Sets MessageType
@@ -695,6 +925,186 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQuery">
+             <summary>
+             TemporalQuery
+             </summary>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum">
+             <summary>
+             Defines MessageType
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.PING">
+             <summary>
+             Enum PING for value: PING
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QSIM">
+             <summary>
+             Enum QSIM for value: Q_SIM
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QMLT">
+             <summary>
+             Enum QMLT for value: Q_MLT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QNESEG">
+             <summary>
+             Enum QNESEG for value: Q_NESEG
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QSEG">
+             <summary>
+             Enum QSEG for value: Q_SEG
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.MLOOKUP">
+             <summary>
+             Enum MLOOKUP for value: M_LOOKUP
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QTEMPORAL">
+             <summary>
+             Enum QTEMPORAL for value: Q_TEMPORAL
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.SESSIONSTART">
+             <summary>
+             Enum SESSIONSTART for value: SESSION_START
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRSTART">
+             <summary>
+             Enum QRSTART for value: QR_START
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QREND">
+             <summary>
+             Enum QREND for value: QR_END
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRERROR">
+             <summary>
+             Enum QRERROR for value: QR_ERROR
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QROBJECT">
+             <summary>
+             Enum QROBJECT for value: QR_OBJECT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRMETADATAO">
+             <summary>
+             Enum QRMETADATAO for value: QR_METADATA_O
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRMETADATAS">
+             <summary>
+             Enum QRMETADATAS for value: QR_METADATA_S
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRSEGMENT">
+             <summary>
+             Enum QRSEGMENT for value: QR_SEGMENT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRSIMILARITY">
+             <summary>
+             Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageType">
+             <summary>
+             Gets or Sets MessageType
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQuery" /> class.
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery},Org.Vitrivr.CineastApi.Model.QueryConfig,System.Collections.Generic.List{System.Single},System.Single,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification},System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQuery" /> class.
+             </summary>
+             <param name="queries">queries (required).</param>
+             <param name="config">config.</param>
+             <param name="timeDistances">timeDistances.</param>
+             <param name="maxLength">maxLength.</param>
+             <param name="metadataAccessSpec">metadataAccessSpec.</param>
+             <param name="messageType">messageType.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.Queries">
+             <summary>
+             Gets or Sets Queries
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.Config">
+             <summary>
+             Gets or Sets Config
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.TimeDistances">
+             <summary>
+             Gets or Sets TimeDistances
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MaxLength">
+             <summary>
+             Gets or Sets MaxLength
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MetadataAccessSpec">
+             <summary>
+             Gets or Sets MetadataAccessSpec
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.Equals(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Returns true if TemporalQuery instances are equal
+             </summary>
+             <param name="input">Instance of TemporalQuery to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -779,19 +1189,20 @@
              MediaObjectMetadataDescriptor
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor" /> class.
              </summary>
-             <param name="objectId">objectId.</param>
+             <param name="objectid">objectid.</param>
              <param name="domain">domain.</param>
              <param name="key">key.</param>
              <param name="value">value.</param>
              <param name="exists">exists.</param>
+             <param name="objectId">objectId.</param>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.ObjectId">
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.Objectid">
              <summary>
-             Gets or Sets ObjectId
+             Gets or Sets Objectid
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.Domain">
@@ -812,6 +1223,11 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.Exists">
              <summary>
              Gets or Sets Exists
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.ObjectId">
+             <summary>
+             Gets or Sets ObjectId
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.ToString">
@@ -858,19 +1274,20 @@
              MediaSegmentMetadataDescriptor
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor" /> class.
              </summary>
-             <param name="segmentId">segmentId.</param>
+             <param name="segmentid">segmentid.</param>
              <param name="domain">domain.</param>
              <param name="key">key.</param>
              <param name="value">value.</param>
              <param name="exists">exists.</param>
+             <param name="segmentId">segmentId.</param>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.SegmentId">
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.Segmentid">
              <summary>
-             Gets or Sets SegmentId
+             Gets or Sets Segmentid
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.Domain">
@@ -891,6 +1308,11 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.Exists">
              <summary>
              Gets or Sets Exists
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.SegmentId">
+             <summary>
+             Gets or Sets SegmentId
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.ToString">
@@ -926,6 +1348,128 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataDescriptor.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.SelectResult">
+             <summary>
+             SelectResult
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.#ctor(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.SelectResult" /> class.
+             </summary>
+             <param name="columns">columns.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.SelectResult.Columns">
+             <summary>
+             Gets or Sets Columns
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.Equals(Org.Vitrivr.CineastApi.Model.SelectResult)">
+             <summary>
+             Returns true if SelectResult instances are equal
+             </summary>
+             <param name="input">Instance of SelectResult to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.SelectSpecification">
+             <summary>
+             SelectSpecification
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.#ctor(System.String,System.Collections.Generic.List{System.String},System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.SelectSpecification" /> class.
+             </summary>
+             <param name="table">table.</param>
+             <param name="columns">columns.</param>
+             <param name="limit">limit.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.SelectSpecification.Table">
+             <summary>
+             Gets or Sets Table
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.SelectSpecification.Columns">
+             <summary>
+             Gets or Sets Columns
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.SelectSpecification.Limit">
+             <summary>
+             Gets or Sets Limit
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.Equals(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Returns true if SelectSpecification instances are equal
+             </summary>
+             <param name="input">Instance of SelectSpecification to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SelectSpecification.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1144,19 +1688,24 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.MessageType">
              <summary>
              Gets or Sets MessageType
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.AbstractMetadataFilterDescriptor},System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.MessageTypeEnum},System.Collections.Generic.List{System.String})">
+        <member name="M:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.AbstractMetadataFilterDescriptor},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.MessageTypeEnum})">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList" /> class.
              </summary>
              <param name="filters">filters.</param>
              <param name="ids">ids.</param>
-             <param name="messageType">messageType.</param>
              <param name="idList">idList.</param>
+             <param name="messageType">messageType.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.OptionallyFilteredIdList.Filters">
              <summary>
@@ -1377,8 +1926,8 @@
              <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
              <param name="distanceIfEmpty">distanceIfEmpty.</param>
              <param name="correspondenceFunction">correspondenceFunction.</param>
-             <param name="normIfEmpty">normIfEmpty.</param>
              <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
+             <param name="normIfEmpty">normIfEmpty.</param>
              <param name="rawResultsPerModule">rawResultsPerModule.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.QueryId">
@@ -1426,14 +1975,14 @@
              Gets or Sets CorrespondenceFunction
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.NormIfEmpty">
-             <summary>
-             Gets or Sets NormIfEmpty
-             </summary>
-            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceWeightsIfEmpty">
              <summary>
              Gets or Sets DistanceWeightsIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.NormIfEmpty">
+             <summary>
+             Gets or Sets NormIfEmpty
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.RawResultsPerModule">
@@ -1474,6 +2023,163 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.QueryConfig.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryResult">
+             <summary>
+             TemporalQueryResult
+             </summary>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum">
+             <summary>
+             Defines MessageType
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.PING">
+             <summary>
+             Enum PING for value: PING
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QSIM">
+             <summary>
+             Enum QSIM for value: Q_SIM
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QMLT">
+             <summary>
+             Enum QMLT for value: Q_MLT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QNESEG">
+             <summary>
+             Enum QNESEG for value: Q_NESEG
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QSEG">
+             <summary>
+             Enum QSEG for value: Q_SEG
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.MLOOKUP">
+             <summary>
+             Enum MLOOKUP for value: M_LOOKUP
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QTEMPORAL">
+             <summary>
+             Enum QTEMPORAL for value: Q_TEMPORAL
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.SESSIONSTART">
+             <summary>
+             Enum SESSIONSTART for value: SESSION_START
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRSTART">
+             <summary>
+             Enum QRSTART for value: QR_START
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QREND">
+             <summary>
+             Enum QREND for value: QR_END
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRERROR">
+             <summary>
+             Enum QRERROR for value: QR_ERROR
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QROBJECT">
+             <summary>
+             Enum QROBJECT for value: QR_OBJECT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRMETADATAO">
+             <summary>
+             Enum QRMETADATAO for value: QR_METADATA_O
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRMETADATAS">
+             <summary>
+             Enum QRMETADATAS for value: QR_METADATA_S
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRSEGMENT">
+             <summary>
+             Enum QRSEGMENT for value: QR_SEGMENT
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRSIMILARITY">
+             <summary>
+             Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageType">
+             <summary>
+             Gets or Sets MessageType
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.TemporalObject},System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQueryResult.MessageTypeEnum})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQueryResult" /> class.
+             </summary>
+             <param name="content">content.</param>
+             <param name="queryId">queryId.</param>
+             <param name="messageType">messageType.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.Content">
+             <summary>
+             Gets or Sets Content
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.QueryId">
+             <summary>
+             Gets or Sets QueryId
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.Equals(Org.Vitrivr.CineastApi.Model.TemporalQueryResult)">
+             <summary>
+             Returns true if TemporalQueryResult instances are equal
+             </summary>
+             <param name="input">Instance of TemporalQueryResult to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1568,6 +2274,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.StartSessionMessage.MessageTypeEnum.QRSIMILARITY">
              <summary>
              Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.StartSessionMessage.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.StartSessionMessage.MessageType">
@@ -1898,33 +2609,37 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.SimilarityQuery.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQuery.MessageType">
              <summary>
              Gets or Sets MessageType
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryComponent},Org.Vitrivr.CineastApi.Model.QueryConfig,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryComponent},System.Nullable{Org.Vitrivr.CineastApi.Model.SimilarityQuery.MessageTypeEnum})">
+        <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQuery.#ctor">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.SimilarityQuery" /> class.
              </summary>
-             <param name="containers">containers.</param>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryTerm},Org.Vitrivr.CineastApi.Model.QueryConfig,System.Nullable{Org.Vitrivr.CineastApi.Model.SimilarityQuery.MessageTypeEnum})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.SimilarityQuery" /> class.
+             </summary>
+             <param name="terms">terms (required).</param>
              <param name="config">config.</param>
-             <param name="components">components.</param>
              <param name="messageType">messageType.</param>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQuery.Containers">
+        <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQuery.Terms">
              <summary>
-             Gets or Sets Containers
+             Gets or Sets Terms
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQuery.Config">
              <summary>
              Gets or Sets Config
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.SimilarityQuery.Components">
-             <summary>
-             Gets or Sets Components
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQuery.ToString">
@@ -2054,6 +2769,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataQueryResult.MessageTypeEnum.QRSIMILARITY">
              <summary>
              Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaSegmentMetadataQueryResult.MessageType">
@@ -2206,6 +2926,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataQueryResult.MessageTypeEnum.QRSIMILARITY">
              <summary>
              Enum QRSIMILARITY for value: QR_SIMILARITY
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataQueryResult.MessageType">
@@ -2398,61 +3123,67 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
-        <member name="T:Org.Vitrivr.CineastApi.Model.QueryComponent">
+        <member name="T:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult">
              <summary>
-             QueryComponent
+             FeaturesByEntityQueryResult
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryTerm},System.Int32)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.#ctor(System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String)">
              <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryComponent" /> class.
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult" /> class.
              </summary>
-             <param name="terms">terms.</param>
-             <param name="containerId">containerId.</param>
+             <param name="queryId">queryId.</param>
+             <param name="featureMap">featureMap.</param>
+             <param name="entityName">entityName.</param>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryComponent.Terms">
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.QueryId">
              <summary>
-             Gets or Sets Terms
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryComponent.ContainerId">
-             <summary>
-             Gets or Sets ContainerId
+             Gets or Sets QueryId
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.ToString">
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.FeatureMap">
+             <summary>
+             Gets or Sets FeatureMap
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.EntityName">
+             <summary>
+             Gets or Sets EntityName
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.ToString">
              <summary>
              Returns the string presentation of the object
              </summary>
              <returns>String presentation of the object</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.ToJson">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.ToJson">
              <summary>
              Returns the JSON string presentation of the object
              </summary>
              <returns>JSON string presentation of the object</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.Equals(System.Object)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.Equals(System.Object)">
              <summary>
              Returns true if objects are equal
              </summary>
              <param name="input">Object to be compared</param>
              <returns>Boolean</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.Equals(Org.Vitrivr.CineastApi.Model.QueryComponent)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.Equals(Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult)">
              <summary>
-             Returns true if QueryComponent instances are equal
+             Returns true if FeaturesByEntityQueryResult instances are equal
              </summary>
-             <param name="input">Instance of QueryComponent to be compared</param>
+             <param name="input">Instance of FeaturesByEntityQueryResult to be compared</param>
              <returns>Boolean</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.GetHashCode">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.GetHashCode">
              <summary>
              Gets the hash code
              </summary>
              <returns>Hash code</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryComponent.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByEntityQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -2702,6 +3433,11 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.Ping.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.Ping.MessageType">
              <summary>
              Gets or Sets MessageType
@@ -2843,6 +3579,11 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.ColumnSpecification.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.ColumnSpecification.MessageType">
              <summary>
              Gets or Sets MessageType
@@ -2910,11 +3651,37 @@
              Tag
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.Tag.#ctor(System.String,System.String,System.String)">
+        <member name="T:Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum">
+             <summary>
+             Defines Priority
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum.REQUEST">
+             <summary>
+             Enum REQUEST for value: REQUEST
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum.REQUIRE">
+             <summary>
+             Enum REQUIRE for value: REQUIRE
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum.EXCLUDE">
+             <summary>
+             Enum EXCLUDE for value: EXCLUDE
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.Tag.Priority">
+             <summary>
+             Gets or Sets Priority
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.Tag.#ctor(System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum},System.String,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.Tag" /> class.
              </summary>
              <param name="name">name.</param>
+             <param name="priority">priority.</param>
              <param name="id">id.</param>
              <param name="description">description.</param>
             </member>
@@ -3132,6 +3899,73 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult">
+             <summary>
+             FeaturesByCategoryQueryResult
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}}},System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult" /> class.
+             </summary>
+             <param name="queryId">queryId.</param>
+             <param name="featureMap">featureMap.</param>
+             <param name="category">category.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.QueryId">
+             <summary>
+             Gets or Sets QueryId
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.FeatureMap">
+             <summary>
+             Gets or Sets FeatureMap
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.Category">
+             <summary>
+             Gets or Sets Category
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.Equals(Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult)">
+             <summary>
+             Returns true if FeaturesByCategoryQueryResult instances are equal
+             </summary>
+             <param name="input">Instance of FeaturesByCategoryQueryResult to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.FeaturesByCategoryQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.MediaObjectQueryResult">
              <summary>
              MediaObjectQueryResult
@@ -3222,6 +4056,11 @@
              Enum QRSIMILARITY for value: QR_SIMILARITY
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MediaObjectQueryResult.MessageTypeEnum.QRTEMPORAL">
+             <summary>
+             Enum QRTEMPORAL for value: QR_TEMPORAL
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectQueryResult.MessageType">
              <summary>
              Gets or Sets MessageType
@@ -3284,6 +4123,72 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery">
+             <summary>
+             StagedSimilarityQuery
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery" /> class.
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryStage},Org.Vitrivr.CineastApi.Model.QueryConfig)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery" /> class.
+             </summary>
+             <param name="stages">stages (required).</param>
+             <param name="config">config.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.Stages">
+             <summary>
+             Gets or Sets Stages
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.Config">
+             <summary>
+             Gets or Sets Config
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.Equals(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Returns true if StagedSimilarityQuery instances are equal
+             </summary>
+             <param name="input">Instance of StagedSimilarityQuery to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.QueryTerm">
              <summary>
              QueryTerm
@@ -3317,6 +4222,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.LOCATION">
              <summary>
              Enum LOCATION for value: LOCATION
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.PARAMETERISEDLOCATION">
+             <summary>
+             Enum PARAMETERISEDLOCATION for value: PARAMETERISED_LOCATION
              </summary>
             </member>
         <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.TIME">
@@ -4964,6 +5874,54 @@
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByCategory(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given category for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByCategoryWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given category for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>ApiResponse of FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByEntity(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given entity name for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>FeaturesByEntityQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByEntityWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given entity name for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>ApiResponse of FeaturesByEntityQueryResult</returns>
+            </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindMetaById(System.String)">
              <summary>
              Find metadata for the given object id
@@ -5174,7 +6132,7 @@
              <param name="id">The segment id to find metadata of</param>
              <returns>ApiResponse of MediaSegmentMetadataQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagsById(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagInformationById(System.String)">
              <summary>
              Find tag ids for the given id
              </summary>
@@ -5185,7 +6143,7 @@
              <param name="id">The id to find tagids of</param>
              <returns>TagIDsForElementQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagsByIdWithHttpInfo(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagInformationByIdWithHttpInfo(System.String)">
              <summary>
              Find tag ids for the given id
              </summary>
@@ -5219,6 +6177,54 @@
              <param name="id">The id to find text of</param>
              <param name="category">The category for which retrieval shall be performed</param>
              <returns>ApiResponse of FeaturesTextCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByCategoryAsync(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given category for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByCategoryAsyncWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given category for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (FeaturesByCategoryQueryResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByEntityAsync(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given entity name for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of FeaturesByEntityQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindFeaturesByEntityAsyncWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <remarks>
+             Find features for the given entity name for all (or specific) IDs
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (FeaturesByEntityQueryResult)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindMetaByIdAsync(System.String)">
              <summary>
@@ -5430,7 +6436,7 @@
              <param name="id">The segment id to find metadata of</param>
              <returns>Task of ApiResponse (MediaSegmentMetadataQueryResult)</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagsByIdAsync(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagInformationByIdAsync(System.String)">
              <summary>
              Find tag ids for the given id
              </summary>
@@ -5441,7 +6447,7 @@
              <param name="id">The id to find tagids of</param>
              <returns>Task of TagIDsForElementQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagsByIdAsyncWithHttpInfo(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMetadataApi.FindTagInformationByIdAsyncWithHttpInfo(System.String)">
              <summary>
              Find tag ids for the given id
              </summary>
@@ -5537,6 +6543,78 @@
              <param name="key">Header field name.</param>
              <param name="value">Header field value.</param>
              <returns></returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByCategory(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs Find features for the given category for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByCategoryWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs Find features for the given category for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>ApiResponse of FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByCategoryAsync(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs Find features for the given category for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of FeaturesByCategoryQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByCategoryAsyncWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given category for all (or specific) IDs Find features for the given category for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="category"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (FeaturesByCategoryQueryResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByEntity(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>FeaturesByEntityQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByEntityWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>ApiResponse of FeaturesByEntityQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByEntityAsync(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of FeaturesByEntityQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindFeaturesByEntityAsyncWithHttpInfo(System.String,Org.Vitrivr.CineastApi.Model.IdList)">
+             <summary>
+             Find features for the given entity name for all (or specific) IDs Find features for the given entity name for all (or specific) IDs
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="entity"></param>
+             <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (FeaturesByEntityQueryResult)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindMetaById(System.String)">
              <summary>
@@ -5850,7 +6928,7 @@
              <param name="id">The segment id to find metadata of</param>
              <returns>Task of ApiResponse (MediaSegmentMetadataQueryResult)</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagsById(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagInformationById(System.String)">
              <summary>
              Find tag ids for the given id Find tag ids for the given id
              </summary>
@@ -5858,7 +6936,7 @@
              <param name="id">The id to find tagids of</param>
              <returns>TagIDsForElementQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagsByIdWithHttpInfo(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagInformationByIdWithHttpInfo(System.String)">
              <summary>
              Find tag ids for the given id Find tag ids for the given id
              </summary>
@@ -5866,7 +6944,7 @@
              <param name="id">The id to find tagids of</param>
              <returns>ApiResponse of TagIDsForElementQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagsByIdAsync(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagInformationByIdAsync(System.String)">
              <summary>
              Find tag ids for the given id Find tag ids for the given id
              </summary>
@@ -5874,7 +6952,7 @@
              <param name="id">The id to find tagids of</param>
              <returns>Task of TagIDsForElementQueryResult</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagsByIdAsyncWithHttpInfo(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.MetadataApi.FindTagInformationByIdAsyncWithHttpInfo(System.String)">
              <summary>
              Find tag ids for the given id Find tag ids for the given id
              </summary>
@@ -5945,6 +7023,28 @@
              <param name="columnSpecification"> (optional)</param>
              <returns>ApiResponse of DistinctElementsResult</returns>
             </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.SelectFromTable(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns
+             </summary>
+             <remarks>
+             Find all elements of given columns
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.SelectFromTableWithHttpInfo(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns
+             </summary>
+             <remarks>
+             Find all elements of given columns
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>ApiResponse of SelectResult</returns>
+            </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.FindDistinctElementsByColumnAsync(Org.Vitrivr.CineastApi.Model.ColumnSpecification)">
              <summary>
              Find all distinct elements of a given column
@@ -5966,6 +7066,28 @@
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="columnSpecification"> (optional)</param>
              <returns>Task of ApiResponse (DistinctElementsResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.SelectFromTableAsync(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns
+             </summary>
+             <remarks>
+             Find all elements of given columns
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>Task of SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.SelectFromTableAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns
+             </summary>
+             <remarks>
+             Find all elements of given columns
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>Task of ApiResponse (SelectResult)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.MiscApi">
              <summary>
@@ -6060,6 +7182,38 @@
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="columnSpecification"> (optional)</param>
              <returns>Task of ApiResponse (DistinctElementsResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.SelectFromTable(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns Find all elements of given columns
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.SelectFromTableWithHttpInfo(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns Find all elements of given columns
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>ApiResponse of SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.SelectFromTableAsync(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns Find all elements of given columns
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>Task of SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.SelectFromTableAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.SelectSpecification)">
+             <summary>
+             Find all elements of given columns Find all elements of given columns
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="selectSpecification"> (optional)</param>
+             <returns>Task of ApiResponse (SelectResult)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.ISegmentApi">
              <summary>
@@ -6383,6 +7537,50 @@
              <param name="similarityQuery"> (optional)</param>
              <returns>ApiResponse of SimilarityQueryResultBatch</returns>
             </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarStaged(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarStagedWithHttpInfo(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>ApiResponse of SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarTemporal(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>TemporalQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarTemporalWithHttpInfo(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>ApiResponse of TemporalQueryResult</returns>
+            </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarAsync(Org.Vitrivr.CineastApi.Model.SimilarityQuery)">
              <summary>
              Find similar segments based on the given query
@@ -6404,6 +7602,50 @@
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="similarityQuery"> (optional)</param>
              <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarStagedAsync(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>Task of SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarStagedAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarTemporalAsync(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>Task of TemporalQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentsApi.FindSegmentSimilarTemporalAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query
+             </summary>
+             <remarks>
+             Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>Task of ApiResponse (TemporalQueryResult)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.SegmentsApi">
              <summary>
@@ -6499,6 +7741,70 @@
              <param name="similarityQuery"> (optional)</param>
              <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
             </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarStaged(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarStagedWithHttpInfo(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>ApiResponse of SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarStagedAsync(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>Task of SimilarityQueryResultBatch</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarStagedAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery)">
+             <summary>
+             Find similar segments based on the given staged query Performs a similarity search based on the formulated query stages, executing each subsequent stage on the results of the previous stage
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="stagedSimilarityQuery"> (optional)</param>
+             <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarTemporal(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>TemporalQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarTemporalWithHttpInfo(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>ApiResponse of TemporalQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarTemporalAsync(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>Task of TemporalQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentsApi.FindSegmentSimilarTemporalAsyncWithHttpInfo(Org.Vitrivr.CineastApi.Model.TemporalQuery)">
+             <summary>
+             Find similar segments based on the given temporal query Performs a similarity search based on the formulated query stages in the given temporal order, scoring final results by their similarity to the specified temporal context
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="temporalQuery"> (optional)</param>
+             <returns>Task of ApiResponse (TemporalQueryResult)</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Client.ApiClient">
              <summary>
              API client is mainly responsible for making the HTTP call to the API backend.
@@ -6526,7 +7832,7 @@
         <member name="M:Org.Vitrivr.CineastApi.Client.ApiClient.#ctor(Org.Vitrivr.CineastApi.Client.Configuration)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Client.ApiClient" /> class
-             with default base path (http://localhost:4567).
+             with default base path (http://localhost).
              </summary>
              <param name="config">An instance of Configuration.</param>
             </member>

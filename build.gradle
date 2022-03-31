@@ -6,12 +6,15 @@ plugins {
   id "org.openapi.generator" version "4.3.1"
 }
 
-/* Setup OpenApi Specs (OAS): Defaults to default.*/
-def cineastOAS = "http://localhost:4567/openapi-specs"
+/* Setup OpenApi Specs (OAS): Defaults to latest official.*/
+def cineastOAS = "https://raw.githubusercontent.com/vitrivr/cineast/master/docs/openapi.json"
 /* If gradle gets 'oas' argument (with -Poas="path/to/OAS"), take these */
 if(project.hasProperty('oas')){
     cineastOAS = oas
 }
+
+/* Name to add to dlls to avoid Unity loading errors. */
+def dllName = "Cineast"
 
 /* The OpenApi generator task */
 openApiGenerate {
@@ -19,7 +22,6 @@ openApiGenerate {
   inputSpec = cineastOAS
   outputDir = "$rootDir/Generated"
   packageName = "Org.Vitrivr.CineastApi"
-  skipValidateSpec = true
 }
 
 /* Customized clean task to delete OpenAPI generated*/
@@ -59,9 +61,9 @@ task modex(type: Exec){
 task deployLibs(type: Copy){
   from(file("$rootDir/Generated/bin"))
   into(file("$rootDir/Runtime/Libs"))
-  rename("RestSharp.dll", "RestSharp.Cineast.dll")
-  rename("Newtonsoft.Json.dll", "Newtonsoft.Json.Cineast.dll")
-  rename("JsonSubTypes.dll", "JsonSubTypes.Cineast.dll")
+  rename("RestSharp.dll", "RestSharp." + dllName + ".dll")
+  rename("Newtonsoft.Json.dll", "Newtonsoft.Json." + dllName + ".dll")
+  rename("JsonSubTypes.dll", "JsonSubTypes." + dllName + ".dll")
 }
 
 /* Copy the mandatory link.xml */
