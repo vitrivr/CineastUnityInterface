@@ -81,7 +81,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     {
       var toInit = objects.Where(obj => !obj.Initialized).Select(obj => obj.Id).ToList();
       var results = await Task.Run(() => CineastWrapper.ObjectApi.FindObjectsByIdBatched(new IdList(toInit)));
-      results.Content.ForEach(dto => GetObject(dto.ObjectId).Initialize(dto));
+      results.Content.ForEach(dto => GetObject(dto.Objectid).Initialize(dto));
     }
 
     public static async Task BatchFetchObjectDataWithMeta(List<ObjectData> objects)

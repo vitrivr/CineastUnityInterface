@@ -29,7 +29,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         return;
       }
 
-      foreach (var meta in data.Content.Where(meta => meta.ObjectId == ObjectId))
+      foreach (var meta in data.Content.Where(meta => meta.Objectid == ObjectId))
       {
         if (!Storage.ContainsKey(meta.Domain))
         {
