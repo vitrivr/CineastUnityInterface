@@ -1,7 +1,7 @@
 # Cineast Unity Interface
 
-A Unity Package Manager package for the Cineast OpenAPI RESTful API.
-See [Cineast](https://github.com/vitrivr/cineast) for further API informations
+A Unity Package Manager package for the Cineast OpenAPI RESTful API (current compatibility for Cineast 3.11.1 and equivalent).
+See [Cineast](https://github.com/vitrivr/cineast) for further API information.
 
 ## Prerequisites
 

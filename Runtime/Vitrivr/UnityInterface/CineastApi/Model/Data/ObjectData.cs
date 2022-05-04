@@ -47,7 +47,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// </summary>
     public ObjectData(MediaObjectDescriptor descriptor)
     {
-      _id = descriptor.ObjectId;
+      _id = descriptor.Objectid;
       Metadata = new ObjectMetadataStore(_id);
       Initialize(descriptor);
     }
@@ -60,7 +60,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// <summary>
     ///   ID of this object's <see cref="MediaObjectDescriptor" />
     /// </summary>
-    public string Id => Initialized ? _descriptor.ObjectId : _id;
+    public string Id => Initialized ? _descriptor.Objectid : _id;
 
     /// <summary>
     ///   Async (lazy loading) call to fill wrapper with content
@@ -110,9 +110,9 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         return;
       }
 
-      if (descriptor.ObjectId != _id)
+      if (descriptor.Objectid != _id)
       {
-        Debug.LogError($"Attempt to init failed. This id ({_id}) and descriptor's {descriptor.ObjectId} do not match.");
+        Debug.LogError($"Attempt to init failed. This id ({_id}) and descriptor's {descriptor.Objectid} do not match.");
         return;
       }
 

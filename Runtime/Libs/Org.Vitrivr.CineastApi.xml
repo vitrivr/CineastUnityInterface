@@ -116,7 +116,7 @@
              Gets or Sets Mediatype
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.#ctor(System.String,System.String,System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum},System.Boolean,System.String,System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.#ctor(System.String,System.String,System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum},System.Boolean,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor" /> class.
              </summary>
@@ -125,7 +125,6 @@
              <param name="path">path.</param>
              <param name="mediatype">mediatype.</param>
              <param name="exists">exists.</param>
-             <param name="objectId">objectId.</param>
              <param name="contentURL">contentURL.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.Objectid">
@@ -146,11 +145,6 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.Exists">
              <summary>
              Gets or Sets Exists
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.ObjectId">
-             <summary>
-             Gets or Sets ObjectId
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.ContentURL">
@@ -191,6 +185,61 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.IntegerMessage">
+             <summary>
+             IntegerMessage
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.#ctor(System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.IntegerMessage" /> class.
+             </summary>
+             <param name="value">value.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.IntegerMessage.Value">
+             <summary>
+             Gets or Sets Value
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.Equals(Org.Vitrivr.CineastApi.Model.IntegerMessage)">
+             <summary>
+             Returns true if IntegerMessage instances are equal
+             </summary>
+             <param name="input">Instance of IntegerMessage to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IntegerMessage.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1036,16 +1085,17 @@
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQuery" /> class.
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery},Org.Vitrivr.CineastApi.Model.QueryConfig,System.Collections.Generic.List{System.Single},System.Single,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification},System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum})">
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.StagedSimilarityQuery},Org.Vitrivr.CineastApi.Model.TemporalQueryConfig,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification},System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQuery.MessageTypeEnum},System.Single,System.Collections.Generic.List{System.Single},Org.Vitrivr.CineastApi.Model.TemporalQueryConfig)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQuery" /> class.
              </summary>
              <param name="queries">queries (required).</param>
              <param name="config">config.</param>
-             <param name="timeDistances">timeDistances.</param>
-             <param name="maxLength">maxLength.</param>
              <param name="metadataAccessSpec">metadataAccessSpec.</param>
              <param name="messageType">messageType.</param>
+             <param name="maxLength">maxLength.</param>
+             <param name="timeDistances">timeDistances.</param>
+             <param name="temporalQueryConfig">temporalQueryConfig.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.Queries">
              <summary>
@@ -1057,9 +1107,9 @@
              Gets or Sets Config
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.TimeDistances">
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MetadataAccessSpec">
              <summary>
-             Gets or Sets TimeDistances
+             Gets or Sets MetadataAccessSpec
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MaxLength">
@@ -1067,9 +1117,14 @@
              Gets or Sets MaxLength
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.MetadataAccessSpec">
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.TimeDistances">
              <summary>
-             Gets or Sets MetadataAccessSpec
+             Gets or Sets TimeDistances
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQuery.TemporalQueryConfig">
+             <summary>
+             Gets or Sets TemporalQueryConfig
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQuery.ToString">
@@ -1189,7 +1244,7 @@
              MediaObjectMetadataDescriptor
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.#ctor(System.String,System.String,System.String,System.String,System.Boolean)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor" /> class.
              </summary>
@@ -1198,7 +1253,6 @@
              <param name="key">key.</param>
              <param name="value">value.</param>
              <param name="exists">exists.</param>
-             <param name="objectId">objectId.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.Objectid">
              <summary>
@@ -1223,11 +1277,6 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.Exists">
              <summary>
              Gets or Sets Exists
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.ObjectId">
-             <summary>
-             Gets or Sets ObjectId
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MediaObjectMetadataDescriptor.ToString">
@@ -1911,7 +1960,7 @@
              Gets or Sets Distance
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryConfig.#ctor(System.Guid,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryConfig.HintsEnum},System.Nullable{Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,System.Collections.Generic.List{System.String},Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Int32)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryConfig.HintsEnum},System.Nullable{Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,System.Collections.Generic.List{System.String},Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,System.Int32)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryConfig" /> class.
              </summary>
@@ -1925,9 +1974,9 @@
              <param name="relevantSegmentIds">relevantSegmentIds.</param>
              <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
              <param name="distanceIfEmpty">distanceIfEmpty.</param>
-             <param name="correspondenceFunction">correspondenceFunction.</param>
              <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
              <param name="normIfEmpty">normIfEmpty.</param>
+             <param name="correspondenceFunction">correspondenceFunction.</param>
              <param name="rawResultsPerModule">rawResultsPerModule.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.QueryId">
@@ -1970,11 +2019,6 @@
              Gets or Sets DistanceIfEmpty
              </summary>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunction">
-             <summary>
-             Gets or Sets CorrespondenceFunction
-             </summary>
-            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceWeightsIfEmpty">
              <summary>
              Gets or Sets DistanceWeightsIfEmpty
@@ -1983,6 +2027,11 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.NormIfEmpty">
              <summary>
              Gets or Sets NormIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunction">
+             <summary>
+             Gets or Sets CorrespondenceFunction
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.RawResultsPerModule">
@@ -3676,14 +3725,19 @@
              Gets or Sets Priority
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.Tag.#ctor(System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum},System.String,System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.Tag.#ctor(System.String,System.String,System.Nullable{Org.Vitrivr.CineastApi.Model.Tag.PriorityEnum},System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.Tag" /> class.
              </summary>
+             <param name="description">description.</param>
              <param name="name">name.</param>
              <param name="priority">priority.</param>
              <param name="id">id.</param>
-             <param name="description">description.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.Tag.Description">
+             <summary>
+             Gets or Sets Description
+             </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.Tag.Name">
              <summary>
@@ -3693,11 +3747,6 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.Tag.Id">
              <summary>
              Gets or Sets Id
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.Tag.Description">
-             <summary>
-             Gets or Sets Description
              </summary>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.Tag.ToString">
@@ -3800,6 +3849,292 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.TagIDsForElementQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig">
+             <summary>
+             TemporalQueryConfig
+             </summary>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum">
+             <summary>
+             Defines Hints
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Exact">
+             <summary>
+             Enum Exact for value: exact
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Inexact">
+             <summary>
+             Enum Inexact for value: inexact
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Lsh">
+             <summary>
+             Enum Lsh for value: lsh
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Ecp">
+             <summary>
+             Enum Ecp for value: ecp
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Mi">
+             <summary>
+             Enum Mi for value: mi
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Pq">
+             <summary>
+             Enum Pq for value: pq
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Sh">
+             <summary>
+             Enum Sh for value: sh
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Va">
+             <summary>
+             Enum Va for value: va
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Vaf">
+             <summary>
+             Enum Vaf for value: vaf
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Vav">
+             <summary>
+             Enum Vav for value: vav
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Sequential">
+             <summary>
+             Enum Sequential for value: sequential
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum.Empirical">
+             <summary>
+             Enum Empirical for value: empirical
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.Hints">
+             <summary>
+             Gets or Sets Hints
+             </summary>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum">
+             <summary>
+             Defines Distance
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Chisquared">
+             <summary>
+             Enum Chisquared for value: chisquared
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Correlation">
+             <summary>
+             Enum Correlation for value: correlation
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Cosine">
+             <summary>
+             Enum Cosine for value: cosine
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Hamming">
+             <summary>
+             Enum Hamming for value: hamming
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Jaccard">
+             <summary>
+             Enum Jaccard for value: jaccard
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Kullbackleibler">
+             <summary>
+             Enum Kullbackleibler for value: kullbackleibler
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Chebyshev">
+             <summary>
+             Enum Chebyshev for value: chebyshev
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Euclidean">
+             <summary>
+             Enum Euclidean for value: euclidean
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Squaredeuclidean">
+             <summary>
+             Enum Squaredeuclidean for value: squaredeuclidean
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Manhattan">
+             <summary>
+             Enum Manhattan for value: manhattan
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Minkowski">
+             <summary>
+             Enum Minkowski for value: minkowski
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Spannorm">
+             <summary>
+             Enum Spannorm for value: spannorm
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum.Haversine">
+             <summary>
+             Enum Haversine for value: haversine
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.Distance">
+             <summary>
+             Gets or Sets Distance
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum},System.Collections.Generic.List{System.Single},System.Single,System.Boolean,System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,System.Collections.Generic.List{System.String},Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig" /> class.
+             </summary>
+             <param name="queryId">queryId.</param>
+             <param name="hints">hints.</param>
+             <param name="timeDistances">timeDistances.</param>
+             <param name="maxLength">maxLength.</param>
+             <param name="computeTemporalObjects">computeTemporalObjects.</param>
+             <param name="distance">distance.</param>
+             <param name="distanceWeights">distanceWeights.</param>
+             <param name="norm">norm.</param>
+             <param name="resultsPerModule">resultsPerModule.</param>
+             <param name="maxResults">maxResults.</param>
+             <param name="relevantSegmentIds">relevantSegmentIds.</param>
+             <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
+             <param name="distanceIfEmpty">distanceIfEmpty.</param>
+             <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
+             <param name="normIfEmpty">normIfEmpty.</param>
+             <param name="correspondenceFunction">correspondenceFunction.</param>
+             <param name="rawResultsPerModule">rawResultsPerModule.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.QueryId">
+             <summary>
+             Gets or Sets QueryId
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.TimeDistances">
+             <summary>
+             Gets or Sets TimeDistances
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.MaxLength">
+             <summary>
+             Gets or Sets MaxLength
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.ComputeTemporalObjects">
+             <summary>
+             Gets or Sets ComputeTemporalObjects
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceWeights">
+             <summary>
+             Gets or Sets DistanceWeights
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.Norm">
+             <summary>
+             Gets or Sets Norm
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.ResultsPerModule">
+             <summary>
+             Gets or Sets ResultsPerModule
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.MaxResults">
+             <summary>
+             Gets or Sets MaxResults
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.RelevantSegmentIds">
+             <summary>
+             Gets or Sets RelevantSegmentIds
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.CorrespondenceFunctionIfEmpty">
+             <summary>
+             Gets or Sets CorrespondenceFunctionIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceIfEmpty">
+             <summary>
+             Gets or Sets DistanceIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceWeightsIfEmpty">
+             <summary>
+             Gets or Sets DistanceWeightsIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.NormIfEmpty">
+             <summary>
+             Gets or Sets NormIfEmpty
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.CorrespondenceFunction">
+             <summary>
+             Gets or Sets CorrespondenceFunction
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.RawResultsPerModule">
+             <summary>
+             Gets or Sets RawResultsPerModule
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.Equals(Org.Vitrivr.CineastApi.Model.TemporalQueryConfig)">
+             <summary>
+             Returns true if TemporalQueryConfig instances are equal
+             </summary>
+             <param name="input">Instance of TemporalQueryConfig to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -4209,11 +4544,6 @@
              Enum AUDIO for value: AUDIO
              </summary>
             </member>
-        <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.MOTION">
-             <summary>
-             Enum MOTION for value: MOTION
-             </summary>
-            </member>
         <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.MODEL3D">
              <summary>
              Enum MODEL3D for value: MODEL3D
@@ -4247,6 +4577,11 @@
         <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.SEMANTIC">
              <summary>
              Enum SEMANTIC for value: SEMANTIC
+             </summary>
+            </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.SKELETON">
+             <summary>
+             Enum SKELETON for value: SKELETON
              </summary>
             </member>
         <member name="F:Org.Vitrivr.CineastApi.Model.QueryTerm.TypeEnum.ID">
@@ -4587,7 +4922,7 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsByAttributeWithHttpInfo(System.String,System.String)">
@@ -4599,7 +4934,7 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>ApiResponse of MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsByIdBatched(Org.Vitrivr.CineastApi.Model.IdList)">
@@ -4622,6 +4957,30 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="idList"> (optional)</param>
+             <returns>ApiResponse of MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsPagination(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
+             <returns>MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsPaginationWithHttpInfo(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
              <returns>ApiResponse of MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsAllAsync">
@@ -4653,7 +5012,7 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>Task of MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsByAttributeAsyncWithHttpInfo(System.String,System.String)">
@@ -4665,7 +5024,7 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsByIdBatchedAsync(Org.Vitrivr.CineastApi.Model.IdList)">
@@ -4688,6 +5047,30 @@
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsPaginationAsync(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
+             <returns>Task of MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IObjectApi.FindObjectsPaginationAsyncWithHttpInfo(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
              <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.ObjectApi">
@@ -4786,7 +5169,7 @@
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsByAttributeWithHttpInfo(System.String,System.String)">
@@ -4795,7 +5178,7 @@
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>ApiResponse of MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsByAttributeAsync(System.String,System.String)">
@@ -4804,7 +5187,7 @@
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>Task of MediaObjectQueryResult</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsByAttributeAsyncWithHttpInfo(System.String,System.String)">
@@ -4813,7 +5196,7 @@
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="attribute">The attribute type of the value. One of: id, name, path</param>
-             <param name="value"></param>
+             <param name="value">The actual value that you want to filter for</param>
              <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsByIdBatched(Org.Vitrivr.CineastApi.Model.IdList)">
@@ -4846,6 +5229,42 @@
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="idList"> (optional)</param>
+             <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsPagination(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
+             <returns>MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsPaginationWithHttpInfo(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
+             <returns>ApiResponse of MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsPaginationAsync(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
+             <returns>Task of MediaObjectQueryResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.ObjectApi.FindObjectsPaginationAsyncWithHttpInfo(System.Int32,System.Int32)">
+             <summary>
+             Get a fixed amount of objects from the sorted list Equivalent to calling SELECT * FROM multimediaobject ORDER BY objectid ASC LIMIT limit SKIP skip. Mostly used for pagination when wanting to retrieve all objects
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="skip">How many objects should be skipped</param>
+             <param name="limit">How many object at most should be fetched</param>
              <returns>Task of ApiResponse (MediaObjectQueryResult)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.ITagApi">
@@ -7001,6 +7420,28 @@
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.CountRows(System.String)">
+             <summary>
+             Count objects
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>IntegerMessage</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.CountRowsWithHttpInfo(System.String)">
+             <summary>
+             Count objects
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>ApiResponse of IntegerMessage</returns>
+            </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.FindDistinctElementsByColumn(Org.Vitrivr.CineastApi.Model.ColumnSpecification)">
              <summary>
              Find all distinct elements of a given column
@@ -7044,6 +7485,28 @@
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="selectSpecification"> (optional)</param>
              <returns>ApiResponse of SelectResult</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.CountRowsAsync(System.String)">
+             <summary>
+             Count objects
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>Task of IntegerMessage</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.CountRowsAsyncWithHttpInfo(System.String)">
+             <summary>
+             Count objects
+             </summary>
+             <remarks>
+             Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </remarks>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>Task of ApiResponse (IntegerMessage)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.IMiscApi.FindDistinctElementsByColumnAsync(Org.Vitrivr.CineastApi.Model.ColumnSpecification)">
              <summary>
@@ -7150,6 +7613,38 @@
              <param name="key">Header field name.</param>
              <param name="value">Header field value.</param>
              <returns></returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.CountRows(System.String)">
+             <summary>
+             Count objects Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>IntegerMessage</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.CountRowsWithHttpInfo(System.String)">
+             <summary>
+             Count objects Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>ApiResponse of IntegerMessage</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.CountRowsAsync(System.String)">
+             <summary>
+             Count objects Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>Task of IntegerMessage</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.CountRowsAsyncWithHttpInfo(System.String)">
+             <summary>
+             Count objects Equivalent to calling SELECT count(*) FROM table. Used to determined #pages for pagination in a frontend or statistical purposes
+             </summary>
+             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="table"></param>
+             <returns>Task of ApiResponse (IntegerMessage)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.MiscApi.FindDistinctElementsByColumn(Org.Vitrivr.CineastApi.Model.ColumnSpecification)">
              <summary>
