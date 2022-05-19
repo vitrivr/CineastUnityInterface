@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Org.Vitrivr.CineastApi.Model;
 using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Vitrivr.UnityInterface.CineastApi.Utils;
@@ -17,20 +18,28 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// <summary>
     /// The executed query leading to the stored results.
     /// </summary>
-    public readonly SimilarityQuery query;
+    [CanBeNull] public readonly SimilarityQuery Query;
+
+    [CanBeNull] public readonly StagedSimilarityQuery StagedQuery;
 
     /// <summary>
     /// Dictionary of result lists by result category.
     /// </summary>
-    public readonly Dictionary<string, List<ScoredSegment>> results;
+    public readonly Dictionary<string, List<ScoredSegment>> Results;
 
 
     /// <param name="query">Query to store data for</param>
     /// <param name="results">Dictionary of results by result category</param>
     public QueryResponse(SimilarityQuery query, Dictionary<string, List<ScoredSegment>> results)
     {
-      this.query = query;
-      this.results = results;
+      Query = query;
+      Results = results;
+    }
+
+    public QueryResponse(StagedSimilarityQuery query, Dictionary<string, List<ScoredSegment>> results)
+    {
+      StagedQuery = query;
+      Results = results;
     }
 
     /// <summary>
@@ -41,7 +50,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     {
       // TODO: Prevent more than the number of segments to be prefetched in total
       var segmentSet = new HashSet<SegmentData>();
-      foreach (var segmentList in results.Values)
+      foreach (var segmentList in Results.Values)
       {
         segmentList.Take(number).Select(item => item.segment).ToList().ForEach(segment => segmentSet.Add(segment));
       }
@@ -51,7 +60,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
     public List<ScoredSegment> GetMeanFusionResults()
     {
-      return ResultUtils.MeanScoreFusion(results);
+      return ResultUtils.MeanScoreFusion(Results);
     }
   }
 }
