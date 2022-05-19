@@ -35,7 +35,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <returns><see cref="QueryResponse"/> for the query including the result list</returns>
     public static async Task<QueryResponse> ExecuteQuery(SimilarityQuery query, int maxResults, int prefetch)
     {
-      var queryResults = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
+      var queryResults = await SegmentsApi.FindSegmentSimilarAsync(query);
 
       var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
 
