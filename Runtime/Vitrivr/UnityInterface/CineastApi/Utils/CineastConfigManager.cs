@@ -19,18 +19,18 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <summary>
     /// The single instance of the cineast config manager
     /// </summary>
-    public static CineastConfigManager Instance => _instance ?? (_instance = new CineastConfigManager());
+    public static CineastConfigManager Instance => _instance ??= new CineastConfigManager();
 
 
     private CineastConfigManager()
     {
-      apiConfig = new Configuration {BasePath = Config.cineastHost};
+      apiConfig = new Configuration { BasePath = Config.cineastHost };
     }
-    
+
     /// <summary>
     /// Cached cineast config. Access via public Config
     /// </summary>
-    private CineastConfig config;
+    private CineastConfig _config;
 
     /// <summary>
     /// The cineast config. First attempts to read from file, otherwise uses default.
@@ -39,26 +39,27 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     {
       get
       {
-        if (config == null)
+        if (_config == null)
         {
-          if (File.Exists(GetFilePath()))
+          var filePath = GetFilePath();
+          if (File.Exists(filePath))
           {
-            var streamReader = File.OpenText(GetFilePath());
+            var streamReader = File.OpenText(filePath);
             var json = streamReader.ReadToEnd();
             streamReader.Close();
-            config = CineastConfig.GetDefault();
-            JsonUtility.FromJsonOverwrite(json, config);
+            _config = CineastConfig.GetDefault();
+            JsonUtility.FromJsonOverwrite(json, _config);
           }
           else
           {
-            config = CineastConfig.GetDefault();
+            _config = CineastConfig.GetDefault();
           }
         }
 
-        config.SanitizeCategories();
-        return config;
+        _config.SanitizeCategories();
+        return _config;
       }
-      set => config = value;
+      set => _config = value;
     }
 
     /// <summary>
@@ -76,17 +77,24 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// </summary>
     public void StoreConfig()
     {
-      FileUtils.WriteJson(config, GetFilePath());
+      FileUtils.WriteJson(_config, $"{FILE_NAME}.{FILE_EXTENSION}");
     }
 
     public static string GetFilePath()
     {
-#if UNITY_EDITOR
-      var folder = Application.dataPath;
-#else
-      var folder = Application.persistentDataPath;
-#endif
-      return Path.Combine(folder, $"{FILE_NAME}.{FILE_EXTENSION}");
+      var fileName = $"{FILE_NAME}.{FILE_EXTENSION}";
+
+      // Check local directory first
+      if (File.Exists(fileName))
+      {
+        return fileName;
+      }
+
+      // Check persistent data path second
+      var persistentLocation = Path.Combine(Application.persistentDataPath, fileName);
+
+      // Check in assets directory last for possibly provided default
+      return File.Exists(persistentLocation) ? persistentLocation : Path.Combine(Application.dataPath, fileName);
     }
   }
 }
