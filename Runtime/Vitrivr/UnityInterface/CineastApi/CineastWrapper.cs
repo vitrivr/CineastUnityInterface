@@ -37,9 +37,45 @@ namespace Vitrivr.UnityInterface.CineastApi
     {
       var queryResults = await SegmentsApi.FindSegmentSimilarAsync(query);
 
+      // TODO: max results should be specified in the respective query config
       var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
 
       var queryData = new QueryResponse(query, querySegments);
+      if (prefetch > 0)
+      {
+        await queryData.Prefetch(prefetch);
+      }
+
+      return queryData;
+    }
+
+    /// <summary>
+    /// Executes a staged query.
+    /// </summary>
+    public static async Task<QueryResponse> ExecuteQuery(StagedSimilarityQuery query, int maxResults, int prefetch)
+    {
+      var queryResults = await SegmentsApi.FindSegmentSimilarStagedAsync(query);
+
+      // TODO: max results should be specified in the respective query config
+      var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
+
+      var queryData = new QueryResponse(query, querySegments);
+      if (prefetch > 0)
+      {
+        await queryData.Prefetch(prefetch);
+      }
+
+      return queryData;
+    }
+
+    /// <summary>
+    /// Executes a temporal query.
+    /// </summary>
+    public static async Task<TemporalQueryResponse> ExecuteQuery(TemporalQuery query, int prefetch)
+    {
+      var queryResults = await SegmentsApi.FindSegmentSimilarTemporalAsync(query);
+      
+      var queryData = new TemporalQueryResponse(query, queryResults);
       if (prefetch > 0)
       {
         await queryData.Prefetch(prefetch);
@@ -81,7 +117,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <returns>List of distinct values occuring in the specified column of the specified table</returns>
     public static async Task<List<string>> GetDistinctTableValues(string table, string column)
     {
-      var columnSpec = new ColumnSpecification(column, table); 
+      var columnSpec = new ColumnSpecification(column, table);
       var results = await Task.Run(() => MiscApi.FindDistinctElementsByColumn(columnSpec));
       return results.DistinctElements;
     }

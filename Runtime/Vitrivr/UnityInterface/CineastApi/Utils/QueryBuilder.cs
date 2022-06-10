@@ -5,15 +5,34 @@ using Vitrivr.UnityInterface.CineastApi.Model.Config;
 
 namespace Vitrivr.UnityInterface.CineastApi.Utils
 {
-  public class QueryBuilder
+  public static class QueryBuilder
   {
     /// <summary>
     /// Generic similarity query for given terms
     /// </summary>
-    /// <param name="terms"></param>
+    /// <param name="terms">Terms to use for query.</param>
     public static SimilarityQuery BuildSimilarityQuery(params QueryTerm[] terms)
     {
       return new SimilarityQuery(terms.ToList());
+    }
+
+    /// <summary>
+    /// Staged similarity query for the given stages.
+    /// </summary>
+    /// <param name="stages">Enumerable of stages, each containing the respective <see cref="QueryTerm"/>s.</param>
+    public static StagedSimilarityQuery BuildStagedQuery(IEnumerable<List<QueryTerm>> stages)
+    {
+      return new StagedSimilarityQuery(stages.Select(terms => new QueryStage(terms)).ToList());
+    }
+
+    /// <summary>
+    /// Temporal similarity query for the given staged temporal contexts.
+    /// </summary>
+    /// <param name="temporalContexts">Enumerable of temporally ordered enumerables containing stages, containing <see cref="QueryTerm"/>s.</param>
+    /// <returns></returns>
+    public static TemporalQuery BuildTemporalQuery(IEnumerable<IEnumerable<List<QueryTerm>>> temporalContexts)
+    {
+      return new TemporalQuery(temporalContexts.Select(BuildStagedQuery).ToList());
     }
 
     /// <summary>
