@@ -28,7 +28,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     public CineastClient(CineastConfig config)
     {
       CineastConfig = config;
-      var apiConfig = config.getApiConfig();
+      var apiConfig = config.GetApiConfig();
       ObjectApi = new ObjectApi(apiConfig);
       SegmentsApi = new SegmentsApi(apiConfig);
       SegmentApi = new SegmentApi(apiConfig);

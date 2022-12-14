@@ -62,10 +62,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     {
       return BuildSimilarityQuery(QueryTermBuilder.BuildImageTermForCategories(base64, new List<string>
       {
-        CineastConfigManager.Instance.Config.categoryMappings.mapping[
-          CategoryMappings.GLOBAL_COLOR_CATEGORY],
-        CineastConfigManager.Instance.Config.categoryMappings.mapping[
-          CategoryMappings.EDGE_CATEGORY],
+        CategoryMappings.GlobalColorCategory,
+        CategoryMappings.EdgeCategory
       }));
     }
 

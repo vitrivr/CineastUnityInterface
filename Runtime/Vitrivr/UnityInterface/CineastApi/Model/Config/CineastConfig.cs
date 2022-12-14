@@ -41,12 +41,6 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
     /// </summary>
     public string mediaPath;
 
-    /// <summary>
-    /// The category names mapped to known names.
-    /// Usually this can be left to default.
-    /// </summary>
-    public CategoryMappings categoryMappings;
-
     public CineastConfig()
     {
       // empty constructor
@@ -64,7 +58,6 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
       this.thumbnailPath = thumbnailPath;
       this.thumbnailExtension = thumbnailExtension;
       this.mediaPath = mediaPath;
-      categoryMappings = CategoryMappings.GetDefault();
     }
 
     public bool IsEmpty()
@@ -79,7 +72,12 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
     /// <returns></returns>
     private string SanitizeHost(string host)
     {
-      if (!string.IsNullOrEmpty(host) && !host.StartsWith("http://"))
+      if (string.IsNullOrEmpty(host))
+      {
+        return host;
+      }
+
+      if (!(host.StartsWith("http://") || host.StartsWith("https://")))
       {
         host = "http://" + host;
       }
@@ -98,15 +96,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
         "collection/:p");
     }
 
-    public void SanitizeCategories()
-    {
-      if (categoryMappings.mapping.Count == 0)
-      {
-        categoryMappings = CategoryMappings.GetDefault();
-      }
-    }
-
-    public Configuration getApiConfig()
+    public Configuration GetApiConfig()
     {
       return new Configuration { BasePath = cineastHost };
     }
