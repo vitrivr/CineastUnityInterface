@@ -16,14 +16,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       Results = results;
     }
 
-    public async Task Prefetch(int number)
+    public async Task Prefetch(int number, MultimediaRegistry multimediaRegistry)
     {
       var segmentSet = Results.Content.Take(number)
         .SelectMany(result => result.Segments
-          .Select(SegmentRegistry.GetSegment)
+          .Select(multimediaRegistry.GetSegment)
         ).ToHashSet();
 
-      await SegmentRegistry.BatchFetchSegmentData(segmentSet.ToList());
+      await multimediaRegistry.BatchFetchSegmentData(segmentSet.ToList());
     }
   }
 }

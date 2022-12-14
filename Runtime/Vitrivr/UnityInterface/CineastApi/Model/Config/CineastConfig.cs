@@ -1,16 +1,17 @@
 ﻿using System;
+using Org.Vitrivr.CineastApi.Client;
 
 namespace Vitrivr.UnityInterface.CineastApi.Model.Config
 {
   [Serializable]
   public class CineastConfig
   {
-
     /// <summary>
     /// The host address of cineast.
     /// Defaults to http://localhost:4567/
     /// </summary>
     public string cineastHost;
+
     /// <summary>
     /// The host address for media items.
     /// Defaults to http://localhost/
@@ -21,17 +22,19 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
     /// If true, cineast is expected to serve the media as "thumbnails/:s" and "objects/:o", hence we'll try to load them from there
     /// </summary>
     public bool cineastServesMedia;
-    
+
     /// <summary>
     /// The path to thumbnail files.
     /// Defaults to "thumbnails/:o/:s"
     /// </summary>
     public string thumbnailPath;
+
     /// <summary>
     /// The thumbnail file extension.
     /// Defaults to ".jpg"
     /// </summary>
     public string thumbnailExtension;
+
     /// <summary>
     /// The path to original media files.
     /// Defaults to "collection/:p"
@@ -43,7 +46,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
     /// Usually this can be left to default.
     /// </summary>
     public CategoryMappings categoryMappings;
-    
+
     public CineastConfig()
     {
       // empty constructor
@@ -85,12 +88,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
       {
         host += "/";
       }
+
       return host;
     }
 
     public static CineastConfig GetDefault()
     {
-      return new CineastConfig("http://localhost:4567/", "http://localhost/", "thumbnails/:o/:s", ".jpg", "collection/:p");
+      return new CineastConfig("http://localhost:4567/", "http://localhost/", "thumbnails/:o/:s", ".jpg",
+        "collection/:p");
     }
 
     public void SanitizeCategories()
@@ -99,6 +104,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
       {
         categoryMappings = CategoryMappings.GetDefault();
       }
+    }
+
+    public Configuration getApiConfig()
+    {
+      return new Configuration { BasePath = cineastHost };
     }
   }
 }

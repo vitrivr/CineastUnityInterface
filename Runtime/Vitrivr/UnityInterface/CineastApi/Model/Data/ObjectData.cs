@@ -14,7 +14,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
   [Serializable]
   public class ObjectData
   {
-    private static readonly SemaphoreSlim InitLock = new SemaphoreSlim(1, 1);
+    private static readonly SemaphoreSlim InitLock = new(1, 1);
 
     /// <summary>
     ///   ObjectId uniquely identifying the corresponding media object.
@@ -31,15 +31,18 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// </summary>
     private List<SegmentData> _segments;
 
+    private MultimediaRegistry _multimediaRegistry;
+
     public ObjectMetadataStore Metadata { get; private set; }
 
     /// <summary>
     ///   Constructs a new instance with the given id, for lazy loading.
     /// </summary>
-    public ObjectData(string id)
+    public ObjectData(string id, MultimediaRegistry multimediaRegistry)
     {
       _id = id;
       Metadata = new ObjectMetadataStore(_id);
+      _multimediaRegistry = multimediaRegistry;
     }
 
     /// <summary>
@@ -76,20 +79,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
           return;
         }
 
-        var result = await CineastWrapper.ObjectApi.FindObjectsByAttributeAsync("id", _id);
-
-        if (result.Content.Count != 1)
-        {
-          Debug.LogError($"Did not retrieve MediaObjectDescriptor for id {_id}");
-        }
-        else
-        {
-          Initialize(result.Content[0]);
-        }
+        await _multimediaRegistry.InitializeObject(this);
 
         if (withMetadata)
         {
-          await Metadata.InitializeAsync();
+          await _multimediaRegistry.InitializeObjectMetadata(this);
         }
       }
       finally
@@ -198,7 +192,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         return _segments;
       }
 
-      _segments = await SegmentRegistry.GetSegmentsOf(Id);
+      _segments = await _multimediaRegistry.GetSegmentsOf(Id);
 
       return _segments;
     }

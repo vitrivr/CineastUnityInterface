@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 
@@ -41,21 +40,6 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       }
 
       Initialized = true;
-    }
-
-    public override async Task InitializeAsync()
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning($"Attempted to initialize already initialized metadata for media object {ObjectId}!");
-        return;
-      }
-
-      var metadataResult = await CineastWrapper.MetadataApi.FindMetaByIdAsync(ObjectId);
-      if (!Initialized)
-      {
-        Initialize(metadataResult);
-      }
     }
   }
 }

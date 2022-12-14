@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Api;
 using Org.Vitrivr.CineastApi.Model;
-using UnityEngine;
 using Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Vitrivr.UnityInterface.CineastApi.Model.Data;
+using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 using Vitrivr.UnityInterface.CineastApi.Utils;
 
 namespace Vitrivr.UnityInterface.CineastApi
@@ -12,38 +12,51 @@ namespace Vitrivr.UnityInterface.CineastApi
   /// <summary>
   /// Wrapper for cineast
   /// </summary>
-  public class CineastWrapper : MonoBehaviour
+  public class CineastClient
   {
-    public static readonly ObjectApi ObjectApi = new ObjectApi(CineastConfigManager.Instance.ApiConfiguration);
-    public static readonly SegmentsApi SegmentsApi = new SegmentsApi(CineastConfigManager.Instance.ApiConfiguration);
-    public static readonly SegmentApi SegmentApi = new SegmentApi(CineastConfigManager.Instance.ApiConfiguration);
-    public static readonly TagApi TagApi = new TagApi(CineastConfigManager.Instance.ApiConfiguration);
-    public static readonly MetadataApi MetadataApi = new MetadataApi(CineastConfigManager.Instance.ApiConfiguration);
-    public static readonly MiscApi MiscApi = new MiscApi(CineastConfigManager.Instance.ApiConfiguration);
+    public readonly ObjectApi ObjectApi;
+    public readonly SegmentsApi SegmentsApi;
+    public readonly SegmentApi SegmentApi;
+    public readonly TagApi TagApi;
+    public readonly MetadataApi MetadataApi;
+    public readonly MiscApi MiscApi;
 
-    public static readonly CineastConfig CineastConfig = CineastConfigManager.Instance.Config;
+    public readonly CineastConfig CineastConfig;
 
-    public bool QueryRunning { get; private set; }
+    public readonly MultimediaRegistry MultimediaRegistry;
+
+    public CineastClient(CineastConfig config)
+    {
+      CineastConfig = config;
+      var apiConfig = config.getApiConfig();
+      ObjectApi = new ObjectApi(apiConfig);
+      SegmentsApi = new SegmentsApi(apiConfig);
+      SegmentApi = new SegmentApi(apiConfig);
+      TagApi = new TagApi(apiConfig);
+      MetadataApi = new MetadataApi(apiConfig);
+      MiscApi = new MiscApi(apiConfig);
+
+      MultimediaRegistry = new MultimediaRegistry(SegmentApi, ObjectApi, MetadataApi);
+    }
 
     /// <summary>
     /// Executes a <see cref="SimilarityQuery"/>, reduces the result set to the specified number of maximum results and
     /// prefetches data for the given number of segments.
     /// </summary>
     /// <param name="query">Query to execute</param>
-    /// <param name="maxResults">Maximum number of results to retain</param>
     /// <param name="prefetch">Number of segments to prefetch data for</param>
     /// <returns><see cref="QueryResponse"/> for the query including the result list</returns>
-    public static async Task<QueryResponse> ExecuteQuery(SimilarityQuery query, int maxResults, int prefetch)
+    public async Task<QueryResponse> ExecuteQuery(SimilarityQuery query, int prefetch)
     {
       var queryResults = await SegmentsApi.FindSegmentSimilarAsync(query);
 
       // TODO: max results should be specified in the respective query config
-      var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
+      var querySegments = ResultUtils.ToSegmentData(queryResults, MultimediaRegistry);
 
       var queryData = new QueryResponse(query, querySegments);
       if (prefetch > 0)
       {
-        await queryData.Prefetch(prefetch);
+        await queryData.Prefetch(prefetch, MultimediaRegistry);
       }
 
       return queryData;
@@ -52,17 +65,17 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <summary>
     /// Executes a staged query.
     /// </summary>
-    public static async Task<QueryResponse> ExecuteQuery(StagedSimilarityQuery query, int maxResults, int prefetch)
+    public async Task<QueryResponse> ExecuteQuery(StagedSimilarityQuery query, int prefetch)
     {
       var queryResults = await SegmentsApi.FindSegmentSimilarStagedAsync(query);
 
       // TODO: max results should be specified in the respective query config
-      var querySegments = ResultUtils.ToSegmentData(queryResults, maxResults);
+      var querySegments = ResultUtils.ToSegmentData(queryResults, MultimediaRegistry);
 
       var queryData = new QueryResponse(query, querySegments);
       if (prefetch > 0)
       {
-        await queryData.Prefetch(prefetch);
+        await queryData.Prefetch(prefetch, MultimediaRegistry);
       }
 
       return queryData;
@@ -71,14 +84,14 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <summary>
     /// Executes a temporal query.
     /// </summary>
-    public static async Task<TemporalQueryResponse> ExecuteQuery(TemporalQuery query, int prefetch)
+    public async Task<TemporalQueryResponse> ExecuteQuery(TemporalQuery query, int prefetch)
     {
       var queryResults = await SegmentsApi.FindSegmentSimilarTemporalAsync(query);
-      
+
       var queryData = new TemporalQueryResponse(query, queryResults);
       if (prefetch > 0)
       {
-        await queryData.Prefetch(prefetch);
+        await queryData.Prefetch(prefetch, MultimediaRegistry);
       }
 
       return queryData;
@@ -87,26 +100,13 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <summary>
     /// Retrieves the unordered list of tags with names matching get given name.
     /// </summary>
-    /// <param name="name">Name or partial name of the tags of interest</param>
+    /// <param name="tagName">Name or partial name of the tags of interest</param>
     /// <returns>List of <see cref="Tag"/> objects matching the given name</returns>
-    public static async Task<List<Tag>> GetMatchingTags(string name)
+    public async Task<List<Tag>> GetMatchingTags(string tagName)
     {
-      var result = await Task.Run(() => TagApi.FindTagsBy("matchingname", name));
+      var result = await Task.Run(() => TagApi.FindTagsBy("matchingname", tagName));
 
       return result.Tags;
-    }
-
-    public async Task<SimilarityQueryResultBatch> RequestThreaded(SimilarityQuery query)
-    {
-      if (QueryRunning)
-      {
-        return null;
-      }
-
-      QueryRunning = true;
-      var result = await Task.Run(() => SegmentsApi.FindSegmentSimilar(query));
-      QueryRunning = false;
-      return result;
     }
 
     /// <summary>
@@ -115,7 +115,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <param name="table">Table name</param>
     /// <param name="column">Column name</param>
     /// <returns>List of distinct values occuring in the specified column of the specified table</returns>
-    public static async Task<List<string>> GetDistinctTableValues(string table, string column)
+    public async Task<List<string>> GetDistinctTableValues(string table, string column)
     {
       var columnSpec = new ColumnSpecification(column, table);
       var results = await Task.Run(() => MiscApi.FindDistinctElementsByColumn(columnSpec));
@@ -127,7 +127,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// </summary>
     /// <param name="segment">Segment to get thumbnail URL of.</param>
     /// <returns>Thumbnail URL of the segment.</returns>
-    public static string GetThumbnailUrlOf(SegmentData segment)
+    public string GetThumbnailUrlOf(SegmentData segment)
     {
       return GetThumbnailUrlOfAsync(segment).Result;
     }
@@ -137,7 +137,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// </summary>
     /// <param name="segment">Segment to get thumbnail URL of.</param>
     /// <returns>Thumbnail URL of the segment.</returns>
-    public static async Task<string> GetThumbnailUrlOfAsync(SegmentData segment)
+    public async Task<string> GetThumbnailUrlOfAsync(SegmentData segment)
     {
       if (CineastConfig.cineastServesMedia)
       {
@@ -154,7 +154,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// </summary>
     /// <param name="obj">Media object to get URL of.</param>
     /// <returns>URL of this media object file.</returns>
-    public static string GetMediaUrlOf(ObjectData obj)
+    public string GetMediaUrlOf(ObjectData obj)
     {
       return GetMediaUrlOfAsync(obj).Result;
     }
@@ -165,7 +165,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <param name="obj">Media object to get URL of.</param>
     /// <param name="segmentId">Optional segment ID to support legacy use cases.</param>
     /// <returns>URL of this media object file.</returns>
-    public static async Task<string> GetMediaUrlOfAsync(ObjectData obj, string segmentId = null)
+    public async Task<string> GetMediaUrlOfAsync(ObjectData obj, string segmentId = null)
     {
       if (CineastConfig.cineastServesMedia)
       {

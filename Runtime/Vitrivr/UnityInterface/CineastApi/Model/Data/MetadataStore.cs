@@ -12,18 +12,15 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// <summary>
     /// Actual internal storage of metadata
     /// </summary>
-    protected Dictionary<string, Dictionary<string, string>> Storage =
-      new Dictionary<string, Dictionary<string, string>>();
+    protected Dictionary<string, Dictionary<string, string>> Storage = new();
 
     public bool Initialized { get; protected set; }
 
-    public abstract Task InitializeAsync();
-
-    public async Task<Dictionary<string, Dictionary<string, string>>> GetAll()
+    public Dictionary<string, Dictionary<string, string>> GetAll()
     {
       if (!Initialized)
       {
-        await InitializeAsync();
+        throw new Exception("Metadata store being accessed before initialization!");
       }
 
       return Storage;

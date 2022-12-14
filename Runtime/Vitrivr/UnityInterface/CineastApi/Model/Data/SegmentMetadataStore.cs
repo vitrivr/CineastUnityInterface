@@ -42,20 +42,5 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
       Initialized = true;
     }
-
-    public override async Task InitializeAsync()
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning($"Attempted to initialize already initialized metadata for media object {SegmentId}!");
-        return;
-      }
-
-      var metadataResult = await CineastWrapper.MetadataApi.FindSegMetaByIdAsync(SegmentId);
-      if (!Initialized)
-      {
-        Initialize(metadataResult);
-      }
-    }
   }
 }
