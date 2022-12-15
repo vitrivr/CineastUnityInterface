@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
@@ -8,22 +9,37 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
   public class TemporalQueryResponse
   {
     public readonly TemporalQuery Query;
-    public readonly TemporalQueryResult Results;
+    public readonly TemporalQueryResult ResultsMessage;
+    public readonly List<TemporalResult> Results;
 
-    public TemporalQueryResponse(TemporalQuery query, TemporalQueryResult results)
+    private readonly MultimediaRegistry _multimediaRegistry;
+
+    public TemporalQueryResponse(TemporalQuery query, TemporalQueryResult resultsMessage,
+      MultimediaRegistry multimediaRegistry)
     {
       Query = query;
-      Results = results;
+      ResultsMessage = resultsMessage;
+      _multimediaRegistry = multimediaRegistry;
+      Results = ResultsMessage.Content.Select(TemporalObjectToResult).ToList();
     }
 
-    public async Task Prefetch(int number, MultimediaRegistry multimediaRegistry)
+    public async Task Prefetch(int number)
     {
-      var segmentSet = Results.Content.Take(number)
+      // Convert to hash set to ensure uniqueness
+      var segmentSet = ResultsMessage.Content.Take(number)
         .SelectMany(result => result.Segments
-          .Select(multimediaRegistry.GetSegment)
+          .Select(_multimediaRegistry.GetSegment)
         ).ToHashSet();
 
-      await multimediaRegistry.BatchFetchSegmentData(segmentSet.ToList());
+      await _multimediaRegistry.BatchFetchSegmentData(segmentSet.ToList());
+    }
+
+    private TemporalResult TemporalObjectToResult(TemporalObject temporalObject)
+    {
+      var mediaObject = _multimediaRegistry.GetObject(temporalObject.ObjectId);
+      var segments = temporalObject.Segments.Select(_multimediaRegistry.GetSegment).ToList();
+
+      return new TemporalResult(mediaObject, segments, temporalObject.Score);
     }
   }
 }

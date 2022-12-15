@@ -3,7 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Org.Vitrivr.CineastApi.Api;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 using Vitrivr.UnityInterface.CineastApi.Model.Data;
@@ -18,15 +17,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     private readonly ConcurrentDictionary<string, SegmentData> _segmentRegistry = new();
     private readonly ConcurrentDictionary<string, ObjectData> _objectRegistry = new();
 
-    private readonly SegmentApi _segmentApi;
-    private readonly ObjectApi _objectApi;
-    private readonly MetadataApi _metadataApi;
+    private readonly CineastClient _cineastClient;
 
-    public MultimediaRegistry(SegmentApi segmentApi, ObjectApi objectApi, MetadataApi metadataApi)
+    public MultimediaRegistry(CineastClient cineastClient)
     {
-      _segmentApi = segmentApi;
-      _objectApi = objectApi;
-      _metadataApi = metadataApi;
+      _cineastClient = cineastClient;
     }
 
     /// <summary>
@@ -52,7 +47,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     /// <returns></returns>
     public async Task<List<SegmentData>> GetSegmentsOf(string objectId)
     {
-      var results = await Task.Run(() => _segmentApi.FindSegmentByObjectId(objectId));
+      var results = await _cineastClient.SegmentApi.FindSegmentByObjectIdAsync(objectId);
       var segmentDescriptors = results.Content;
       return segmentDescriptors.Select(descriptor =>
       {
@@ -81,7 +76,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
 
       var segmentIds = uninitializedSegments.Select(segment => segment.Id).ToList();
 
-      var results = await Task.Run(() => _segmentApi.FindSegmentByIdBatched(new IdList(segmentIds)));
+      var results = await _cineastClient.SegmentApi.FindSegmentByIdBatchedAsync(new IdList(segmentIds));
 
       results.Content.ForEach(data => GetSegment(data.SegmentId).Initialize(data));
     }
@@ -183,7 +178,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
         return;
       }
 
-      var result = await _objectApi.FindObjectsByAttributeAsync("id", objectData.Id);
+      var result = await _cineastClient.ObjectApi.FindObjectsByAttributeAsync("id", objectData.Id);
 
       if (result.Content.Count != 1)
       {
@@ -202,7 +197,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
         Debug.LogError($"Metadata of object already initialized: {objectData.Id}");
       }
 
-      var metadataResult = await _metadataApi.FindMetaByIdAsync(objectData.Id);
+      var metadataResult = await _cineastClient.MetadataApi.FindMetaByIdAsync(objectData.Id);
       objectData.InitializeMeta(metadataResult);
     }
 
@@ -215,7 +210,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
         return;
       }
 
-      var result = await _segmentApi.FindSegmentByIdAsync(segmentData.Id);
+      var result = await _cineastClient.SegmentApi.FindSegmentByIdAsync(segmentData.Id);
 
       if (result.Content.Count != 1)
       {
@@ -225,7 +220,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
 
       segmentData.Initialize(result.Content[0]);
     }
-    
+
     public async Task InitializeSegmentMetadata(SegmentData segmentData)
     {
       // Ensure the segment metadata is not already initialized
@@ -234,7 +229,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
         Debug.LogError($"Metadata of segment already initialized: {segmentData.Id}");
       }
 
-      var metadataResult = await _metadataApi.FindSegMetaByIdAsync(segmentData.Id);
+      var metadataResult = await _cineastClient.MetadataApi.FindSegMetaByIdAsync(segmentData.Id);
       segmentData.InitializeMeta(metadataResult);
     }
 
@@ -258,7 +253,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     public async Task BatchFetchObjectData(IEnumerable<ObjectData> objects)
     {
       var toInit = objects.Where(obj => !obj.Initialized).Select(obj => obj.Id).ToList();
-      var results = await Task.Run(() => _objectApi.FindObjectsByIdBatched(new IdList(toInit)));
+      var results = await _cineastClient.ObjectApi.FindObjectsByIdBatchedAsync(new IdList(toInit));
       results.Content.ForEach(dto => GetObject(dto.Objectid).Initialize(dto));
     }
 
@@ -272,12 +267,30 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     {
       var toInitObj = objects.Where(obj => !obj.Metadata.Initialized).ToList();
       var toInit = toInitObj.Select(obj => obj.Id).ToList();
-      var result = await Task.Run(() =>
-        _metadataApi.FindMetadataForObjectIdBatchedAsync(new OptionallyFilteredIdList(ids: toInit)));
+      var result =
+        await _cineastClient.MetadataApi.FindMetadataForObjectIdBatchedAsync(new OptionallyFilteredIdList(ids: toInit));
       foreach (var obj in toInitObj)
       {
         obj.Metadata.Initialize(result);
       }
+    }
+
+    public async Task<string> GetMediaUrlOfAsync(ObjectData objectData, string segmentId = null)
+    {
+      return await _cineastClient.GetMediaUrlOfAsync(objectData, segmentId);
+    }
+
+    public async Task<string> GetThumbnailUrlOfAsync(SegmentData segment)
+    {
+      return await _cineastClient.GetThumbnailUrlOfAsync(segment);
+    }
+
+    public async Task<List<Tag>> GetTags(string segmentId)
+    {
+      var tagIds = await _cineastClient.MetadataApi.FindTagInformationByIdAsync(segmentId);
+      var tagsResult = await _cineastClient.TagApi.FindTagsByIdAsync(new IdList(tagIds.TagIDs));
+
+      return tagsResult.Tags;
     }
   }
 }

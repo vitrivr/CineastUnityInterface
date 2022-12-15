@@ -26,7 +26,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     private readonly string _id;
 
     // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
-    private static readonly SemaphoreSlim InitLock = new SemaphoreSlim(1, 1);
+    private static readonly SemaphoreSlim InitLock = new(1, 1);
 
     private MultimediaRegistry _multimediaRegistry;
 
@@ -150,6 +150,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       return _descriptor.ObjectId;
     }
 
+    public async Task<ObjectData> GetObject()
+    {
+      return await _multimediaRegistry.GetObjectOf(Id);
+    }
+
     /// <summary>
     /// Start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
     /// </summary>
@@ -235,6 +240,21 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       }
 
       return Metadata.GetAll();
+    }
+
+    public async Task<string> GetThumbnailUrl()
+    {
+      return await _multimediaRegistry.GetThumbnailUrlOfAsync(this);
+    }
+
+    public async Task<string> GetMediaUrl()
+    {
+      return await _multimediaRegistry.GetMediaUrlOfAsync(await GetObject(), Id);
+    }
+
+    public async Task<List<Tag>> GetTags()
+    {
+      return await _multimediaRegistry.GetTags(Id);
     }
   }
 }

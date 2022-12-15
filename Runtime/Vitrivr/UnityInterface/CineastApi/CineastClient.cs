@@ -36,7 +36,7 @@ namespace Vitrivr.UnityInterface.CineastApi
       MetadataApi = new MetadataApi(apiConfig);
       MiscApi = new MiscApi(apiConfig);
 
-      MultimediaRegistry = new MultimediaRegistry(SegmentApi, ObjectApi, MetadataApi);
+      MultimediaRegistry = new MultimediaRegistry(this);
     }
 
     /// <summary>
@@ -88,10 +88,10 @@ namespace Vitrivr.UnityInterface.CineastApi
     {
       var queryResults = await SegmentsApi.FindSegmentSimilarTemporalAsync(query);
 
-      var queryData = new TemporalQueryResponse(query, queryResults);
+      var queryData = new TemporalQueryResponse(query, queryResults, MultimediaRegistry);
       if (prefetch > 0)
       {
-        await queryData.Prefetch(prefetch, MultimediaRegistry);
+        await queryData.Prefetch(prefetch);
       }
 
       return queryData;

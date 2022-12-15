@@ -184,8 +184,9 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     ///
     /// <b>Note</b> The segments have to be initialised beforehand, as only initialised segments are retrieved.
     /// </summary>
-    /// <returns></returns>
-    public async Task<List<SegmentData>> GetSegments()
+    /// <param name="initialize">Batch initialize the segments of this object.</param>
+    /// <returns>Segments of this multimedia object</returns>
+    public async Task<List<SegmentData>> GetSegments(bool initialize = true)
     {
       if (_segments != null)
       {
@@ -193,6 +194,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       }
 
       _segments = await _multimediaRegistry.GetSegmentsOf(Id);
+
+      if (initialize)
+      {
+        await _multimediaRegistry.BatchFetchSegmentData(_segments);
+      }
 
       return _segments;
     }
@@ -227,6 +233,28 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
         throw new ArgumentException("Cannot get descriptor of uninitialised object: " + Id);
       }
+    }
+
+    public async Task<Dictionary<string, Dictionary<string, string>>> GetMetadata()
+    {
+      if (Metadata.Initialized) return Metadata.GetAll();
+
+      await InitLock.WaitAsync();
+      try
+      {
+        await _multimediaRegistry.InitializeObjectMetadata(this);
+      }
+      finally
+      {
+        InitLock.Release();
+      }
+
+      return Metadata.GetAll();
+    }
+
+    public async Task<string> GetMediaUrl()
+    {
+      return await _multimediaRegistry.GetMediaUrlOfAsync(this);
     }
   }
 }

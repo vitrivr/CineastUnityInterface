@@ -12,7 +12,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// <summary>
     /// Actual internal storage of metadata
     /// </summary>
-    protected Dictionary<string, Dictionary<string, string>> Storage = new();
+    protected Dictionary<string, Dictionary<string, string>> storage = new();
 
     public bool Initialized { get; protected set; }
 
@@ -23,19 +23,19 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         throw new Exception("Metadata store being accessed before initialization!");
       }
 
-      return Storage;
+      return storage;
     }
 
     public bool DomainExists(string domain)
     {
       Assert.IsTrue(Initialized);
-      return Storage.ContainsKey(domain);
+      return storage.ContainsKey(domain);
     }
 
     public string Get(string domain, string key)
     {
       Assert.IsTrue(Initialized);
-      return Storage[domain][key];
+      return storage[domain][key];
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       var domainAndKey = str.Split('.');
       if (domainAndKey.Length >= 1)
       {
-        return Storage[domainAndKey[0]][domainAndKey[1]];
+        return storage[domainAndKey[0]][domainAndKey[1]];
       }
 
       throw new ArgumentException("Cannot retrieve without domain");
@@ -61,7 +61,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     public List<(string Key, string Value)> GetDomain(string domain)
     {
       Assert.IsTrue(Initialized);
-      var items = Storage[domain];
+      var items = storage[domain];
       return items.Keys.Select(key => (key, items[key])).ToList();
     }
 
@@ -72,7 +72,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     public bool Exists(string domain, string key)
     {
       Assert.IsTrue(Initialized);
-      return DomainExists(domain) && Storage[domain].ContainsKey(key);
+      return DomainExists(domain) && storage[domain].ContainsKey(key);
     }
   }
 }
