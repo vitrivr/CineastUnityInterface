@@ -7,6 +7,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
   public class CineastConfig
   {
     /// <summary>
+    /// A descriptive name for the connected Cineast.
+    /// </summary>
+    public string name;
+
+    /// <summary>
     /// The host address of cineast.
     /// Defaults to http://localhost:4567/
     /// </summary>
@@ -47,12 +52,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
     }
 
     public CineastConfig(
+      string name,
       string cineastHost,
       string mediaHost,
       string thumbnailPath,
       string thumbnailExtension,
       string mediaPath)
     {
+      this.name = name;
       this.cineastHost = SanitizeHost(cineastHost);
       this.mediaHost = SanitizeHost(mediaHost);
       this.thumbnailPath = thumbnailPath;
@@ -92,7 +99,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Config
 
     public static CineastConfig GetDefault()
     {
-      return new CineastConfig("http://localhost:4567/", "http://localhost/", "thumbnails/:o/:s", ".jpg",
+      return new CineastConfig("Cineast",
+        "http://localhost:4567/",
+        "http://localhost/",
+        "thumbnails/:o/:s",
+        ".jpg",
         "collection/:p");
     }
 
