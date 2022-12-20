@@ -62,9 +62,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildEdgeTerm(string data)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, new List<string>());
-      qt.Categories.Add(
-        CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.EDGE_CATEGORY]);
+      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, new List<string> { CategoryMappings.EdgeCategory });
       return qt;
     }
 
@@ -86,12 +84,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildGlobalColorTerm(string data)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data,
-        new List<string>
-        {
-          CineastConfigManager.Instance.Config.categoryMappings.mapping[
-            CategoryMappings.GLOBAL_COLOR_CATEGORY]
-        });
+      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, new List<string> { CategoryMappings.GlobalColorCategory });
       return qt;
     }
 
@@ -129,13 +122,13 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       return BuildImageTermForCategories(encodedImage, categories);
     }
 
-    public static QueryTerm BuildLocationTerm(double latitude, double longitude)
+    public static QueryTerm BuildLocationTerm(double latitude, double longitude,
+      string spatialCategory = CategoryMappings.SpatialCategory)
     {
       var qt = new QueryTerm(
         QueryTerm.TypeEnum.LOCATION,
         $"[{latitude},{longitude}]",
-        new List<string>
-          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY] });
+        new List<string> { spatialCategory });
       return qt;
     }
 
@@ -145,8 +138,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <param name="latitude">Latitude of term</param>
     /// <param name="longitude">Longitude of term</param>
     /// <param name="halfSimilarityDistance">Distance at which similarity should equal 0.5</param>
+    /// <param name="spatialCategory">Category to use for location term</param>
     /// <returns>The corresponding query term</returns>
-    public static QueryTerm BuildLocationTerm(double latitude, double longitude, double halfSimilarityDistance)
+    public static QueryTerm BuildLocationTerm(double latitude, double longitude, double halfSimilarityDistance,
+      string spatialCategory = CategoryMappings.SpatialCategory)
     {
       var qt = new QueryTerm(
         QueryTerm.TypeEnum.PARAMETERISEDLOCATION,
@@ -158,8 +153,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
         "}, \"parameter\": " +
         halfSimilarityDistance +
         "}",
-        new List<string>
-          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.SPATIAL_CATEGORY] });
+        new List<string> { spatialCategory });
       return qt;
     }
 
@@ -167,13 +161,13 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// Builds a <see cref="QueryTerm"/> of type TAG with category tags
     /// </summary>
     /// <param name="tags">Base64 encoded JSON list of tags</param>
+    /// <param name="tagsCategory">Category to use for tag term</param>
     /// <returns>The corresponding query term for the given tags string</returns>
-    public static QueryTerm BuildTagTerm(string tags)
+    public static QueryTerm BuildTagTerm(string tags, string tagsCategory = CategoryMappings.TagsCategory)
     {
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
         Base64Converter.JsonPrefix + tags,
-        new List<string>
-          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY] });
+        new List<string> { tagsCategory });
       return qt;
     }
 
@@ -181,8 +175,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// Builds a <see cref="QueryTerm"/> of type TAG with category tags
     /// </summary>
     /// <param name="tags">List of (tag ID, tag name) pairs</param>
+    /// <param name="tagsCategory">Category to use for tag term</param>
     /// <returns>The corresponding query term for the given tags string</returns>
-    public static QueryTerm BuildTagTerm(IEnumerable<(string id, string name)> tags)
+    public static QueryTerm BuildTagTerm(IEnumerable<(string id, string name)> tags,
+      string tagsCategory = CategoryMappings.TagsCategory)
     {
       var tagStrings = tags.Select(tag =>
         $"{{\"id\":\"{tag.id}\",\"name\":\"{tag.name}\",\"description\":\"\"}}");
@@ -192,7 +188,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
         Base64Converter.JsonToBase64(tagList),
         new List<string>
-          { CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TAGS_CATEGORY] });
+          { tagsCategory });
       return qt;
     }
 
@@ -247,13 +243,14 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// Builds a <see cref="QueryTerm"/> of type TIME with category temporal
     /// </summary>
     /// <param name="utcTime">The timestamp in utc time format</param>
+    /// <param name="temporalCategory">Category to use for time term</param>
     /// <returns>The corresponding query term using the temporal category and time type</returns>
-    public static QueryTerm BuildTimeTerm(string utcTime)
+    public static QueryTerm BuildTimeTerm(string utcTime, string temporalCategory = CategoryMappings.TemporalCategory)
     {
       var qt = new QueryTerm(QueryTerm.TypeEnum.TIME, utcTime,
         new List<string>
         {
-          CineastConfigManager.Instance.Config.categoryMappings.mapping[CategoryMappings.TEMPORAL_CATEGORY]
+          temporalCategory
         });
       return qt;
     }

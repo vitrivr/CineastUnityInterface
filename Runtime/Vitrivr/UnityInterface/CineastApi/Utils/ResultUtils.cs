@@ -31,16 +31,16 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// Converts a query result into a more easily processable list of <see cref="SegmentData"/> and score.
     /// </summary>
     /// <param name="results">The query results to convert</param>
-    /// <param name="maxResults">The maximum number of results to include from each results category</param>
+    /// <param name="multimediaRegistry">The multimedia registry to instantiate the segment data</param>
     /// <returns>Dictionary of results by result category</returns>
-    public static Dictionary<string, List<ScoredSegment>> ToSegmentData(
-      SimilarityQueryResultBatch results, int maxResults)
+    public static Dictionary<string, List<ScoredSegment>> ToSegmentData(SimilarityQueryResultBatch results,
+      MultimediaRegistry multimediaRegistry)
     {
       return results.Results.Where(similarityQueryResult => similarityQueryResult.Content.Count > 0)
         .ToDictionary(
           similarityQueryResult => similarityQueryResult.Category,
-          similarityQueryResult => similarityQueryResult.Content.Take(maxResults)
-            .Select(result => new ScoredSegment(SegmentRegistry.GetSegment(result.Key), result.Value))
+          similarityQueryResult => similarityQueryResult.Content
+            .Select(result => new ScoredSegment(multimediaRegistry.GetSegment(result.Key), result.Value))
             .ToList()
         );
     }

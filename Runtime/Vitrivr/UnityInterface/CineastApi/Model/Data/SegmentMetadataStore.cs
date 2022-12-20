@@ -31,31 +31,16 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
       foreach (var meta in data.Content.Where(meta => meta.SegmentId == SegmentId))
       {
-        if (!Storage.ContainsKey(meta.Domain))
+        if (!storage.ContainsKey(meta.Domain))
         {
-          Storage.Add(meta.Domain, new Dictionary<string, string>());
+          storage.Add(meta.Domain, new Dictionary<string, string>());
         }
 
-        var domain = Storage[meta.Domain];
+        var domain = storage[meta.Domain];
         domain.Add(meta.Key, meta.Value);
       }
 
       Initialized = true;
-    }
-
-    public override async Task InitializeAsync()
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning($"Attempted to initialize already initialized metadata for media object {SegmentId}!");
-        return;
-      }
-
-      var metadataResult = await CineastWrapper.MetadataApi.FindSegMetaByIdAsync(SegmentId);
-      if (!Initialized)
-      {
-        Initialize(metadataResult);
-      }
     }
   }
 }

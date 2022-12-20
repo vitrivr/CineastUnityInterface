@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
@@ -8,7 +9,7 @@ using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 {
   /// <summary>
-  /// Data object containing all information on a specific media segment. Use <see cref="SegmentRegistry"/> to
+  /// Data object containing all information on a specific media segment. Use <see cref="MultimediaRegistry"/> to
   /// instantiate.
   /// </summary>
   [Serializable]
@@ -25,15 +26,18 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     private readonly string _id;
 
     // TODO: Consider combining lazy loading requests into batch requests every x seconds to reduce request overhead
-    private static readonly SemaphoreSlim InitLock = new SemaphoreSlim(1, 1);
+    private static readonly SemaphoreSlim InitLock = new(1, 1);
+
+    private MultimediaRegistry _multimediaRegistry;
 
     public SegmentMetadataStore Metadata { get; private set; }
 
 
-    public SegmentData(string id)
+    public SegmentData(string id, MultimediaRegistry multimediaRegistry)
     {
       _id = id;
       Metadata = new SegmentMetadataStore(_id);
+      _multimediaRegistry = multimediaRegistry;
     }
 
     public SegmentData(MediaSegmentDescriptor descriptor)
@@ -58,19 +62,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
           return;
         }
 
-        var queryResult = await CineastWrapper.SegmentApi.FindSegmentByIdAsync(_id);
-        if (queryResult.Content.Count != 1)
-        {
-          throw new Exception(
-            $"Unexpected number of segment data results for segment \"{_id}\": {queryResult.Content.Count}");
-        }
-
-        var result = queryResult.Content[0];
-        Initialize(result);
+        await _multimediaRegistry.InitializeSegment(this);
 
         if (withMetadata)
         {
-          await Metadata.InitializeAsync();
+          await _multimediaRegistry.InitializeSegmentMetadata(this);
         }
       }
       finally
@@ -154,6 +150,11 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       return _descriptor.ObjectId;
     }
 
+    public async Task<ObjectData> GetObject()
+    {
+      return await _multimediaRegistry.GetObjectOf(Id);
+    }
+
     /// <summary>
     /// Start of the {@link MediaSegmentDescriptor} within the {@link MediaObjectDescriptor} in frames (e.g. for videos or audio).
     /// </summary>
@@ -222,6 +223,38 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
       }
 
       return _descriptor.Endabs;
+    }
+
+    public async Task<Dictionary<string, Dictionary<string, string>>> GetMetadata()
+    {
+      if (Metadata.Initialized) return Metadata.GetAll();
+
+      await InitLock.WaitAsync();
+      try
+      {
+        await _multimediaRegistry.InitializeSegmentMetadata(this);
+      }
+      finally
+      {
+        InitLock.Release();
+      }
+
+      return Metadata.GetAll();
+    }
+
+    public async Task<string> GetThumbnailUrl()
+    {
+      return await _multimediaRegistry.GetThumbnailUrlOfAsync(this);
+    }
+
+    public async Task<string> GetMediaUrl()
+    {
+      return await _multimediaRegistry.GetMediaUrlOfAsync(await GetObject(), Id);
+    }
+
+    public async Task<List<Tag>> GetTags()
+    {
+      return await _multimediaRegistry.GetTags(Id);
     }
   }
 }

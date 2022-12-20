@@ -26,7 +26,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
       return path
         .Replace(":o", objectId)
         .Replace(":s", segmentId)
-        .Replace(":S", segmentId?.Substring(3))
+        .Replace(":S", segmentId?[3..])
         .Replace(":n", objectName)
         .Replace(":p", objectPath)
         .Replace(":t", mediaType)

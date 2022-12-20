@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
 using UnityEngine;
 
@@ -31,31 +30,16 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
       foreach (var meta in data.Content.Where(meta => meta.Objectid == ObjectId))
       {
-        if (!Storage.ContainsKey(meta.Domain))
+        if (!storage.ContainsKey(meta.Domain))
         {
-          Storage.Add(meta.Domain, new Dictionary<string, string>());
+          storage.Add(meta.Domain, new Dictionary<string, string>());
         }
 
-        var domain = Storage[meta.Domain];
+        var domain = storage[meta.Domain];
         domain.Add(meta.Key, meta.Value);
       }
 
       Initialized = true;
-    }
-
-    public override async Task InitializeAsync()
-    {
-      if (Initialized)
-      {
-        Debug.LogWarning($"Attempted to initialize already initialized metadata for media object {ObjectId}!");
-        return;
-      }
-
-      var metadataResult = await CineastWrapper.MetadataApi.FindMetaByIdAsync(ObjectId);
-      if (!Initialized)
-      {
-        Initialize(metadataResult);
-      }
     }
   }
 }

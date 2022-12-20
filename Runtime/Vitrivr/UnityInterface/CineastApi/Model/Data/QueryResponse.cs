@@ -46,7 +46,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
     /// Batch fetches segment data for the top scoring number of segments in the results set.
     /// </summary>
     /// <param name="number">Number of top scoring segments from each result category to prefetch data for</param>
-    public async Task Prefetch(int number)
+    /// <param name="multimediaRegistry">The multimedia registry to do the data fetching</param>
+    public async Task Prefetch(int number, MultimediaRegistry multimediaRegistry)
     {
       // TODO: Prevent more than the number of segments to be prefetched in total
       var segmentSet = new HashSet<SegmentData>();
@@ -55,7 +56,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         segmentList.Take(number).Select(item => item.segment).ToList().ForEach(segment => segmentSet.Add(segment));
       }
 
-      await SegmentRegistry.BatchFetchSegmentData(segmentSet.ToList());
+      await multimediaRegistry.BatchFetchSegmentData(segmentSet.ToList());
     }
 
     public List<ScoredSegment> GetMeanFusionResults()
