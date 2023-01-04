@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Model;
+using UnityEngine;
 using Vitrivr.UnityInterface.CineastApi.Model.Registries;
 
 namespace Vitrivr.UnityInterface.CineastApi.Model.Data
@@ -25,6 +26,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
 
     public async Task Prefetch(int number)
     {
+      // Segments
       // Convert to hash set to ensure uniqueness
       var segmentSet = ResultsMessage.Content.Take(number)
         .SelectMany(result => result.Segments
@@ -32,6 +34,13 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Data
         ).ToHashSet();
 
       await _multimediaRegistry.BatchFetchSegmentData(segmentSet.ToList());
+
+      // Objects
+      var objectSet = ResultsMessage.Content.Take(number)
+        .Select(result => _multimediaRegistry.GetObject(result.ObjectId)
+        ).ToHashSet();
+
+      await _multimediaRegistry.BatchFetchObjectData(objectSet.ToList());
     }
 
     private TemporalResult TemporalObjectToResult(TemporalObject temporalObject)
