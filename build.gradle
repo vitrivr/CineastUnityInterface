@@ -3,7 +3,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 /* Get the openapi generator plugin */
 plugins {
-  id "org.openapi.generator" version "4.3.1"
+  id "org.openapi.generator" version "6.4.0"
 }
 
 /* Setup OpenApi Specs (OAS): Defaults to latest official.*/
@@ -22,6 +22,7 @@ openApiGenerate {
   inputSpec = cineastOAS
   outputDir = "$rootDir/Generated"
   packageName = "Org.Vitrivr.CineastApi"
+  skipValidateSpec = true
 }
 
 /* Customized clean task to delete OpenAPI generated*/

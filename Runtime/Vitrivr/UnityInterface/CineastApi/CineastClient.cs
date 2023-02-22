@@ -20,6 +20,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     public readonly TagApi TagApi;
     public readonly MetadataApi MetadataApi;
     public readonly MiscApi MiscApi;
+    public readonly CacheApi CacheApi;
 
     public readonly CineastConfig CineastConfig;
 
@@ -35,6 +36,7 @@ namespace Vitrivr.UnityInterface.CineastApi
       TagApi = new TagApi(apiConfig);
       MetadataApi = new MetadataApi(apiConfig);
       MiscApi = new MiscApi(apiConfig);
+      CacheApi = new CacheApi(apiConfig);
 
       MultimediaRegistry = new MultimediaRegistry(this);
     }
@@ -178,6 +180,12 @@ namespace Vitrivr.UnityInterface.CineastApi
       var path = PathResolver.ResolvePath(CineastConfig.mediaPath, obj.Id, segmentId, objectName, objectPath,
         mediaType.ToString());
       return PathResolver.CombineUrl(CineastConfig.mediaHost, path);
+    }
+
+    public async Task<List<QueryCacheInfo>> ListCachedQueries()
+    {
+      var cacheList = await CacheApi.ListCachedQueriesAsync();
+      return cacheList.Info;
     }
   }
 }

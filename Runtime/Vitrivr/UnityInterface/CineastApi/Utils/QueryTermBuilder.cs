@@ -20,8 +20,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     {
       var expressionJson = BuildBooleanTermJson(attribute, op, values);
       var data = Base64Converter.JsonToBase64($"[{expressionJson}]");
+      var categories = new List<string> { "boolean" };
+      const QueryTerm.TypeEnum type = QueryTerm.TypeEnum.BOOLEAN;
 
-      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> { "boolean" });
+      return new QueryTerm(categories, type, data);
     }
 
     /// <summary>
@@ -34,8 +36,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     {
       var conditionsJson = conditions.Select(c => BuildBooleanTermJson(c.attribute, c.op, c.values));
       var data = Base64Converter.JsonToBase64($"[{string.Join(",", conditionsJson)}]");
+      var categories = new List<string> { "boolean" };
+      const QueryTerm.TypeEnum type = QueryTerm.TypeEnum.BOOLEAN;
 
-      return new QueryTerm(QueryTerm.TypeEnum.BOOLEAN, data, new List<string> { "boolean" });
+      return new QueryTerm(categories, type, data);
     }
 
     /// <summary>
@@ -62,7 +66,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildEdgeTerm(string data)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, new List<string> { CategoryMappings.EdgeCategory });
+      var qt = new QueryTerm(new List<string> { CategoryMappings.EdgeCategory }, QueryTerm.TypeEnum.IMAGE, data);
       return qt;
     }
 
@@ -84,7 +88,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildGlobalColorTerm(string data)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, new List<string> { CategoryMappings.GlobalColorCategory });
+      var qt = new QueryTerm(new List<string> { CategoryMappings.GlobalColorCategory }, QueryTerm.TypeEnum.IMAGE, data);
       return qt;
     }
 
@@ -107,7 +111,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term</returns>
     public static QueryTerm BuildImageTermForCategories(string data, List<string> categories)
     {
-      return new QueryTerm(QueryTerm.TypeEnum.IMAGE, data, categories);
+      return new QueryTerm(categories, QueryTerm.TypeEnum.IMAGE, data);
     }
 
     /// <summary>
@@ -125,11 +129,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     public static QueryTerm BuildLocationTerm(double latitude, double longitude,
       string spatialCategory = CategoryMappings.SpatialCategory)
     {
-      var qt = new QueryTerm(
+      return new QueryTerm(
+        new List<string> { spatialCategory },
         QueryTerm.TypeEnum.LOCATION,
-        $"[{latitude},{longitude}]",
-        new List<string> { spatialCategory });
-      return qt;
+        $"[{latitude},{longitude}]");
     }
 
     /// <summary>
@@ -143,7 +146,8 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     public static QueryTerm BuildLocationTerm(double latitude, double longitude, double halfSimilarityDistance,
       string spatialCategory = CategoryMappings.SpatialCategory)
     {
-      var qt = new QueryTerm(
+      return new QueryTerm(
+        new List<string> { spatialCategory },
         QueryTerm.TypeEnum.PARAMETERISEDLOCATION,
         "{\"geoPoint\": " +
         "{\"latitude\": " +
@@ -152,9 +156,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
         longitude +
         "}, \"parameter\": " +
         halfSimilarityDistance +
-        "}",
-        new List<string> { spatialCategory });
-      return qt;
+        "}");
     }
 
     /// <summary>
@@ -165,10 +167,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term for the given tags string</returns>
     public static QueryTerm BuildTagTerm(string tags, string tagsCategory = CategoryMappings.TagsCategory)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
-        Base64Converter.JsonPrefix + tags,
-        new List<string> { tagsCategory });
-      return qt;
+      return new QueryTerm(
+        new List<string> { tagsCategory },
+        QueryTerm.TypeEnum.TAG,
+        Base64Converter.JsonPrefix + tags);
     }
 
     /// <summary>
@@ -185,11 +187,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
 
       var tagList = $"[{string.Join(",", tagStrings)}]";
 
-      var qt = new QueryTerm(QueryTerm.TypeEnum.TAG,
-        Base64Converter.JsonToBase64(tagList),
-        new List<string>
-          { tagsCategory });
-      return qt;
+      return new QueryTerm(
+        new List<string> { tagsCategory },
+        QueryTerm.TypeEnum.TAG,
+        Base64Converter.JsonToBase64(tagList));
     }
 
     /// <summary>
@@ -200,9 +201,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term for the given text string</returns>
     public static QueryTerm BuildTextTerm(string text, List<string> categories)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.TEXT,
-        text,
-        categories);
+      var qt = new QueryTerm(
+        categories,
+        QueryTerm.TypeEnum.TEXT,
+        text);
       return qt;
     }
 
@@ -233,10 +235,10 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
         categories.Add("scenecaption");
       }
 
-      var qt = new QueryTerm(QueryTerm.TypeEnum.TEXT,
-        text,
-        categories);
-      return qt;
+      return new QueryTerm(
+        categories,
+        QueryTerm.TypeEnum.TEXT,
+        text);
     }
 
     /// <summary>
@@ -247,12 +249,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Utils
     /// <returns>The corresponding query term using the temporal category and time type</returns>
     public static QueryTerm BuildTimeTerm(string utcTime, string temporalCategory = CategoryMappings.TemporalCategory)
     {
-      var qt = new QueryTerm(QueryTerm.TypeEnum.TIME, utcTime,
-        new List<string>
-        {
-          temporalCategory
-        });
-      return qt;
+      return new QueryTerm(new List<string> { temporalCategory }, QueryTerm.TypeEnum.TIME, utcTime);
     }
   }
 }

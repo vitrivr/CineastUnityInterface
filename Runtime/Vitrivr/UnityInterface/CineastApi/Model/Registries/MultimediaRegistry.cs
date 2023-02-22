@@ -288,7 +288,7 @@ namespace Vitrivr.UnityInterface.CineastApi.Model.Registries
     public async Task<List<Tag>> GetTags(string segmentId)
     {
       var tagIds = await _cineastClient.MetadataApi.FindTagInformationByIdAsync(segmentId);
-      var tagsResult = await _cineastClient.TagApi.FindTagsByIdAsync(new IdList(tagIds.TagIDs));
+      var tagsResult = await _cineastClient.TagApi.FindTagsByIdAsync(new IdList(tagIds.Tags));
 
       return tagsResult.Tags;
     }
