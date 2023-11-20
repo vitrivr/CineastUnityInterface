@@ -101,6 +101,11 @@
              Enum MODEL3D for value: MODEL3D
              </summary>
             </member>
+        <member name="F:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum.TEXTUREMODEL3D">
+             <summary>
+             Enum TEXTUREMODEL3D for value: TEXTUREMODEL3D
+             </summary>
+            </member>
         <member name="F:Org.Vitrivr.CineastApi.Model.MediaObjectDescriptor.MediatypeEnum.IMAGESEQUENCE">
              <summary>
              Enum IMAGESEQUENCE for value: IMAGE_SEQUENCE
@@ -251,6 +256,61 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.IdVectorList">
+             <summary>
+             IdVectorList
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.IdVectorPair})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.IdVectorList" /> class.
+             </summary>
+             <param name="points">points.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.IdVectorList.Points">
+             <summary>
+             Gets or Sets Points
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.Equals(Org.Vitrivr.CineastApi.Model.IdVectorList)">
+             <summary>
+             Returns true if IdVectorList instances are equal
+             </summary>
+             <param name="input">Instance of IdVectorList to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorList.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.MetadataDomainFilter">
              <summary>
              MetadataDomainFilter
@@ -381,73 +441,6 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MetadataAccessSpecification.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
-             <summary>
-             To validate all properties of the instance
-             </summary>
-             <param name="validationContext">Validation context</param>
-             <returns>Validation Result</returns>
-            </member>
-        <member name="T:Org.Vitrivr.CineastApi.Model.QueryCacheInfo">
-             <summary>
-             QueryCacheInfo
-             </summary>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.#ctor(System.String,System.Int64,System.Int32)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryCacheInfo" /> class.
-             </summary>
-             <param name="id">id.</param>
-             <param name="timestamp">timestamp.</param>
-             <param name="uniqueSegments">uniqueSegments.</param>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.Id">
-             <summary>
-             Gets or Sets Id
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.Timestamp">
-             <summary>
-             Gets or Sets Timestamp
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.UniqueSegments">
-             <summary>
-             Gets or Sets UniqueSegments
-             </summary>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.ToString">
-             <summary>
-             Returns the string presentation of the object
-             </summary>
-             <returns>String presentation of the object</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.ToJson">
-             <summary>
-             Returns the JSON string presentation of the object
-             </summary>
-             <returns>JSON string presentation of the object</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.Equals(System.Object)">
-             <summary>
-             Returns true if objects are equal
-             </summary>
-             <param name="input">Object to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.Equals(Org.Vitrivr.CineastApi.Model.QueryCacheInfo)">
-             <summary>
-             Returns true if QueryCacheInfo instances are equal
-             </summary>
-             <param name="input">Instance of QueryCacheInfo to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.GetHashCode">
-             <summary>
-             Gets the hash code
-             </summary>
-             <returns>Hash code</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfo.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -940,6 +933,79 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.SimilarityQueryResult.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.VectorLookup">
+             <summary>
+             VectorLookup
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.#ctor(Org.Vitrivr.CineastApi.Model.IdList,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.VectorLookup" /> class.
+             </summary>
+             <param name="ids">ids.</param>
+             <param name="feature">feature.</param>
+             <param name="projection">projection.</param>
+             <param name="properties">properties.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.VectorLookup.Ids">
+             <summary>
+             Gets or Sets Ids
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.VectorLookup.Feature">
+             <summary>
+             Gets or Sets Feature
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.VectorLookup.Projection">
+             <summary>
+             Gets or Sets Projection
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.VectorLookup.Properties">
+             <summary>
+             Gets or Sets Properties
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.Equals(Org.Vitrivr.CineastApi.Model.VectorLookup)">
+             <summary>
+             Returns true if VectorLookup instances are equal
+             </summary>
+             <param name="input">Instance of VectorLookup to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.VectorLookup.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1806,7 +1872,7 @@
              Gets or Sets Distance
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryConfig.HintsEnum},System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Int32)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.QueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryConfig.HintsEnum},System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Int32)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryConfig" /> class.
              </summary>
@@ -1819,10 +1885,10 @@
              <param name="resultsPerModule">resultsPerModule.</param>
              <param name="maxResults">maxResults.</param>
              <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
+             <param name="distanceIfEmpty">distanceIfEmpty.</param>
              <param name="correspondenceFunction">correspondenceFunction.</param>
              <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
              <param name="normIfEmpty">normIfEmpty.</param>
-             <param name="distanceIfEmpty">distanceIfEmpty.</param>
              <param name="rawResultsPerModule">rawResultsPerModule.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.QueryId">
@@ -1865,6 +1931,11 @@
              Gets or Sets CorrespondenceFunctionIfEmpty
              </summary>
             </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceIfEmpty">
+             <summary>
+             Gets or Sets DistanceIfEmpty
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.CorrespondenceFunction">
              <summary>
              Gets or Sets CorrespondenceFunction
@@ -1878,11 +1949,6 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.NormIfEmpty">
              <summary>
              Gets or Sets NormIfEmpty
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.DistanceIfEmpty">
-             <summary>
-             Gets or Sets DistanceIfEmpty
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.QueryConfig.RawResultsPerModule">
@@ -2196,61 +2262,6 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Model.MetadataKeyFilter.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
-             <summary>
-             To validate all properties of the instance
-             </summary>
-             <param name="validationContext">Validation context</param>
-             <returns>Validation Result</returns>
-            </member>
-        <member name="T:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList">
-             <summary>
-             QueryCacheInfoList
-             </summary>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.#ctor(System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.QueryCacheInfo})">
-             <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList" /> class.
-             </summary>
-             <param name="info">info.</param>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.Info">
-             <summary>
-             Gets or Sets Info
-             </summary>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.ToString">
-             <summary>
-             Returns the string presentation of the object
-             </summary>
-             <returns>String presentation of the object</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.ToJson">
-             <summary>
-             Returns the JSON string presentation of the object
-             </summary>
-             <returns>JSON string presentation of the object</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.Equals(System.Object)">
-             <summary>
-             Returns true if objects are equal
-             </summary>
-             <param name="input">Object to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.Equals(Org.Vitrivr.CineastApi.Model.QueryCacheInfoList)">
-             <summary>
-             Returns true if QueryCacheInfoList instances are equal
-             </summary>
-             <param name="input">Instance of QueryCacheInfoList to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.GetHashCode">
-             <summary>
-             Gets the hash code
-             </summary>
-             <returns>Hash code</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.QueryCacheInfoList.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -3449,6 +3460,67 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Org.Vitrivr.CineastApi.Model.IdVectorPair">
+             <summary>
+             IdVectorPair
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.#ctor(System.String,System.Collections.Generic.List{System.Single})">
+             <summary>
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.IdVectorPair" /> class.
+             </summary>
+             <param name="id">id.</param>
+             <param name="vector">vector.</param>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.IdVectorPair.Id">
+             <summary>
+             Gets or Sets Id
+             </summary>
+            </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.IdVectorPair.Vector">
+             <summary>
+             Gets or Sets Vector
+             </summary>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.Equals(Org.Vitrivr.CineastApi.Model.IdVectorPair)">
+             <summary>
+             Returns true if IdVectorPair instances are equal
+             </summary>
+             <param name="input">Instance of IdVectorPair to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Org.Vitrivr.CineastApi.Model.IdVectorPair.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig">
              <summary>
              TemporalQueryConfig
@@ -3594,7 +3666,7 @@
              Gets or Sets Distance
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum},System.Collections.Generic.List{System.Single},System.Single,System.Boolean,System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Int32)">
+        <member name="M:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.#ctor(System.String,System.Collections.Generic.List{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.HintsEnum},System.Collections.Generic.List{System.Single},System.Single,System.Boolean,System.Collections.Generic.List{System.String},System.Nullable{Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceEnum},System.Collections.Generic.List{System.Single},System.Single,System.Int32,System.Int32,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Object,Org.Vitrivr.CineastApi.Model.QueryConfig,Org.Vitrivr.CineastApi.Model.QueryConfig,System.Int32)">
              <summary>
              Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig" /> class.
              </summary>
@@ -3610,10 +3682,10 @@
              <param name="resultsPerModule">resultsPerModule.</param>
              <param name="maxResults">maxResults.</param>
              <param name="correspondenceFunctionIfEmpty">correspondenceFunctionIfEmpty.</param>
+             <param name="distanceIfEmpty">distanceIfEmpty.</param>
              <param name="correspondenceFunction">correspondenceFunction.</param>
              <param name="distanceWeightsIfEmpty">distanceWeightsIfEmpty.</param>
              <param name="normIfEmpty">normIfEmpty.</param>
-             <param name="distanceIfEmpty">distanceIfEmpty.</param>
              <param name="rawResultsPerModule">rawResultsPerModule.</param>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.QueryId">
@@ -3671,6 +3743,11 @@
              Gets or Sets CorrespondenceFunctionIfEmpty
              </summary>
             </member>
+        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceIfEmpty">
+             <summary>
+             Gets or Sets DistanceIfEmpty
+             </summary>
+            </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.CorrespondenceFunction">
              <summary>
              Gets or Sets CorrespondenceFunction
@@ -3684,11 +3761,6 @@
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.NormIfEmpty">
              <summary>
              Gets or Sets NormIfEmpty
-             </summary>
-            </member>
-        <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.DistanceIfEmpty">
-             <summary>
-             Gets or Sets DistanceIfEmpty
              </summary>
             </member>
         <member name="P:Org.Vitrivr.CineastApi.Model.TemporalQueryConfig.RawResultsPerModule">
@@ -4395,108 +4467,112 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
-        <member name="T:Org.Vitrivr.CineastApi.Api.ICacheApi">
+        <member name="T:Org.Vitrivr.CineastApi.Api.IVectorsApi">
              <summary>
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ICacheApi.ListCachedQueries">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IVectorsApi.LoadVectors(Org.Vitrivr.CineastApi.Model.VectorLookup)">
              <summary>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </summary>
              <remarks>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <returns>QueryCacheInfoList</returns>
+             <param name="vectorLookup"> (optional)</param>
+             <returns>IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ICacheApi.ListCachedQueriesWithHttpInfo">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IVectorsApi.LoadVectorsWithHttpInfo(Org.Vitrivr.CineastApi.Model.VectorLookup)">
              <summary>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </summary>
              <remarks>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <returns>ApiResponse of QueryCacheInfoList</returns>
+             <param name="vectorLookup"> (optional)</param>
+             <returns>ApiResponse of IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ICacheApi.ListCachedQueriesAsync(System.Threading.CancellationToken)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IVectorsApi.LoadVectorsAsync(Org.Vitrivr.CineastApi.Model.VectorLookup,System.Threading.CancellationToken)">
              <summary>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </summary>
              <remarks>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="vectorLookup"> (optional)</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of QueryCacheInfoList</returns>
+             <returns>Task of IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ICacheApi.ListCachedQueriesWithHttpInfoAsync(System.Threading.CancellationToken)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.IVectorsApi.LoadVectorsWithHttpInfoAsync(Org.Vitrivr.CineastApi.Model.VectorLookup,System.Threading.CancellationToken)">
              <summary>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </summary>
              <remarks>
-             Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection
              </remarks>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="vectorLookup"> (optional)</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of ApiResponse (QueryCacheInfoList)</returns>
+             <returns>Task of ApiResponse (IdVectorList)</returns>
             </member>
-        <member name="T:Org.Vitrivr.CineastApi.Api.CacheApi">
+        <member name="T:Org.Vitrivr.CineastApi.Api.VectorsApi">
              <summary>
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.#ctor(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.#ctor(System.String)">
              <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.CacheApi" /> class.
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.VectorsApi" /> class.
              </summary>
              <returns></returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.#ctor">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.#ctor">
              <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.CacheApi" /> class
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.VectorsApi" /> class
              </summary>
              <returns></returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.#ctor(Org.Vitrivr.CineastApi.Client.Configuration)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.#ctor(Org.Vitrivr.CineastApi.Client.Configuration)">
              <summary>
-             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.CacheApi" /> class
+             Initializes a new instance of the <see cref="T:Org.Vitrivr.CineastApi.Api.VectorsApi" /> class
              using Configuration object
              </summary>
              <param name="configuration">An instance of Configuration</param>
              <returns></returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.GetBasePath">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.GetBasePath">
              <summary>
              Gets the base path of the API client.
              </summary>
              <value>The base path</value>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.SetBasePath(System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.SetBasePath(System.String)">
              <summary>
              Sets the base path of the API client.
              </summary>
              <value>The base path</value>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Api.CacheApi.Configuration">
+        <member name="P:Org.Vitrivr.CineastApi.Api.VectorsApi.Configuration">
              <summary>
              Gets or sets the configuration object
              </summary>
              <value>An instance of the Configuration</value>
             </member>
-        <member name="P:Org.Vitrivr.CineastApi.Api.CacheApi.ExceptionFactory">
+        <member name="P:Org.Vitrivr.CineastApi.Api.VectorsApi.ExceptionFactory">
              <summary>
              Provides a factory method hook for the creation of exceptions.
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.DefaultHeader">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.DefaultHeader">
              <summary>
              Gets the default header.
              </summary>
              <returns>Dictionary of HTTP header</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.AddDefaultHeader(System.String,System.String)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.AddDefaultHeader(System.String,System.String)">
              <summary>
              Add default header.
              </summary>
@@ -4504,35 +4580,39 @@
              <param name="value">Header field value.</param>
              <returns></returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.ListCachedQueries">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.LoadVectors(Org.Vitrivr.CineastApi.Model.VectorLookup)">
              <summary>
-             Lists cached queries Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection Loads the vectors of a particular feature, applies optional projection
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <returns>QueryCacheInfoList</returns>
+             <param name="vectorLookup"> (optional)</param>
+             <returns>IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.ListCachedQueriesWithHttpInfo">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.LoadVectorsWithHttpInfo(Org.Vitrivr.CineastApi.Model.VectorLookup)">
              <summary>
-             Lists cached queries Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection Loads the vectors of a particular feature, applies optional projection
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <returns>ApiResponse of QueryCacheInfoList</returns>
+             <param name="vectorLookup"> (optional)</param>
+             <returns>ApiResponse of IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.ListCachedQueriesAsync(System.Threading.CancellationToken)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.LoadVectorsAsync(Org.Vitrivr.CineastApi.Model.VectorLookup,System.Threading.CancellationToken)">
              <summary>
-             Lists cached queries Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection Loads the vectors of a particular feature, applies optional projection
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="vectorLookup"> (optional)</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of QueryCacheInfoList</returns>
+             <returns>Task of IdVectorList</returns>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.CacheApi.ListCachedQueriesWithHttpInfoAsync(System.Threading.CancellationToken)">
+        <member name="M:Org.Vitrivr.CineastApi.Api.VectorsApi.LoadVectorsWithHttpInfoAsync(Org.Vitrivr.CineastApi.Model.VectorLookup,System.Threading.CancellationToken)">
              <summary>
-             Lists cached queries Lists cached queries
+             Loads the vectors of a particular feature, applies optional projection Loads the vectors of a particular feature, applies optional projection
              </summary>
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="vectorLookup"> (optional)</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of ApiResponse (QueryCacheInfoList)</returns>
+             <returns>Task of ApiResponse (IdVectorList)</returns>
             </member>
         <member name="T:Org.Vitrivr.CineastApi.Api.IStatusApi">
              <summary>
@@ -7384,28 +7464,6 @@
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentByCachedQueryId(System.String)">
-             <summary>
-             Finds segments for specified cached query id
-             </summary>
-             <remarks>
-             Finds segments for specified cached query id
-             </remarks>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <returns>SimilarityQueryResultBatch</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentByCachedQueryIdWithHttpInfo(System.String)">
-             <summary>
-             Finds segments for specified cached query id
-             </summary>
-             <remarks>
-             Finds segments for specified cached query id
-             </remarks>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <returns>ApiResponse of SimilarityQueryResultBatch</returns>
-            </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentById(System.String)">
              <summary>
              Finds segments for specified id
@@ -7471,30 +7529,6 @@
              <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="id">The id of the media object to find segments fo</param>
              <returns>ApiResponse of MediaSegmentQueryResult</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentByCachedQueryIdAsync(System.String,System.Threading.CancellationToken)">
-             <summary>
-             Finds segments for specified cached query id
-             </summary>
-             <remarks>
-             Finds segments for specified cached query id
-             </remarks>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of SimilarityQueryResultBatch</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentByCachedQueryIdWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
-             <summary>
-             Finds segments for specified cached query id
-             </summary>
-             <remarks>
-             Finds segments for specified cached query id
-             </remarks>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.ISegmentApi.FindSegmentByIdAsync(System.String,System.Threading.CancellationToken)">
              <summary>
@@ -7629,40 +7663,6 @@
              <param name="key">Header field name.</param>
              <param name="value">Header field value.</param>
              <returns></returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentApi.FindSegmentByCachedQueryId(System.String)">
-             <summary>
-             Finds segments for specified cached query id Finds segments for specified cached query id
-             </summary>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <returns>SimilarityQueryResultBatch</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentApi.FindSegmentByCachedQueryIdWithHttpInfo(System.String)">
-             <summary>
-             Finds segments for specified cached query id Finds segments for specified cached query id
-             </summary>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <returns>ApiResponse of SimilarityQueryResultBatch</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentApi.FindSegmentByCachedQueryIdAsync(System.String,System.Threading.CancellationToken)">
-             <summary>
-             Finds segments for specified cached query id Finds segments for specified cached query id
-             </summary>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of SimilarityQueryResultBatch</returns>
-            </member>
-        <member name="M:Org.Vitrivr.CineastApi.Api.SegmentApi.FindSegmentByCachedQueryIdWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
-             <summary>
-             Finds segments for specified cached query id Finds segments for specified cached query id
-             </summary>
-             <exception cref="T:Org.Vitrivr.CineastApi.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="queryId">The id of the query</param>
-             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-             <returns>Task of ApiResponse (SimilarityQueryResultBatch)</returns>
             </member>
         <member name="M:Org.Vitrivr.CineastApi.Api.SegmentApi.FindSegmentById(System.String)">
              <summary>

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Org.Vitrivr.CineastApi.Api;
 using Org.Vitrivr.CineastApi.Model;
+using UnityEngine;
 using Vitrivr.UnityInterface.CineastApi.Model.Config;
 using Vitrivr.UnityInterface.CineastApi.Model.Data;
 using Vitrivr.UnityInterface.CineastApi.Model.Registries;
@@ -20,7 +22,7 @@ namespace Vitrivr.UnityInterface.CineastApi
     public readonly TagApi TagApi;
     public readonly MetadataApi MetadataApi;
     public readonly MiscApi MiscApi;
-    public readonly CacheApi CacheApi;
+    public readonly VectorsApi VectorsApi;
 
     public readonly CineastConfig CineastConfig;
 
@@ -36,7 +38,7 @@ namespace Vitrivr.UnityInterface.CineastApi
       TagApi = new TagApi(apiConfig);
       MetadataApi = new MetadataApi(apiConfig);
       MiscApi = new MiscApi(apiConfig);
-      CacheApi = new CacheApi(apiConfig);
+      VectorsApi = new VectorsApi(apiConfig);
 
       MultimediaRegistry = new MultimediaRegistry(this);
     }
@@ -182,10 +184,40 @@ namespace Vitrivr.UnityInterface.CineastApi
       return PathResolver.CombineUrl(CineastConfig.mediaHost, path);
     }
 
-    public async Task<List<QueryCacheInfo>> ListCachedQueries()
+    /// <summary>
+    /// Loads the vectors for the given IDs and feature.
+    /// Applies optional projection and properties.
+    /// </summary>
+    /// <param name="ids">List of segment IDs of which to retrieve vectors.</param>
+    /// <param name="feature">Feature of which to retrieve vectors.</param>
+    /// <param name="projection">Optional projection to apply, e.g. "umap".</param>
+    /// <param name="properties">Properties passed to the projection function.</param>
+    /// <returns>List of IDs and vectors.</returns>
+    public async Task<IdVectorList> LoadVectors(List<string> ids, string feature, string projection = "raw",
+      Dictionary<string, string> properties = null)
     {
-      var cacheList = await CacheApi.ListCachedQueriesAsync();
-      return cacheList.Info;
+      properties ??= new Dictionary<string, string>();
+      return await VectorsApi.LoadVectorsAsync(new VectorLookup(new IdList(ids), feature: feature,
+        projection: projection,
+        properties: properties));
+    }
+
+    /// <summary>
+    /// Retrieves the vectors for the given IDs and feature and reduces them to 3 dimensions with the given projection.
+    /// </summary>
+    /// <param name="ids">List of segment IDs of which to retrieve and transform vectors.</param>
+    /// <param name="feature">Feature of which to retrieve vectors.</param>
+    /// <param name="projection">Projection to apply, e.g. "umap".</param>
+    /// <param name="metric">Distance metric to calculate similarity in the vector space (e.g. "cosine", "euclidean").</param>
+    /// <returns>List of tuples of segment data and the corresponding 3D vector.</returns>
+    public async Task<List<(SegmentData segment, Vector3 position)>> DimensionalityReduceFeature(List<string> ids,
+      string feature, string projection = "umap", string metric = "cosine")
+    {
+      var properties = new Dictionary<string, string> { { "components", "3" }, { "metric", metric } };
+      var vectors = await LoadVectors(ids, feature, projection, properties);
+
+      return vectors.Points.Select(point => (MultimediaRegistry.GetSegment(point.Id),
+        new Vector3(point.Vector[0], point.Vector[1], point.Vector[2]))).ToList();
     }
   }
 }
