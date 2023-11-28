@@ -224,5 +224,36 @@ namespace Vitrivr.UnityInterface.CineastApi
       return vectors.Points.Select(point => (MultimediaRegistry.GetSegment(point.Id),
         new Vector3(point.Vector[0], point.Vector[1], point.Vector[2]))).ToList();
     }
+
+    public async Task<int> GetMultimediaObjectCount()
+    {
+      var result = await MiscApi.CountRowsAsync("cineast_multimediaobject");
+      return result.Value;
+    }
+
+    public async Task<int> GetSegmentCount()
+    {
+      var result = await MiscApi.CountRowsAsync("cineast_segment");
+      return result.Value;
+    }
+
+    public async Task<ObjectData> GetRandomObject()
+    {
+      var numObjects = await GetMultimediaObjectCount();
+      var randomIndex = Random.Range(0, numObjects);
+      var randomObjectResult = await ObjectApi.FindObjectsPaginationAsync(randomIndex, 1);
+      var randomObject = randomObjectResult.Content.First().Objectid;
+
+      return MultimediaRegistry.GetObject(randomObject);
+    }
+
+    public async Task<SegmentData> GetRandomSegment()
+    {
+      var randomObject = await GetRandomObject();
+      var segments = await randomObject.GetSegments();
+      var randomSegment = segments[Random.Range(0, segments.Count)];
+
+      return randomSegment;
+    }
   }
 }
