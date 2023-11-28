@@ -209,11 +209,16 @@ namespace Vitrivr.UnityInterface.CineastApi
     /// <param name="feature">Feature of which to retrieve vectors.</param>
     /// <param name="projection">Projection to apply, e.g. "umap".</param>
     /// <param name="metric">Distance metric to calculate similarity in the vector space (e.g. "cosine", "euclidean").</param>
+    /// <param name="components">Number of components to reduce to.</param>
+    /// <param name="properties">Additional properties passed to the projection function.</param>
     /// <returns>List of tuples of segment data and the corresponding 3D vector.</returns>
     public async Task<List<(SegmentData segment, Vector3 position)>> DimensionalityReduceFeature(List<string> ids,
-      string feature, string projection = "umap", string metric = "cosine")
+      string feature, string projection = "umap", string metric = "cosine", int components = 3,
+      Dictionary<string, string> properties = null)
     {
-      var properties = new Dictionary<string, string> { { "components", "3" }, { "metric", metric } };
+      properties ??= new Dictionary<string, string>();
+      properties["components"] = components.ToString();
+      properties["metric"] = metric;
       var vectors = await LoadVectors(ids, feature, projection, properties);
 
       return vectors.Points.Select(point => (MultimediaRegistry.GetSegment(point.Id),
